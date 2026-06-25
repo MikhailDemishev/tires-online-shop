@@ -1,0 +1,26 @@
+.link {
+  position: relative;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: red;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+  }
+}
+
+.active::after {
+  transform: scaleX(1);
+}

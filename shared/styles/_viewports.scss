@@ -1,0 +1,11 @@
+$desktop: 1400px;
+$tablet: 1025px;
+$mobile: 766px;
+$mobile-small: 500px;
+
+:root {
+  --viewport-desktop: #{$desktop};
+  --viewport-tablet: #{$tablet};
+  --viewport-mobile: #{$mobile};
+  --viewport-mobile-small: #{$mobile-small};
+}

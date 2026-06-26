@@ -1,5 +1,10 @@
 .header {
   background-color: var(--color-background-secondary);
+
+  .headerTop,
+  .headerBottom {
+    padding: 17px 0;
+  }
 }
 
 .headerNavBar {

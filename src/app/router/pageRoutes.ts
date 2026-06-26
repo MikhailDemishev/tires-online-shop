@@ -8,7 +8,7 @@ import { News } from '@/pages/News';
 
 import { ROUTES } from './paths';
 
-export const appRoutes = [
+export const pageRoutes = [
   {
     label: 'Главная',
     path: ROUTES.home,

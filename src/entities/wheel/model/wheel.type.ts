@@ -1,0 +1,23 @@
+export type Wheel = {
+  id: number;
+  userId: string;
+  title: string;
+  titlePl: string;
+  titleRu: string;
+  typeOfWheel: string;
+  diameter: number;
+  width: number;
+  centralBoreDiameter: number;
+  boltSpacing: string;
+  et: number;
+  color: string;
+  material: string;
+  weight: number;
+  productType: string;
+  url: string;
+  urls: string;
+  inf: string;
+  price: number;
+  quantityInStock: number;
+  createdDate: string;
+};

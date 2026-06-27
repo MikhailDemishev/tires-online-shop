@@ -1,6 +1,8 @@
 import { useGetTiresQuery } from '@/entities/tire/api';
 import { TireCard } from '@/entities/tire/ui';
-
+import s from './Tires.module.scss';
+import { ProductPageLayout } from '@/layouts/ProductPageLayout';
+import { ProductGrid } from '@/widgets/ProductGrid';
 export const Tires = () => {
   const { data, isLoading, isError, error } = useGetTiresQuery();
 
@@ -14,10 +16,12 @@ export const Tires = () => {
   }
 
   return (
-    <div>
-      {data?.map((tire) => (
-        <TireCard key={tire.id} tire={tire} />
-      ))}
-    </div>
+    <ProductPageLayout title="Tires" className={s.tiresPage}>
+      <ProductGrid
+        items={data ?? []}
+        getKey={(tire) => tire.id}
+        renderItem={(tire) => <TireCard tire={tire} />}
+      />
+    </ProductPageLayout>
   );
 };

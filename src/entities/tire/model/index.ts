@@ -1,1 +1,1 @@
-export * from './tire';
+export * from './tire.type';

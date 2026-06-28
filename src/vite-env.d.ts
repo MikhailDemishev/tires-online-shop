@@ -1,3 +1,5 @@
+/// <reference types="vite-plugin-svgr/client" />
+
 interface ImportMetaEnv {
   readonly VITE_BASE_APP_FIREBASE_API_KEY: string;
   readonly VITE_BASE_APP_FIREBASE_AUTH_DOMAIN: string;

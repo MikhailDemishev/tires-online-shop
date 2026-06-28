@@ -14,8 +14,8 @@
     left: 0;
     right: 0;
     bottom: -6px;
-    height: 2px;
-    background: red;
+    height: 1px;
+    background: var(--color-text-secondary);
     transform: scaleX(0);
     transition: transform 0.2s ease;
   }

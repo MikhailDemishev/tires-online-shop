@@ -2,7 +2,7 @@ import s from './Wheels.module.scss';
 import { ProductPageLayout } from '@/layouts/ProductPageLayout';
 import { ProductGrid } from '@/widgets/ProductGrid';
 import { useGetWheelsQuery } from '@/entities/wheel/api';
-import { WheelCard } from '@/entities/wheel/ui';
+import { WheelCard } from '@/entities/wheel/ui/WheelCard';
 export const Wheels = () => {
   const { data, isLoading, isError, error } = useGetWheelsQuery();
 

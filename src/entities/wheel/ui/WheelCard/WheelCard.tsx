@@ -1,6 +1,6 @@
 import type { Wheel } from '@/entities/wheel/model';
 import s from './WheelCard.module.scss';
-import { ProductCard } from '@/entities/product/ProductCard/ui';
+import { ProductCard } from '@/entities/product/ui/ProductCard';
 type Props = {
   wheel: Wheel;
 };

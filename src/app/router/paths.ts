@@ -9,4 +9,6 @@ export const ROUTES = {
   tires: '/tires',
   wheels: '/wheel',
   wheelSpacers: '/wheel-spacers',
+  searchEmpty: '/products/title',
+  search: '/products/title/:title',
 } as const;

@@ -1,5 +1,5 @@
 import { useGetTiresQuery } from '@/entities/tire/api';
-import { TireCard } from '@/entities/tire/ui';
+import { TireCard } from '@/entities/tire/ui/TireCard';
 import s from './Tires.module.scss';
 import { ProductPageLayout } from '@/layouts/ProductPageLayout';
 import { ProductGrid } from '@/widgets/ProductGrid';

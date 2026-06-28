@@ -1,4 +1,4 @@
-import { Footer } from '@/widgets/Footer';
+import { Footer } from '@/widgets/Footer/ui';
 import { Header } from '@/widgets/Header';
 import { Outlet } from 'react-router-dom';
 

@@ -1,4 +1,4 @@
-import type { Product } from '@/entities/product/ProductCard/model';
+import type { Product } from '@/entities/product/model';
 import s from './ProductCard.module.scss';
 import clsx from 'clsx';
 

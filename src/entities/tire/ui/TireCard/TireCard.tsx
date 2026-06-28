@@ -1,6 +1,6 @@
 import type { Tire } from '@/entities/tire/model';
 import s from './TireCard.module.scss';
-import { ProductCard } from '@/entities/product/ProductCard/ui';
+import { ProductCard } from '@/entities/product/ui/ProductCard';
 import clsx from 'clsx';
 type Props = {
   tire: Tire;

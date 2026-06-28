@@ -1,0 +1,13 @@
+.input {
+  width: 100%;
+  font: inherit;
+  outline: none;
+
+  //   &:focus {
+  //     border-color: #18181a;
+  //   }
+}
+
+.error {
+  border-color: red;
+}

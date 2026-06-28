@@ -1,0 +1,19 @@
+.searchInput {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: var(--color-background-primary);
+
+  .searchInputField {
+    border: transparent;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.searchIcon {
+  color: var(--color-icon-primary);
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,26 @@
+.footerTopItem {
+  display: flex;
+  gap: 12px;
+}
+
+.icon {
+  width: 53px;
+  height: 53px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 12px;
+  line-height: 12px;
+}

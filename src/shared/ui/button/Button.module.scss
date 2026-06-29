@@ -1,0 +1,22 @@
+.primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  background-color: var(--color-background-secondary);
+  text-transform: uppercase;
+  padding: 14px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  transition: opacity 0.3s ease-in-out;
+
+  &:not(:disabled):hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: unset;
+  }
+}

@@ -1,0 +1,24 @@
+.homeFilter {
+  width: 381px;
+  .tabs {
+    width: 100%;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+}
+
+.fields {
+  background-color: var(--color-background-primary);
+}
+
+.selectTrigger {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 6px 8px;
+}
+
+.homeFilterContent {
+  padding: 40px 20px;
+}

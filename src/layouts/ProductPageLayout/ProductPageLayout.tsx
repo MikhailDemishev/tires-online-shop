@@ -20,7 +20,7 @@ export const ProductPageLayout = ({
   className,
 }: Props) => {
   return (
-    <section className={clsx(className, s.productPageLayout)}>
+    <section className={clsx(className, 'container', s.productPageLayout)}>
       <section className={s.header}>
         <div>
           <div className={s.breadcrumbs}>Главная / {title}</div>

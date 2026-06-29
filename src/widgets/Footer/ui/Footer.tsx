@@ -5,7 +5,7 @@ import { FooterTop } from '@/widgets/Footer/ui';
 export const Footer = () => {
   return (
     <footer className={s.footer}>
-      <FooterTop className={clsx(s.footerTop, 'container')} />
+      <FooterTop className={clsx(s.footerTop)} />
       <div className={s.footer__middle}>
         <div className="container">Средняя часть футера</div>
       </div>

@@ -14,6 +14,7 @@ export const Tires = () => {
     console.error(error);
     return <h1>Error</h1>;
   }
+  console.log(data);
 
   return (
     <ProductPageLayout title="Tires" className={s.tiresPage}>

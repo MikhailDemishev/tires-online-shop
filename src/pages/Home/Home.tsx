@@ -1,3 +1,10 @@
+import { HomeFilter } from '@/features/filters/home/ui/HomeFilter';
+import { Hero } from '@/widgets/Hero';
+
 export const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <Hero>
+      <HomeFilter />
+    </Hero>
+  );
 };

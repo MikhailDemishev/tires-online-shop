@@ -1,0 +1,20 @@
+.tabs {
+  display: flex;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 40px;
+  background-color: transparent;
+  width: 100%;
+}
+
+.active {
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
+}

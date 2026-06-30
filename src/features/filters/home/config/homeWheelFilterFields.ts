@@ -2,15 +2,6 @@ import type { HomeFilterField } from '@/features/filters/home/model';
 
 export const homeWheelFilterFields: HomeFilterField[] = [
   {
-    name: 'diameter',
-    placeholder: 'Диаметр',
-    options: [
-      { value: '15', label: 'R15' },
-      { value: '16', label: 'R16' },
-      { value: '17', label: 'R17' },
-    ],
-  },
-  {
     name: 'width',
     placeholder: 'Ширина',
     options: [
@@ -21,8 +12,22 @@ export const homeWheelFilterFields: HomeFilterField[] = [
     ],
   },
   {
+    name: 'diameter',
+    placeholder: 'Диаметр',
+    options: [
+      { value: '15', label: 'R15' },
+      { value: '16', label: 'R16' },
+      { value: '17', label: 'R17' },
+    ],
+  },
+  {
+    name: 'centralBoreDiameter',
+    placeholder: 'DIA',
+    options: [{ value: '0', label: '0' }],
+  },
+  {
     name: 'boltSpacing',
-    placeholder: 'Разболтовка',
+    placeholder: 'PCD',
     options: [
       { value: '5x114.3', label: '5×114.3' },
       { value: '5x127', label: '5×127' },

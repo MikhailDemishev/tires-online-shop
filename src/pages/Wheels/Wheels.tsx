@@ -3,8 +3,13 @@ import { ProductPageLayout } from '@/layouts/ProductPageLayout';
 import { ProductGrid } from '@/widgets/ProductGrid';
 import { useGetWheelsQuery } from '@/entities/wheel/api';
 import { WheelCard } from '@/entities/wheel/ui/WheelCard';
+import { useSearchParams } from 'react-router-dom';
+import type { WheelParams } from '@/entities/wheel/model';
 export const Wheels = () => {
-  const { data, isLoading, isError, error } = useGetWheelsQuery();
+  const [searchParams] = useSearchParams();
+  const params = Object.fromEntries(searchParams) as WheelParams;
+
+  const { data, isLoading, isError, error } = useGetWheelsQuery(params);
 
   if (isLoading) {
     return <h1>Loading...</h1>;

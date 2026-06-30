@@ -7,7 +7,7 @@ export const ROUTES = {
   news: '/news',
   feedback: '/feedback',
   tires: '/tires',
-  wheels: '/wheel',
+  wheels: '/wheels',
   wheelSpacers: '/wheel-spacers',
   searchEmpty: '/products/title',
   search: '/products/title/:title',

@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/shared/ui/button';
 import { Select } from '@/shared/ui/Select';
+import { useNavigate } from 'react-router-dom';
 
 export type HomeFilterProps = {
   className?: string;
@@ -22,10 +23,26 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
   const fields = type === 'tire' ? homeTireFilterFields : homeWheelFilterFields;
   type HomeFilterFormValues = Record<string, string>;
 
-  const { register, reset, handleSubmit } = useForm<HomeFilterFormValues>();
+  const { register, reset, watch, handleSubmit } =
+    useForm<HomeFilterFormValues>();
+
+  const values = watch();
+  const isDisabled = !fields.some((field) => values[field.name]);
+
+  const navigate = useNavigate();
 
   const onSubmit = (data: HomeFilterFormValues) => {
-    console.log(data);
+    const params = new URLSearchParams();
+
+    Object.entries(data).forEach(([key, value]) => {
+      if (value) {
+        params.set(key, value);
+      }
+    });
+
+    const path = type === 'tire' ? '/tires' : '/wheels';
+
+    navigate(`${path}?${params.toString()}`);
   };
 
   const handleTypeChange = (value: 'tire' | 'wheel') => {
@@ -54,7 +71,7 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
           ))}
         </div>
 
-        <Button type="submit" fullWidth className={s.submitBtn}>
+        <Button type="submit" className={s.submitBtn} disabled={isDisabled}>
           Подобрать
         </Button>
       </form>

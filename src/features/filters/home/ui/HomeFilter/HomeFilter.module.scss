@@ -8,9 +8,19 @@
     width: 100%;
   }
 }
+.homeFilterForm {
+  background-color: var(--color-background-primary);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
 
 .fields {
-  background-color: var(--color-background-primary);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
 }
 
 .selectTrigger {

@@ -1,23 +1,27 @@
 import type { ReactNode } from 'react';
 import s from './ProductPageLayout.module.scss';
 import clsx from 'clsx';
+import { Pagination } from '@/shared/ui/Pagination';
+import type { ProductFilterType } from '@/features/filters/model';
+import { ProductFilter } from '@/features/filters/ProductFilter';
 
 type Props = {
   title: string;
-  filters?: ReactNode;
-  actions?: ReactNode;
   children: ReactNode;
+  isEmpty?: boolean;
+  filterType?: ProductFilterType;
+  actions?: ReactNode;
   pagination?: ReactNode;
   className?: string;
 };
 
 export const ProductPageLayout = ({
   title,
-  filters,
-  actions,
   children,
-  pagination,
+  filterType,
+  actions,
   className,
+  isEmpty,
 }: Props) => {
   return (
     <section className={clsx(className, 'container', s.productPageLayout)}>
@@ -31,11 +35,21 @@ export const ProductPageLayout = ({
       </section>
 
       <section className={s.body}>
-        <aside className={s.filters}>{filters}Здесь будут фильтры</aside>
+        {filterType && (
+          <aside className={s.filters}>
+            <ProductFilter filterType={filterType} />
+          </aside>
+        )}
 
         <div className={s.content}>
-          {children}
-          {pagination}
+          {isEmpty ? (
+            <p>Товары не найдены</p>
+          ) : (
+            <>
+              {children}
+              <Pagination />
+            </>
+          )}
         </div>
       </section>
     </section>

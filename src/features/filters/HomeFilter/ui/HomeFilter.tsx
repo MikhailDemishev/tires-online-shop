@@ -1,51 +1,36 @@
 import { Tabs } from '@/shared/ui/Tabs';
 
-import {
-  homeFilterTabs,
-  homeTireFilterFields,
-  homeWheelFilterFields,
-} from '@/features/filters/home/config';
+import { homeFilterTabs } from '@/features/filters/HomeFilter/config';
+import { FILTER_VALUES } from '@/features/filters/config';
 import s from './HomeFilter.module.scss';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Button } from '@/shared/ui/button';
+import { Button } from '@/shared/ui/Button';
 import { Select } from '@/shared/ui/Select';
 import { useNavigate } from 'react-router-dom';
+import { createSearchParams } from '@/shared/lib/helpers';
 
 export type HomeFilterProps = {
   className?: string;
 };
 
 export const HomeFilter = ({ className }: HomeFilterProps) => {
-  const [type, setType] = useState<'tire' | 'wheel'>('tire');
-
-  const fields = type === 'tire' ? homeTireFilterFields : homeWheelFilterFields;
+  const [type, setType] = useState<'tires' | 'wheels'>('tires');
+  const { fields, route } = FILTER_VALUES[type];
   type HomeFilterFormValues = Record<string, string>;
-
   const { register, reset, watch, handleSubmit } =
     useForm<HomeFilterFormValues>();
-
   const values = watch();
   const isDisabled = !fields.some((field) => values[field.name]);
-
   const navigate = useNavigate();
 
   const onSubmit = (data: HomeFilterFormValues) => {
-    const params = new URLSearchParams();
-
-    Object.entries(data).forEach(([key, value]) => {
-      if (value) {
-        params.set(key, value);
-      }
-    });
-
-    const path = type === 'tire' ? '/tires' : '/wheels';
-
-    navigate(`${path}?${params.toString()}`);
+    const params = createSearchParams(data);
+    navigate(`${route}?${params.toString()}`);
   };
 
-  const handleTypeChange = (value: 'tire' | 'wheel') => {
+  const handleTypeChange = (value: 'tires' | 'wheels') => {
     setType(value);
     reset();
   };
@@ -65,6 +50,8 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
               key={field.name}
               options={field.options}
               placeholder={field.placeholder}
+              className={s.homeFilterFormSelect}
+              iconClassName={s.homeFilterFormSelectIcon}
               defaultValue=""
               {...register(field.name)}
             />

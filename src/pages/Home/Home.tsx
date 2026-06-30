@@ -1,4 +1,4 @@
-import { HomeFilter } from '@/features/filters/home/ui/HomeFilter';
+import { HomeFilter } from '@/features/filters/HomeFilter/ui';
 import { Hero } from '@/widgets/Hero';
 
 export const Home = () => {

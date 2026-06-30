@@ -1,0 +1,48 @@
+.productFilter {
+  width: 100%;
+
+  .resetBtn {
+    width: 100%;
+  }
+
+  .productFilterSelectWrapper {
+    width: 100%;
+    border-bottom: 1px solid #111;
+  }
+  .productFilterSelect {
+    width: 100%;
+    padding: 14px 13px;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    border: none;
+  }
+
+  .productFilterSelectIcon {
+    right: 14px;
+    width: 10px;
+    height: 13px;
+    color: var(--color-icon-primary);
+  }
+}
+.productFilterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.filterFields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.selectTrigger {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 6px 8px;
+}
+
+.homeFilterContent {
+  padding: 40px 20px;
+}

@@ -21,7 +21,12 @@ export const Wheels = () => {
   }
 
   return (
-    <ProductPageLayout title="Wheels" className={s.wheelsPage}>
+    <ProductPageLayout
+      title="Wheels"
+      className={s.wheelsPage}
+      filterType="wheels"
+      isEmpty={!data?.length}
+    >
       <ProductGrid
         items={data ?? []}
         getKey={(wheel) => wheel.id}

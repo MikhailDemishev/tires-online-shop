@@ -6,7 +6,7 @@ import { ProductGrid } from '@/widgets/ProductGrid';
 import { SearchCard } from '@/features/search/ui/SearchCard';
 import { useGetSearchResultsQuery } from '@/features/search/api';
 import { skipToken } from '@reduxjs/toolkit/query';
-import { useDebounce } from '@/shared/hooks';
+import { useDebounce } from '@/shared/lib/hooks';
 export const Search = () => {
   const { title = '' } = useParams();
   const debouncedTitle = useDebounce(title, 500);

@@ -8,7 +8,6 @@ import type { TireParams } from '@/entities/tire/model';
 export const Tires = () => {
   const [searchParams] = useSearchParams();
   const params = Object.fromEntries(searchParams) as TireParams;
-  console.log('params', params);
   const { data, isLoading, isError, error } = useGetTiresQuery(params);
 
   if (isLoading) {
@@ -22,7 +21,12 @@ export const Tires = () => {
   console.log(data);
 
   return (
-    <ProductPageLayout title="Tires" className={s.tiresPage}>
+    <ProductPageLayout
+      title="Tires"
+      filterType="tires"
+      className={s.tiresPage}
+      isEmpty={!data?.length}
+    >
       <ProductGrid
         items={data ?? []}
         getKey={(tire) => tire.id}

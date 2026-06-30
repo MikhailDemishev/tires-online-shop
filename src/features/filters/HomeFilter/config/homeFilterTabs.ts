@@ -1,10 +1,10 @@
 export const homeFilterTabs = [
   {
-    value: 'tire',
+    value: 'tires',
     label: 'Шины',
   },
   {
-    value: 'wheel',
+    value: 'wheels',
     label: 'Диски',
   },
 ] as const;

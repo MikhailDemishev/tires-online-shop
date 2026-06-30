@@ -1,4 +1,4 @@
-export type HomeFilterField = {
+export type FilterField = {
   name: string;
   placeholder: string;
   options: {

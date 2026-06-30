@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { type ComponentPropsWithoutRef } from 'react';
 
 import s from './Select.module.scss';
-import { ArrowSelect } from '@/assets/icons';
+import { Arrow } from '@/assets/icons';
 
 export type SelectOption = {
   value: string;
@@ -12,17 +12,21 @@ export type SelectOption = {
 type SelectProps = {
   options: SelectOption[];
   placeholder?: string;
+  iconClassName?: string;
+  warpperClassName?: string;
 } & ComponentPropsWithoutRef<'select'>;
 
 export const Select = ({
   options,
   placeholder,
   className,
+  iconClassName,
+  warpperClassName,
   ...props
 }: SelectProps) => {
   return (
-    <div className={s.selectWrapper}>
-      <select className={clsx(s.select, className)} {...props}>
+    <div className={clsx(warpperClassName, s.selectWrapper)}>
+      <select className={clsx(className, s.select)} {...props}>
         {placeholder && (
           <option value="" disabled>
             {placeholder}
@@ -35,9 +39,7 @@ export const Select = ({
           </option>
         ))}
       </select>
-      <span className={s.iconBox}>
-        <ArrowSelect className={s.icon} />
-      </span>
+      <Arrow className={clsx(iconClassName, s.icon)} />
     </div>
   );
 };

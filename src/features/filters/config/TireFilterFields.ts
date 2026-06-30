@@ -1,6 +1,6 @@
-import type { HomeFilterField } from '@/features/filters/home/model';
+import type { FilterField } from '@/features/filters/model';
 
-export const homeTireFilterFields: HomeFilterField[] = [
+export const TireFilterFields: FilterField[] = [
   {
     name: 'width',
     placeholder: 'Ширина',

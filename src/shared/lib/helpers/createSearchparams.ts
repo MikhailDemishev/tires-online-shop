@@ -1,9 +1,11 @@
-export const createSearchParams = (data: Record<string, string>) => {
-  const params = new URLSearchParams();
+export const createSearchParams = (
+  values: Record<string, string | boolean>,
+) => {
+  const params: Record<string, string> = {};
 
-  Object.entries(data).forEach(([key, value]) => {
-    if (value) {
-      params.set(key, value);
+  Object.entries(values).forEach(([key, value]) => {
+    if (typeof value === 'string' && value) {
+      params[key] = value;
     }
   });
 

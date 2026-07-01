@@ -3,7 +3,7 @@ import s from './ProductPageLayout.module.scss';
 import clsx from 'clsx';
 import { Pagination } from '@/shared/ui/Pagination';
 import type { ProductFilterType } from '@/features/filters/model';
-import { ProductFilter } from '@/features/filters/ProductFilter';
+import { ProductFilter } from '@/features/filters/ui/ProductFilter';
 
 type Props = {
   title: string;
@@ -34,7 +34,7 @@ export const ProductPageLayout = ({
         <div className={s.actions}>{actions}Здесь будет селект</div>
       </section>
 
-      <section className={s.body}>
+      <section className={clsx(s.body, !filterType && s.bodyWithoutFilters)}>
         {filterType && (
           <aside className={s.filters}>
             <ProductFilter filterType={filterType} />

@@ -1,6 +1,6 @@
 import { Tabs } from '@/shared/ui/Tabs';
 
-import { homeFilterTabs } from '@/features/filters/HomeFilter/config';
+import { homeFilterTabs } from '@/features/filters/config';
 import { FILTER_VALUES } from '@/features/filters/config';
 import s from './HomeFilter.module.scss';
 import clsx from 'clsx';
@@ -27,7 +27,9 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
 
   const onSubmit = (data: HomeFilterFormValues) => {
     const params = createSearchParams(data);
-    navigate(`${route}?${params.toString()}`);
+    const searchParams = new URLSearchParams(params);
+
+    navigate(`${route}?${searchParams.toString()}`);
   };
 
   const handleTypeChange = (value: 'tires' | 'wheels') => {

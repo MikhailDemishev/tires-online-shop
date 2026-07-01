@@ -32,6 +32,10 @@
   gap: 32px;
 }
 
+.bodyWithoutFilters {
+  grid-template-columns: 1fr;
+}
+
 .filters {
   min-width: 0;
 }

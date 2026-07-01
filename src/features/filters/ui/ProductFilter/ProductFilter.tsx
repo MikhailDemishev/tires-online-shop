@@ -1,4 +1,7 @@
-import { type ProductFilterType } from '@/features/filters/model';
+import {
+  type ProductFilterFormValues,
+  type ProductFilterType,
+} from '@/features/filters/model';
 import { FILTER_VALUES } from '@/features/filters/config';
 
 import s from './ProductFilter.module.scss';
@@ -12,7 +15,8 @@ import {
   getFormValuesFromSearchParams,
 } from '@/shared/lib/helpers';
 import { useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { Checkbox } from '@/shared/ui/Checkbox';
+import { PriceRangeFilter } from '@/features/filters/ui/PriceRangeFilter';
 
 export type ProductFilterProps = {
   className?: string;
@@ -26,23 +30,44 @@ export const ProductFilter = ({
   const fields = FILTER_VALUES[filterType].fields;
   const [searchParams, setSearchParams] = useSearchParams();
 
-  type ProductFilterFormValues = Record<string, string>;
+  const defaultValues = {
+    ...getFormValuesFromSearchParams(fields, searchParams),
+    priceFrom: searchParams.get('priceFrom') ?? '',
+    priceTo: searchParams.get('priceTo') ?? '',
+    inStock: false,
+  };
 
-  const { register, watch, reset } = useForm<ProductFilterFormValues>({
-    defaultValues: getFormValuesFromSearchParams(fields, searchParams),
-  });
+  const { register, watch, reset, setValue } = useForm<ProductFilterFormValues>(
+    {
+      defaultValues,
+    },
+  );
 
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+
     const subscription = watch((values) => {
-      const params = createSearchParams(values as ProductFilterFormValues);
-      setSearchParams(params);
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(() => {
+        const params = createSearchParams(values as ProductFilterFormValues);
+        setSearchParams(params);
+      }, 300);
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      clearTimeout(timeoutId);
+      subscription.unsubscribe();
+    };
   }, [watch, setSearchParams]);
 
   const handleReset = () => {
-    reset(getFormValuesFromSearchParams(fields, new URLSearchParams()));
+    reset({
+      ...getFormValuesFromSearchParams(fields, new URLSearchParams()),
+      priceFrom: '',
+      priceTo: '',
+      inStock: false,
+    });
 
     setSearchParams({});
   };
@@ -50,13 +75,19 @@ export const ProductFilter = ({
   return (
     <div className={clsx(className, s.productFilter)}>
       <form className={s.productFilterForm}>
+        <Checkbox
+          className={s.checkbox}
+          labelClassName={s.label}
+          label="в наличии"
+          {...register('inStock')}
+        />
         <div className={s.filterFields}>
           {fields.map((field) => (
             <Select
               key={field.name}
               options={field.options}
               placeholder={field.placeholder}
-              warpperClassName={s.productFilterSelectWrapper}
+              wrapperClassName={s.productFilterSelectWrapper}
               className={s.productFilterSelect}
               iconClassName={s.productFilterSelectIcon}
               defaultValue=""
@@ -65,6 +96,11 @@ export const ProductFilter = ({
           ))}
         </div>
 
+        <PriceRangeFilter
+          register={register}
+          watch={watch}
+          setValue={setValue}
+        />
         <Button type="button" className={s.resetBtn} onClick={handleReset}>
           Сбросить фильтры
         </Button>

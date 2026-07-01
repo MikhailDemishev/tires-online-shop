@@ -4,7 +4,7 @@ import { type ChangeEvent } from 'react';
 import { SearchIcon } from '@/assets/icons';
 
 import s from './SearchInput.module.scss';
-import { Input } from '@/shared/ui/Input/Input';
+import { Input } from '@/shared/ui/Input';
 
 export type SearchInputProps = {
   className?: string;

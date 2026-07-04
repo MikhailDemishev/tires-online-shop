@@ -1,0 +1,53 @@
+.modalAuthContent {
+  width: 474px;
+  background: var(--color-background-primary);
+  border-radius: 24px;
+  padding: 80px 37px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  &__switchButtons {
+    display: flex;
+    width: 100%;
+    border-radius: 20px;
+    margin: 0 0 31px;
+    background-color: var(--color-light-white);
+  }
+  &__switchButton {
+    width: 100%;
+    border-radius: 20px;
+    padding: 19px;
+    color: var(--color-light-primary);
+    transition: all 0.3s ease;
+
+    &.active {
+      background: var(--color-light-primary);
+      color: var(--color-light-white);
+    }
+
+    &__text {
+      text-transform: none;
+    }
+  }
+
+  &__title,
+  &__text {
+    color: var(--color-light-primary);
+  }
+
+  &__text {
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  &__forgot {
+    text-transform: none;
+    color: var(--color-light-primary);
+  }
+}

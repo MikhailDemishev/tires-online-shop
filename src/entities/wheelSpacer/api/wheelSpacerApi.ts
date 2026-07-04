@@ -1,14 +1,19 @@
 import { baseApi } from '@/shared/api';
-import type { WheelSpacer } from '@/entities/wheelSpacer/model';
+import type {
+  WheelSpacerFullResponse,
+  WheelSpacerParams,
+} from '@/entities/wheelSpacer/model';
+import { createPaginationParams } from '@/shared/lib/helpers';
 
 const BASE_URL = '/api/spacers';
 
 export const wheelSpacerApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getWheelSpacers: builder.query<WheelSpacer[], void>({
+    getWheelSpacers: builder.query<WheelSpacerFullResponse, WheelSpacerParams>({
       providesTags: ['WheelSpacers'],
-      query: () => ({
+      query: (params) => ({
         url: BASE_URL,
+        params: createPaginationParams(params),
       }),
     }),
   }),

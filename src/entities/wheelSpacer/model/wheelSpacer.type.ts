@@ -12,7 +12,18 @@ export type WheelSpacer = {
   urls: string;
   inf: string;
   quantityInStock: number;
+  inStock?: boolean;
   price: number;
   inArchive: boolean;
   createdDate: string;
+};
+
+export type WheelSpacerFullResponse = {
+  content: WheelSpacer[];
+  pageNumber: number;
+  size: number;
+  totalElements: number;
+  totalPages: number;
+  isFirst: boolean;
+  isLast: boolean;
 };

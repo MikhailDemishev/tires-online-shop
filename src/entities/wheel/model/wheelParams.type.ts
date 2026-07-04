@@ -4,13 +4,11 @@ export type WheelParams = {
   boltSpacing?: string;
   et?: string;
   centralBoreDiameter?: string;
-
   color?: string;
   material?: string;
-
+  inStock?: boolean;
   priceFrom?: number;
   priceTo?: number;
-
   page?: number;
   size?: number;
 };

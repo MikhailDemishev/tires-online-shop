@@ -3,13 +3,13 @@ import { ProductPageLayout } from '@/layouts/ProductPageLayout';
 import { ProductGrid } from '@/widgets/ProductGrid';
 import { useGetWheelsQuery } from '@/entities/wheel/api';
 import { WheelCard } from '@/entities/wheel/ui/WheelCard';
-import { useSearchParams } from 'react-router-dom';
 import type { WheelParams } from '@/entities/wheel/model';
+import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
 export const Wheels = () => {
-  const [searchParams] = useSearchParams();
-  const params = Object.fromEntries(searchParams) as WheelParams;
+  const params = usePaginationParams<WheelParams>();
 
   const { data, isLoading, isError, error } = useGetWheelsQuery(params);
+  const wheels = data?.content;
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -24,11 +24,13 @@ export const Wheels = () => {
     <ProductPageLayout
       title="Wheels"
       className={s.wheelsPage}
+      totalPages={data?.totalPages ?? 1}
+      currentPage={data?.pageNumber ?? 1}
       filterType="wheels"
-      isEmpty={!data?.length}
+      isEmpty={!wheels?.length}
     >
       <ProductGrid
-        items={data ?? []}
+        items={wheels ?? []}
         getKey={(wheel) => wheel.id}
         renderItem={(wheel) => <WheelCard wheel={wheel} />}
       />

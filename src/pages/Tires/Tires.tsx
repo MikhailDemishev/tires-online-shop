@@ -3,12 +3,12 @@ import { TireCard } from '@/entities/tire/ui/TireCard';
 import s from './Tires.module.scss';
 import { ProductPageLayout } from '@/layouts/ProductPageLayout';
 import { ProductGrid } from '@/widgets/ProductGrid';
-import { useSearchParams } from 'react-router-dom';
 import type { TireParams } from '@/entities/tire/model';
+import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
 export const Tires = () => {
-  const [searchParams] = useSearchParams();
-  const params = Object.fromEntries(searchParams) as TireParams;
+  const params = usePaginationParams<TireParams>();
   const { data, isLoading, isError, error } = useGetTiresQuery(params);
+  const tires = data?.content;
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -24,11 +24,13 @@ export const Tires = () => {
     <ProductPageLayout
       title="Tires"
       filterType="tires"
+      totalPages={data?.totalPages ?? 1}
+      currentPage={data?.pageNumber ?? 1}
       className={s.tiresPage}
-      isEmpty={!data?.length}
+      isEmpty={!tires?.length}
     >
       <ProductGrid
-        items={data ?? []}
+        items={tires ?? []}
         getKey={(tire) => tire.id}
         renderItem={(tire) => <TireCard tire={tire} />}
       />

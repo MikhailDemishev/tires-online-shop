@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import s from './Button.module.scss';
 import { Slot } from '@radix-ui/react-slot';
 
-export type VariantBtn = 'primary' | 'secondary';
+export type VariantBtn = 'primary' | 'secondary' | 'unset';
 
 type Props = {
   variant?: VariantBtn;

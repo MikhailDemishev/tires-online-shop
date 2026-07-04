@@ -8,6 +8,7 @@ export type TireParams = {
   speedIndex?: string;
   loadIndex?: string;
   offroadUsingType?: string;
+  inStock?: boolean;
   priceFrom?: number;
   priceTo?: number;
   page?: number;

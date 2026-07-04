@@ -7,13 +7,23 @@ import { SearchCard } from '@/features/search/ui/SearchCard';
 import { useGetSearchResultsQuery } from '@/features/search/api';
 import { skipToken } from '@reduxjs/toolkit/query';
 import { useDebounce } from '@/shared/lib/hooks';
+import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
+import type { SearchParams } from '@/features/search/model';
 export const Search = () => {
   const { title = '' } = useParams();
   const debouncedTitle = useDebounce(title, 500);
+  const params = usePaginationParams<SearchParams>();
 
   const { data, isLoading, isError, error } = useGetSearchResultsQuery(
-    debouncedTitle ? { keyword: title } : skipToken,
+    debouncedTitle
+      ? {
+          ...params,
+          keyword: title,
+        }
+      : skipToken,
   );
+
+  const foundProducts = data?.content;
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -25,15 +35,20 @@ export const Search = () => {
   }
 
   return (
-    <ProductPageLayout title="Search Results" className={s.searchPage}>
+    <ProductPageLayout
+      title="Search Results"
+      className={s.searchPage}
+      totalPages={data?.totalPages ?? 1}
+      currentPage={data?.pageNumber ?? 1}
+    >
       {!title ? (
         <div>Введите запрос</div>
-      ) : data?.length ? (
+      ) : foundProducts?.length ? (
         <ProductGrid
-          items={data}
-          getKey={(searchProduct) => searchProduct.id}
-          renderItem={(searchProduct) => (
-            <SearchCard searchProduct={searchProduct} />
+          items={foundProducts}
+          getKey={(foundProduct) => foundProduct.id}
+          renderItem={(foundProduct) => (
+            <SearchCard searchProduct={foundProduct} />
           )}
         />
       ) : (

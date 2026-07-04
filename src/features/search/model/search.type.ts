@@ -13,3 +13,13 @@ export type SearchProduct = {
   inArchive: boolean;
   createdDate: string;
 };
+
+export type SearchFullResponse = {
+  content: SearchProduct[];
+  pageNumber: number;
+  size: number;
+  totalElements: number;
+  totalPages: number;
+  isFirst: boolean;
+  isLast: boolean;
+};

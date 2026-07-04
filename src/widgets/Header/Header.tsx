@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { SearchInput } from '@/features/search/ui/SearchInput';
 import { Link } from 'react-router';
 import { matchPath, useLocation, useNavigate } from 'react-router-dom';
+import { HeaderControls } from './HeaderControls';
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -29,12 +30,13 @@ export const Header = () => {
   return (
     <header className={s.header}>
       <div className={s.headerTop}>
-        <div className="container">
+        <div className={clsx('container', s.headerTopContent)}>
           <NavBar
             items={pageRoutes}
             className={s.headerNavBar}
             navLinkClassName={s.headerNavBarLink}
           />
+          <HeaderControls />
         </div>
       </div>
       <div className={s.headerBottom}>

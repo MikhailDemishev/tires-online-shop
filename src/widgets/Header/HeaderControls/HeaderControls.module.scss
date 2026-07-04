@@ -1,0 +1,28 @@
+.headerControls {
+  --gap: 27px;
+  display: flex;
+  gap: var(--gap);
+
+  .btn {
+    width: 24px;
+    height: 24px;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: calc(100% + var(--gap) / 2);
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 2px;
+      height: calc(100% - 5px);
+      background-color: var(--color-background-primary);
+    }
+  }
+
+  .icon {
+    color: var(--color-icon-secondary);
+    width: 18px;
+    height: 18px;
+  }
+}

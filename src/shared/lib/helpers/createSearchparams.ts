@@ -7,6 +7,10 @@ export const createSearchParams = (
     if (typeof value === 'string' && value) {
       params[key] = value;
     }
+
+    if (typeof value === 'boolean' && value) {
+      params[key] = 'true';
+    }
   });
 
   return params;

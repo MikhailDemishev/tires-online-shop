@@ -15,9 +15,20 @@ export type Tire = {
   urls: string;
   inf: string;
   quantityInStock: number;
+  inStock?: boolean;
   price: number;
   protector: string;
   speedIndex: number;
   loadIndex: string;
   offroadUsingType: string;
+};
+
+export type TireFullResponse = {
+  content: Tire[];
+  pageNumber: number;
+  size: number;
+  totalElements: number;
+  totalPages: number;
+  isFirst: boolean;
+  isLast: boolean;
 };

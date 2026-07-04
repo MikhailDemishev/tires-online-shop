@@ -19,5 +19,15 @@ export type Wheel = {
   inf: string;
   price: number;
   quantityInStock: number;
+  inStock?: boolean;
   createdDate: string;
+};
+export type WheelFullResponse = {
+  content: Wheel[];
+  pageNumber: number;
+  size: number;
+  totalElements: number;
+  totalPages: number;
+  isFirst: boolean;
+  isLast: boolean;
 };

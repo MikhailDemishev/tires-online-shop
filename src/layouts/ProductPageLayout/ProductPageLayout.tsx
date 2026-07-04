@@ -1,28 +1,34 @@
 import type { ReactNode } from 'react';
 import s from './ProductPageLayout.module.scss';
 import clsx from 'clsx';
-import { Pagination } from '@/shared/ui/Pagination';
+
 import type { ProductFilterType } from '@/features/filters/model';
 import { ProductFilter } from '@/features/filters/ui/ProductFilter';
+import { Pagination } from '@/features/pagination/ui';
 
 type Props = {
   title: string;
   children: ReactNode;
+  totalPages: number;
+  currentPage: number;
   isEmpty?: boolean;
   filterType?: ProductFilterType;
   actions?: ReactNode;
-  pagination?: ReactNode;
   className?: string;
 };
 
 export const ProductPageLayout = ({
   title,
   children,
+  totalPages,
+  currentPage,
   filterType,
   actions,
   className,
   isEmpty,
 }: Props) => {
+  // Backend uses 0-based page numbering, Pagination uses 1-based.
+  const displayPage = currentPage + 1;
   return (
     <section className={clsx(className, 'container', s.productPageLayout)}>
       <section className={s.header}>
@@ -47,7 +53,9 @@ export const ProductPageLayout = ({
           ) : (
             <>
               {children}
-              <Pagination />
+              {totalPages > 1 && (
+                <Pagination totalPages={totalPages} currentPage={displayPage} />
+              )}
             </>
           )}
         </div>

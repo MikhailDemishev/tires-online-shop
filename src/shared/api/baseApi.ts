@@ -6,14 +6,12 @@ export const baseApi = createApi({
   tagTypes: [
     'Auth',
     'Profile',
-
     'Tires',
     'Wheels',
     'WheelSpacers',
-
     'Brands',
+    'Manufacturers',
     'Categories',
-
     'Cart',
     'Favorites',
     'Orders',

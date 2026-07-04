@@ -1,7 +1,7 @@
 .productFilter {
   width: 100%;
 
-  .checkbox {
+  .inStockCheckbox {
     .label {
       text-transform: uppercase;
     }
@@ -51,4 +51,29 @@
 
 .homeFilterContent {
   padding: 40px 20px;
+}
+
+.manufacturerFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+
+  .manufacturerFilterLabel {
+    text-transform: uppercase;
+    padding: 12px 14px;
+    border: 1px solid var(--color-background-tertiary);
+  }
+
+  .manufacturerFilterFields {
+    padding: 8px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .manufacturerFilterButton {
+    width: fit-content;
+    padding: 0 14px;
+  }
 }

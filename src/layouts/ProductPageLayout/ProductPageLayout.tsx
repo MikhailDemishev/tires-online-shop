@@ -13,6 +13,7 @@ type Props = {
   currentPage: number;
   isEmpty?: boolean;
   filterType?: ProductFilterType;
+  page?: string;
   actions?: ReactNode;
   className?: string;
 };
@@ -25,6 +26,7 @@ export const ProductPageLayout = ({
   filterType,
   actions,
   className,
+  page,
   isEmpty,
 }: Props) => {
   // Backend uses 0-based page numbering, Pagination uses 1-based.
@@ -43,7 +45,7 @@ export const ProductPageLayout = ({
       <section className={clsx(s.body, !filterType && s.bodyWithoutFilters)}>
         {filterType && (
           <aside className={s.filters}>
-            <ProductFilter filterType={filterType} />
+            <ProductFilter filterType={filterType} page={page} />
           </aside>
         )}
 

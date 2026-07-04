@@ -1,1 +1,4 @@
-export type ProductFilterFormValues = Record<string, string | boolean>;
+export type ProductFilterFormValues = Record<
+  string,
+  string | boolean | string[]
+>;

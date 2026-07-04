@@ -1,15 +1,21 @@
+type SearchParamValue = string | boolean | string[] | undefined;
 export const createSearchParams = (
-  values: Record<string, string | boolean>,
+  values: Record<string, SearchParamValue>,
 ) => {
-  const params: Record<string, string> = {};
+  const params = new URLSearchParams();
 
   Object.entries(values).forEach(([key, value]) => {
     if (typeof value === 'string' && value) {
-      params[key] = value;
+      params.set(key, value);
     }
 
     if (typeof value === 'boolean' && value) {
-      params[key] = 'true';
+      params.set(key, 'true');
+    }
+
+    if (Array.isArray(value)) {
+      // value.forEach((item) => params.append(key, item));
+      params.set(key, value.join(','));
     }
   });
 

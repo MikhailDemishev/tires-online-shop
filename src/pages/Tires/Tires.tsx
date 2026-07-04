@@ -28,6 +28,7 @@ export const Tires = () => {
       currentPage={data?.pageNumber ?? 1}
       className={s.tiresPage}
       isEmpty={!tires?.length}
+      page="tires"
     >
       <ProductGrid
         items={tires ?? []}

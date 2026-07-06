@@ -1,0 +1,25 @@
+.sortFilter {
+  width: 100%;
+  .label {
+    text-transform: uppercase;
+  }
+
+  .productSortSelectWrapper {
+    width: 100%;
+  }
+  .productSortSelect {
+    width: 100%;
+    padding: 14px 13px;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    border: none;
+  }
+
+  .productSortSelectIcon {
+    right: 0;
+    width: 10px;
+    height: 13px;
+    color: var(--color-icon-primary);
+  }
+}

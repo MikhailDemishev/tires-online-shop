@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import type { ProductFilterType } from '@/features/filters/model';
 import { ProductFilter } from '@/features/filters/ui/ProductFilter';
 import { Pagination } from '@/features/pagination/ui';
+import { ProductSort } from '@/features/sort/ui';
 
 type Props = {
   title: string;
@@ -24,7 +25,6 @@ export const ProductPageLayout = ({
   totalPages,
   currentPage,
   filterType,
-  actions,
   className,
   page,
   isEmpty,
@@ -39,7 +39,9 @@ export const ProductPageLayout = ({
           <h1 className={s.title}>{title}</h1>
         </div>
 
-        <div className={s.actions}>{actions}Здесь будет селект</div>
+        <div className={s.actions}>
+          <ProductSort />
+        </div>
       </section>
 
       <section className={clsx(s.body, !filterType && s.bodyWithoutFilters)}>

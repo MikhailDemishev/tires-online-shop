@@ -31,6 +31,7 @@ export const ProductFilter = ({
   page,
 }: ProductFilterProps) => {
   const fields = FILTER_VALUES[filterType].fields;
+  console.log('fields', fields);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const defaultValues = {

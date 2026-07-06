@@ -13,8 +13,7 @@ export const createSearchParams = (
       params.set(key, 'true');
     }
 
-    if (Array.isArray(value)) {
-      // value.forEach((item) => params.append(key, item));
+    if (Array.isArray(value) && value.length > 0) {
       params.set(key, value.join(','));
     }
   });

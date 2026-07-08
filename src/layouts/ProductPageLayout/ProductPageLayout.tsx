@@ -32,38 +32,43 @@ export const ProductPageLayout = ({
   // Backend uses 0-based page numbering, Pagination uses 1-based.
   const displayPage = currentPage + 1;
   return (
-    <section className={clsx(className, 'container', s.productPageLayout)}>
-      <section className={s.header}>
-        <div>
-          <div className={s.breadcrumbs}>Главная / {title}</div>
-          <h1 className={s.title}>{title}</h1>
-        </div>
+    <section className={clsx(className, s.productPageLayout)}>
+      <div className="container">
+        <section className={s.header}>
+          <div>
+            <div className={s.breadcrumbs}>Главная / {title}</div>
+            <h1 className={s.title}>{title}</h1>
+          </div>
 
-        <div className={s.actions}>
-          <ProductSort />
-        </div>
-      </section>
+          <div className={s.actions}>
+            <ProductSort />
+          </div>
+        </section>
 
-      <section className={clsx(s.body, !filterType && s.bodyWithoutFilters)}>
-        {filterType && (
-          <aside className={s.filters}>
-            <ProductFilter filterType={filterType} page={page} />
-          </aside>
-        )}
-
-        <div className={s.content}>
-          {isEmpty ? (
-            <p>Товары не найдены</p>
-          ) : (
-            <>
-              {children}
-              {totalPages > 1 && (
-                <Pagination totalPages={totalPages} currentPage={displayPage} />
-              )}
-            </>
+        <section className={clsx(s.body, !filterType && s.bodyWithoutFilters)}>
+          {filterType && (
+            <aside className={s.filters}>
+              <ProductFilter filterType={filterType} page={page} />
+            </aside>
           )}
-        </div>
-      </section>
+
+          <div className={s.content}>
+            {isEmpty ? (
+              <p>Товары не найдены</p>
+            ) : (
+              <>
+                {children}
+                {totalPages > 1 && (
+                  <Pagination
+                    totalPages={totalPages}
+                    currentPage={displayPage}
+                  />
+                )}
+              </>
+            )}
+          </div>
+        </section>
+      </div>
     </section>
   );
 };

@@ -6,6 +6,13 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react(), svgr()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use '@/shared/styles/viewports' as *;`,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

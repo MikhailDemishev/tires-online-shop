@@ -18,7 +18,7 @@ export const Tires = () => {
     console.error(error);
     return <h1>Error</h1>;
   }
-  console.log(data);
+  console.log('tires', data);
 
   return (
     <ProductPageLayout

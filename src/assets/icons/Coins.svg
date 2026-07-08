@@ -1,0 +1,21 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_1559_3542)">
+        <path
+            d="M12 15C17.5228 15 22 12.9853 22 10.5C22 8.01472 17.5228 6 12 6C6.47715 6 2 8.01472 2 10.5C2 12.9853 6.47715 15 12 15Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M2 10.5V15.5C2 17.985 6.4775 20 12 20C17.5225 20 22 17.985 22 15.5V10.5"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8 14.625V19.625" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        <path
+            d="M21.9999 12.0898C26.5649 12.5073 29.9999 14.3223 29.9999 16.4998C29.9999 18.9848 25.5224 20.9998 19.9999 20.9998C17.5499 20.9998 15.3049 20.6036 13.5662 19.9448"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M10 19.91V21.5C10 23.985 14.4775 26 20 26C25.5225 26 30 23.985 30 21.5V16.5"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M24 20.625V25.625" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        <path d="M16 14.625V25.625" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </g>
+
+</svg>

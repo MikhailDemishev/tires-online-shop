@@ -2,9 +2,19 @@
   min-height: clamp(500px, 65vh, 727px);
   position: relative;
   background-image: url('/src/assets/images/hero.jpg');
+  background-color: var(--color-background-secondary);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.heroTitle {
+  font-family: var(--font-onder);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
+  color: var(--color-text-secondary);
+  margin-bottom: 64px;
 }
 
 .heroContent {

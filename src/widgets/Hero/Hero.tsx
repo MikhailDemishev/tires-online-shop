@@ -9,8 +9,11 @@ type HeroProps = {
 export const Hero = ({ children, className, classNameContent }: HeroProps) => {
   return (
     <section className={clsx(className, s.hero)}>
-      <div className={clsx(s.heroContent, classNameContent, 'container')}>
-        {children}
+      <div className="container">
+        <div className={clsx(s.heroContent, classNameContent)}>
+          <h1 className={s.heroTitle}>подбери свою пару</h1>
+          {children}
+        </div>
       </div>
     </section>
   );

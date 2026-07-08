@@ -9,6 +9,7 @@ export const WheelCard = ({ wheel }: Props) => {
   return (
     <ProductCard product={wheel} className={s.wheelCard}>
       <p className={s.material}>{wheel.material}</p>
+      <p className={s.diameter}>{wheel.diameter}"</p>
     </ProductCard>
   );
 };

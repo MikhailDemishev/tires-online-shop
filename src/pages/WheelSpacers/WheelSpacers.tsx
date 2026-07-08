@@ -9,7 +9,7 @@ export const WheelSpacers = () => {
   const params = usePaginationParams<WheelSpacerParams>();
   const { data, isLoading, isError, error } = useGetWheelSpacersQuery(params);
   const wheelSpacers = data?.content;
-  console.log('test', data);
+  console.log(data?.content, 'spacers');
 
   if (isLoading) {
     return <h1>Loading...</h1>;

@@ -10,6 +10,7 @@ export const Wheels = () => {
 
   const { data, isLoading, isError, error } = useGetWheelsQuery(params);
   const wheels = data?.content;
+  console.log('wheels', wheels);
 
   if (isLoading) {
     return <h1>Loading...</h1>;

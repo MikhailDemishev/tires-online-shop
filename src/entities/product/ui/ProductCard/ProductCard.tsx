@@ -1,6 +1,7 @@
 import type { Product } from '@/entities/product/model';
 import s from './ProductCard.module.scss';
 import clsx from 'clsx';
+import { Dots } from '@/assets/icons';
 
 export type ProductCardProps = {
   product: Product;
@@ -15,18 +16,23 @@ export const ProductCard = ({
 }: ProductCardProps) => {
   return (
     <div className={clsx(className, s.productCard)}>
-      <div className={s.productCard__imageWrapper}>
-        <img
-          className={s.productCard__image}
-          src={product.url}
-          alt={product.title}
-        />
+      <div className={s.imageWrapper}>
+        <img className={s.image} src={product.url} alt={product.title} />
       </div>
 
-      <div className={s.productCard__bottom}>
-        <h3 className={s.productCard__title}>{product.title}</h3>
+      <div className={s.bottom}>
+        <h3 className={s.title}>{product.title}</h3>
         {children}
-        <span className={s.productCard__price}>{product.price} zl</span>
+        <div className={s.priceBlock}>
+          <span className={s.price}>{product.price} zl.</span>
+          <div className={s.stockBlock}>
+            <div className={s.stockBlockUpper}>
+              <span className={s.stockBlockQuantity}> {product.price} шт.</span>
+              <Dots className={s.stockBlockIcon} />
+            </div>
+            <span className={s.stockBlockDescription}>Остаток на складе</span>
+          </div>
+        </div>
       </div>
     </div>
   );

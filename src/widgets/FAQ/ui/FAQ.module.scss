@@ -1,0 +1,127 @@
+.homeFaq {
+  padding: 80px 0;
+
+  .homeFaqWrapper {
+    padding: 40px 0;
+  }
+
+  .title {
+    font-family: var(--font-onder);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-text-primary);
+    margin-bottom: 24px;
+  }
+}
+
+.faqAccordion {
+  padding: 16px 16px 88px 16px;
+
+  .faqAccordionContent {
+    will-change: height;
+    &[data-state='open'] {
+      animation: accordionDown 0.3s ease forwards;
+    }
+
+    &[data-state='closed'] {
+      animation: accordionUp 0.3s ease forwards;
+    }
+  }
+
+  .faqAccordionTitle {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 20px;
+    display: block;
+  }
+
+  .faqAccordionTrigger {
+    width: 100%;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .faqAccordionItem {
+    border-bottom: 1px solid #888888;
+    position: relative;
+    &[data-state='closed'] {
+      padding: 30px 88px 30px 16px;
+    }
+
+    &[data-state='open'] {
+      padding: 16px 88px 16px 16px;
+    }
+
+    &[data-state='closed'] .faqAccordionTitle {
+      margin-bottom: 0;
+    }
+
+    &[data-state='open'] .faqAccordionTitle {
+      margin-bottom: 24px;
+    }
+
+    &[data-state='closed'] .faqAccordionIcon {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &[data-state='open'] .faqAccordionIcon {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+
+  .faqAccordionIcon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    position: absolute;
+    transform: translateY(50%);
+    transform-origin: center;
+
+    right: 24px;
+    top: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  .faqAccordionText {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .faqAccordionList {
+    display: flex;
+    flex-direction: column;
+    list-style-type: disc;
+    padding: 16px;
+    gap: 16px;
+  }
+}
+
+.accent {
+  color: var(--color-border-accent);
+}
+
+@keyframes accordionDown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordionUp {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}

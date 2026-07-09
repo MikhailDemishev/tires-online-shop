@@ -4,6 +4,7 @@ import { Hero } from '@/widgets/Hero';
 import s from './Home.module.scss';
 import { PromoBanner } from '@/widgets/PromoBanner/';
 import { BrandIntro } from '@/widgets/BrandIntro/ui';
+import { FAQ } from '@/widgets/FAQ/ui';
 
 export const Home = () => {
   return (
@@ -14,6 +15,7 @@ export const Home = () => {
       <Advantages />
       <PromoBanner />
       <BrandIntro />
+      <FAQ />
     </section>
   );
 };

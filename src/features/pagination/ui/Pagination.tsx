@@ -7,10 +7,15 @@ import { useSearchParams } from 'react-router-dom';
 type Pagination = {
   currentPage: number;
   totalPages: number;
+  className?: string;
   onPageChange?: (page: number) => void;
 };
 
-export const Pagination = ({ currentPage, totalPages }: Pagination) => {
+export const Pagination = ({
+  currentPage,
+  totalPages,
+  className,
+}: Pagination) => {
   const pages = [...Array(totalPages).keys()].map((i) => i + 1);
   const DOTS = 'dots';
   const [searchParams, setSearchParams] = useSearchParams();
@@ -59,7 +64,7 @@ export const Pagination = ({ currentPage, totalPages }: Pagination) => {
   })();
 
   return (
-    <div className={s.pagination}>
+    <div className={clsx(className, s.pagination)}>
       <Button
         variant="unset"
         className={clsx(s.arrowBtn, s.previous)}

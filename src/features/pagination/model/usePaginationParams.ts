@@ -1,5 +1,5 @@
 const DEFAULT_PAGE = 1;
-const DEFAULT_PAGE_SIZE = 4;
+const DEFAULT_PAGE_SIZE = 8;
 
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';

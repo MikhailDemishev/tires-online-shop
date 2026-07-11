@@ -15,7 +15,7 @@ export type Tire = {
   urls: string;
   inf: string;
   quantityInStock: number;
-  inStock?: boolean;
+  inStock: boolean;
   price: number;
   protector: string;
   speedIndex: number;
@@ -31,4 +31,11 @@ export type TireFullResponse = {
   totalPages: number;
   isFirst: boolean;
   isLast: boolean;
+};
+
+export type TireDetails = Tire & {
+  userId: string;
+  inArchive: boolean;
+  createdDate: string;
+  tt: string;
 };

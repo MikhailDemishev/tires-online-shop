@@ -19,7 +19,7 @@ export type Wheel = {
   inf: string;
   price: number;
   quantityInStock: number;
-  inStock?: boolean;
+  inStock: boolean;
   createdDate: string;
 };
 export type WheelFullResponse = {
@@ -31,3 +31,5 @@ export type WheelFullResponse = {
   isFirst: boolean;
   isLast: boolean;
 };
+
+export type WheelDetails = Wheel;

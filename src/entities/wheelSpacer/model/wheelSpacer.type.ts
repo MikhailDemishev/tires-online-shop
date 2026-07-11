@@ -27,3 +27,5 @@ export type WheelSpacerFullResponse = {
   isFirst: boolean;
   isLast: boolean;
 };
+
+export type WheelSpacerDetails = WheelSpacer;

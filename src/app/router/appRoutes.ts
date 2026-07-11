@@ -16,6 +16,9 @@ import { Profile } from '@/pages/Profile';
 import { ReturnExchange } from '@/pages/ReturnExchange';
 import { Promotions } from '@/pages/Promotions';
 import { Payment } from '@/pages/Payment';
+import { WheelSpacerDetails } from '@/pages/WheelSpacerDetails';
+import { TireDetails } from '@/pages/TireDetails';
+import { WheelDetails } from '@/pages/WheelDetails';
 
 export const appRoutes = [
   {
@@ -51,12 +54,24 @@ export const appRoutes = [
     component: Tires,
   },
   {
+    path: ROUTES.tire,
+    component: TireDetails,
+  },
+  {
     path: ROUTES.wheels,
     component: Wheels,
   },
   {
+    path: ROUTES.wheel,
+    component: WheelDetails,
+  },
+  {
     path: ROUTES.wheelSpacers,
     component: WheelSpacers,
+  },
+  {
+    path: ROUTES.wheelSpacer,
+    component: WheelSpacerDetails,
   },
   {
     path: ROUTES.search,

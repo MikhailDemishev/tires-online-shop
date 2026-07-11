@@ -1,0 +1,47 @@
+.productDetailsPageLayout {
+  background-color: var(--color-background-primary);
+  .layoutWrapper {
+    padding: 86px 0;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.breadcrumbs {
+  margin-bottom: 16px;
+  font-size: 12px;
+}
+
+.title {
+  font-family: 'Onder';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+// .body {
+//   display: grid;
+//   grid-template-columns: 228px minmax(0, 1fr);
+//   gap: 32px;
+// }
+
+// .bodyWithoutFilters {
+//   grid-template-columns: 1fr;
+// }
+
+// .filters {
+//   min-width: 0;
+// }
+
+// .content {
+//   min-width: 0;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 32px;
+// }

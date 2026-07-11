@@ -1,5 +1,9 @@
 import { baseApi } from '@/shared/api';
-import type { WheelFullResponse, WheelParams } from '@/entities/wheel/model';
+import type {
+  WheelDetails,
+  WheelFullResponse,
+  WheelParams,
+} from '@/entities/wheel/model';
 import { createPaginationParams } from '@/shared/lib/helpers';
 
 const BASE_URL = '/api/wheels';
@@ -13,7 +17,11 @@ export const wheelApi = baseApi.injectEndpoints({
         params: createPaginationParams(params),
       }),
     }),
+    getWheelById: builder.query<WheelDetails, string | number>({
+      query: (id) => `${BASE_URL}/${id}`,
+      providesTags: (_, __, id) => [{ type: 'Wheel', id }],
+    }),
   }),
 });
 
-export const { useGetWheelsQuery } = wheelApi;
+export const { useGetWheelsQuery, useGetWheelByIdQuery } = wheelApi;

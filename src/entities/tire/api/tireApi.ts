@@ -1,5 +1,9 @@
 import { baseApi } from '@/shared/api';
-import type { TireFullResponse, TireParams } from '@/entities/tire/model';
+import type {
+  TireDetails,
+  TireFullResponse,
+  TireParams,
+} from '@/entities/tire/model';
 import { createPaginationParams } from '@/shared/lib/helpers';
 
 const BASE_URL = '/api/tires';
@@ -13,7 +17,11 @@ export const tireApi = baseApi.injectEndpoints({
         params: createPaginationParams(params),
       }),
     }),
+    getTireById: builder.query<TireDetails, string | number>({
+      query: (id) => `${BASE_URL}/${id}`,
+      providesTags: (_, __, id) => [{ type: 'Tire', id }],
+    }),
   }),
 });
 
-export const { useGetTiresQuery } = tireApi;
+export const { useGetTiresQuery, useGetTireByIdQuery } = tireApi;

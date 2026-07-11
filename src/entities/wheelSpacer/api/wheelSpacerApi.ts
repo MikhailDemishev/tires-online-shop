@@ -1,5 +1,6 @@
 import { baseApi } from '@/shared/api';
 import type {
+  WheelSpacerDetails,
   WheelSpacerFullResponse,
   WheelSpacerParams,
 } from '@/entities/wheelSpacer/model';
@@ -16,7 +17,12 @@ export const wheelSpacerApi = baseApi.injectEndpoints({
         params: createPaginationParams(params),
       }),
     }),
+    getWheelSpacerById: builder.query<WheelSpacerDetails, string | number>({
+      query: (id) => `${BASE_URL}/${id}`,
+      providesTags: (_, __, id) => [{ type: 'Wheel', id }],
+    }),
   }),
 });
 
-export const { useGetWheelSpacersQuery } = wheelSpacerApi;
+export const { useGetWheelSpacersQuery, useGetWheelSpacerByIdQuery } =
+  wheelSpacerApi;

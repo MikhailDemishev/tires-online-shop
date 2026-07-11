@@ -1,0 +1,28 @@
+//import type { Tire } from '@/entities/tire/model';
+// import s from './WheelSpacerDetailsCard.module.scss';
+// import { ProductCard } from '@/entities/product/ui/ProductCard';
+// import clsx from 'clsx';
+// import { ROUTES } from '@/app/router';
+// type Props = {
+//   tire: Tire;
+//   className?: string;
+// };
+
+import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
+import clsx from 'clsx';
+import type { WheelSpacer } from '@/entities/wheelSpacer/model';
+import s from './WheelSpacerDetailsCard.module.scss';
+
+type Props = {
+  spacer: WheelSpacer;
+  className?: string;
+};
+
+export const WheelSpacersDetailsCard = ({ spacer, className }: Props) => {
+  return (
+    <ProductDetailsCard
+      product={spacer}
+      className={clsx(className, s.spacersDetailsCard)}
+    />
+  );
+};

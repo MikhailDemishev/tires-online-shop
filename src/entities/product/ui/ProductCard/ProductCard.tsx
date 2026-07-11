@@ -2,20 +2,23 @@ import type { Product } from '@/entities/product/model';
 import s from './ProductCard.module.scss';
 import clsx from 'clsx';
 import { Dots } from '@/assets/icons';
+import { Link } from 'react-router-dom';
 
 export type ProductCardProps = {
   product: Product;
+  to: string;
   children?: React.ReactNode;
   className?: string;
 };
 
 export const ProductCard = ({
   product,
+  to,
   className,
   children,
 }: ProductCardProps) => {
   return (
-    <div className={clsx(className, s.productCard)}>
+    <Link className={clsx(className, s.productCard)} to={to}>
       <div className={s.imageWrapper}>
         <img className={s.image} src={product.url} alt={product.title} />
       </div>
@@ -34,6 +37,6 @@ export const ProductCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

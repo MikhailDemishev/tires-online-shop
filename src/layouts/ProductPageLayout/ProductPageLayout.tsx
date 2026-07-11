@@ -34,40 +34,40 @@ export const ProductPageLayout = ({
   return (
     <section className={clsx(className, s.productPageLayout)}>
       <div className="container">
-        <section className={s.header}>
-          <div>
-            <div className={s.breadcrumbs}>Главная / {title}</div>
-            <h1 className={s.title}>{title}</h1>
-          </div>
+        <div className={s.layoutWrapper}>
+          <section className={s.header}>
+            <div>
+              <div className={s.breadcrumbs}>Главная / {title}</div>
+              <h1 className={s.title}>{title}</h1>
+            </div>
 
-          <div className={s.actions}>
-            <ProductSort />
-          </div>
-        </section>
+            <div className={s.actions}>
+              <ProductSort />
+            </div>
+          </section>
 
-        <section className={clsx(s.body, !filterType && s.bodyWithoutFilters)}>
-          {filterType && (
-            <aside className={s.filters}>
-              <ProductFilter filterType={filterType} page={page} />
-            </aside>
-          )}
-
-          <div className={s.content}>
-            {isEmpty ? (
-              <p>Товары не найдены</p>
-            ) : (
-              <>
-                {children}
-                {totalPages > 1 && (
-                  <Pagination
-                    totalPages={totalPages}
-                    currentPage={displayPage}
-                  />
-                )}
-              </>
+          <section
+            className={clsx(s.body, !filterType && s.bodyWithoutFilters)}
+          >
+            {filterType && (
+              <aside className={s.filters}>
+                <ProductFilter filterType={filterType} page={page} />
+              </aside>
             )}
-          </div>
-        </section>
+
+            <div className={s.content}>
+              {isEmpty ? <p>Товары не найдены</p> : <>{children}</>}
+            </div>
+          </section>
+
+          {totalPages > 1 && (
+            <Pagination
+              totalPages={totalPages}
+              currentPage={displayPage}
+              className={s.layoutPagination}
+            />
+          )}
+        </div>
       </div>
     </section>
   );

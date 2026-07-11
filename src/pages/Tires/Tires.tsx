@@ -10,6 +10,8 @@ export const Tires = () => {
   const { data, isLoading, isError, error } = useGetTiresQuery(params);
   const tires = data?.content;
 
+  console.log('tires', tires);
+
   if (isLoading) {
     return <h1>Loading...</h1>;
   }

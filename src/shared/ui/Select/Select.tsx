@@ -27,11 +27,7 @@ export const Select = ({
   return (
     <div className={clsx(wrapperClassName, s.selectWrapper)}>
       <select className={clsx(className, s.select)} {...props}>
-        {placeholder && (
-          <option value="" disabled>
-            {placeholder}
-          </option>
-        )}
+        {placeholder && <option value="">{placeholder}</option>}
 
         {options.map((option) => (
           <option key={option.value} value={option.value}>

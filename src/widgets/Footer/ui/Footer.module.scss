@@ -3,9 +3,52 @@
   color: var(--color-text-secondary);
 
   .footerTop {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding: 40px 0;
     display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footerNavBar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footerNavBarLink {
+    width: fit-content;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .footerBottom {
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+
+    .copywright {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.footerColumns {
+  display: grid;
+  grid-template-columns:
+    minmax(100px, 108px)
+    minmax(130px, 150px)
+    minmax(180px, 200px)
+    minmax(180px, 200px);
+
+  column-gap: clamp(32px, 5vw, 71px);
+
+  .columnTitle {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
   }
 }

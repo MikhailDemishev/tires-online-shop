@@ -9,6 +9,7 @@ export const ProductSort = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const sortField = searchParams.get('sortField');
   const sortDirection = searchParams.get('sortDirection');
+  const size = searchParams.get('size');
 
   const sortValue =
     sortField === 'price'
@@ -24,7 +25,8 @@ export const ProductSort = () => {
     // 2. Удаляем предыдущую сортировку
     params.delete('sortField');
     params.delete('sortDirection');
-
+    params.delete('page');
+    params.delete('size');
     // 3. Устанавливаем новую сортировку
     if (value !== 'default') {
       if (value === 'asc' || value === 'desc') {
@@ -35,7 +37,13 @@ export const ProductSort = () => {
       }
     }
 
+    //чисто косметически удаляем size и заново пишем старое значение, чтобы порядок един был
+    if (size) {
+      params.set('size', size);
+    }
+
     // 4. Обновляем URL
+
     setSearchParams(params);
   };
   return (

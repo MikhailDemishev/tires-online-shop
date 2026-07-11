@@ -1,11 +1,11 @@
-import { pageRoutes, catalogRoutes, ROUTES } from '@/app/router';
+import { headerRoutes } from '@/app/router';
 import { NavBar } from '@/shared/ui/NavBar';
 import s from './Header.module.scss';
 import clsx from 'clsx';
 import { SearchInput } from '@/features/search/ui/SearchInput';
-import { Link } from 'react-router';
 import { matchPath, useLocation, useNavigate } from 'react-router-dom';
 import { HeaderControls } from './HeaderControls';
+import { Logo } from '@/shared/ui/Logo/Logo';
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ export const Header = () => {
       <div className={s.headerTop}>
         <div className={clsx('container', s.headerTopContent)}>
           <NavBar
-            items={pageRoutes}
+            items={headerRoutes.pages}
             className={s.headerNavBar}
             navLinkClassName={s.headerNavBarLink}
           />
@@ -41,11 +41,9 @@ export const Header = () => {
       </div>
       <div className={s.headerBottom}>
         <div className={clsx('container', s.wrapper)}>
-          <Link to={ROUTES.home} className={s.logo}>
-            Insa Turbo
-          </Link>
+          <Logo />
           <NavBar
-            items={catalogRoutes}
+            items={headerRoutes.catalog}
             className={s.headerNavBar}
             navLinkClassName={s.headerNavBarLink}
           />

@@ -1,1 +1,2 @@
-export * from './footerFeatures';
+export * from './footerColumns';
+export * from './footerSocials';

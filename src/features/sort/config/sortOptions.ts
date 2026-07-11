@@ -8,10 +8,6 @@ export const SORT_OPTIONS = [
     label: 'популярные',
   },
   {
-    value: 'createdDate',
-    label: 'по дате',
-  },
-  {
     value: 'asc',
     label: 'дешевле',
   },

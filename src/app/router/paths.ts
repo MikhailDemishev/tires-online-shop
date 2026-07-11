@@ -11,7 +11,10 @@ export const ROUTES = {
   wheelSpacers: '/wheel-spacers',
   searchEmpty: '/products/title',
   search: '/products/title/:title',
-  profile: 'profile',
-  favorites: 'favorites',
-  cart: 'cart',
+  profile: '/profile',
+  favorites: '/favorites',
+  cart: '/cart',
+  returnExchange: '/returnExchange',
+  promotions: '/promotions',
+  payment: 'payment',
 } as const;

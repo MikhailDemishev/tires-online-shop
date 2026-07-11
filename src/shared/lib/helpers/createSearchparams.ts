@@ -1,6 +1,7 @@
 type SearchParamValue = string | boolean | string[] | undefined;
 export const createSearchParams = (
   values: Record<string, SearchParamValue>,
+  currentParams?: URLSearchParams,
 ) => {
   const params = new URLSearchParams();
 
@@ -17,6 +18,17 @@ export const createSearchParams = (
       params.set(key, value.join(','));
     }
   });
+
+  const sortField = currentParams?.get('sortField');
+  const sortDirection = currentParams?.get('sortDirection');
+
+  if (sortField) {
+    params.set('sortField', sortField);
+  }
+
+  if (sortDirection) {
+    params.set('sortDirection', sortDirection);
+  }
 
   return params;
 };

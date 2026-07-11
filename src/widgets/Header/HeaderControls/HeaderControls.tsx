@@ -1,4 +1,4 @@
-import { headerControlRoutes } from '@/app/router/headerControlRoutes';
+import { headerRoutes } from '@/app/router';
 import { useAppDispatch } from '@/app/store';
 import { openModal } from '@/app/store/slices';
 import { Button } from '@/shared/ui/Button';
@@ -11,7 +11,7 @@ export const HeaderControls = () => {
   const dispatch = useAppDispatch();
   return (
     <div className={s.headerControls}>
-      {headerControlRoutes.map(
+      {headerRoutes.controls.map(
         ({ icon: Icon, path, protected: isProtected }) => (
           <Button asChild key={path} variant="unset" className={s.btn}>
             <Link

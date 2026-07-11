@@ -49,6 +49,12 @@ export const BrandIntro = () => {
             </ul>
           </div>
         </div>
+        <div className={s.brandIntroBottom}>
+          <p className={s.brandIntroBottomText}>
+            Европейский масштаб: <span className={s.large}>500 000+</span> шин в
+            год
+          </p>
+        </div>
       </div>
     </section>
   );

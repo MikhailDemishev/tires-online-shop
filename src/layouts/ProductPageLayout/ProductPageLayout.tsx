@@ -6,12 +6,15 @@ import type { ProductFilterType } from '@/features/filters/model';
 import { ProductFilter } from '@/features/filters/ui/ProductFilter';
 import { Pagination } from '@/features/pagination/ui';
 import { ProductSort } from '@/features/sort/ui';
+import { Breadcrumbs, type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
+import { ROUTES } from '@/app/router';
 
 type Props = {
   title: string;
   children: ReactNode;
   totalPages: number;
   currentPage: number;
+  category: BreadcrumbItem;
   isEmpty?: boolean;
   filterType?: ProductFilterType;
   page?: string;
@@ -21,6 +24,7 @@ type Props = {
 
 export const ProductPageLayout = ({
   title,
+  category,
   children,
   totalPages,
   currentPage,
@@ -37,7 +41,9 @@ export const ProductPageLayout = ({
         <div className={s.layoutWrapper}>
           <section className={s.header}>
             <div>
-              <div className={s.breadcrumbs}>Главная / {title}</div>
+              <Breadcrumbs
+                items={[{ label: 'Главная', to: ROUTES.home }, category]}
+              />
               <h1 className={s.title}>{title}</h1>
             </div>
 

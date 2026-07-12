@@ -1,3 +1,4 @@
+import { ROUTES } from '@/app/router';
 import { useGetWheelSpacerByIdQuery } from '@/entities/wheelSpacer/api';
 import { WheelSpacersDetailsCard } from '@/entities/wheelSpacer/ui/WheelSpacerDetailsCard';
 import { ProductDetailsPageLayout } from '@/layouts/ProductDetailsPageLayout';
@@ -22,7 +23,13 @@ export const WheelSpacerDetails = () => {
 
   console.log('tires', data);
   return (
-    <ProductDetailsPageLayout title={data?.title ?? 'title'}>
+    <ProductDetailsPageLayout
+      title={data?.title ?? 'title'}
+      category={{
+        label: 'Проставки',
+        to: ROUTES.wheelSpacers,
+      }}
+    >
       <WheelSpacersDetailsCard spacer={data} />
     </ProductDetailsPageLayout>
   );

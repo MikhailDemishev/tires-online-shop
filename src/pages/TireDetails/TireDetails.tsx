@@ -1,3 +1,4 @@
+import { ROUTES } from '@/app/router';
 import { useGetTireByIdQuery } from '@/entities/tire/api';
 import { TireDetailsCard } from '@/entities/tire/ui/TireDetailsCard';
 import { ProductDetailsPageLayout } from '@/layouts/ProductDetailsPageLayout';
@@ -22,7 +23,13 @@ export const TireDetails = () => {
 
   console.log('tires', data);
   return (
-    <ProductDetailsPageLayout title={data?.title ?? 'title'}>
+    <ProductDetailsPageLayout
+      title={data?.title ?? 'title'}
+      category={{
+        label: 'Шины 4x4',
+        to: ROUTES.tires,
+      }}
+    >
       <TireDetailsCard tire={data} />
     </ProductDetailsPageLayout>
   );

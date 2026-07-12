@@ -9,10 +9,12 @@ type Props = {
 };
 
 export const TireCard = ({ tire, className }: Props) => {
+  const cardTitle = tire.title.replace(/\s*\([^)]*\)\s*$/, '');
   return (
     <ProductCard
       product={tire}
       className={clsx(className, s.tireCard)}
+      title={cardTitle}
       to={`${ROUTES.tires}/${tire.id}`}
     >
       <p className={s.text}>{tire.protector ?? ''}</p>

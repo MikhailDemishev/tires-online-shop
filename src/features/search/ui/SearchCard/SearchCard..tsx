@@ -7,11 +7,22 @@ type Props = {
 };
 
 export const SearchCard = ({ searchProduct }: Props) => {
+  const cardTitle = searchProduct.title.replace(/\s*\([^)]*\)\s*$/, '');
+
+  const getTireProtectorName = (title: string) =>
+    title.match(/\(([^)]+)\)/)?.[1] ?? '';
+  console.log('productType', searchProduct.productType);
   return (
     <ProductCard
       product={searchProduct}
       className={s.searchCard}
+      title={cardTitle}
       to={getProductPath(searchProduct)}
-    ></ProductCard>
+    >
+      <p className={s.text}>
+        {searchProduct.productType === 'Tire' &&
+          getTireProtectorName(searchProduct.title)}
+      </p>
+    </ProductCard>
   );
 };

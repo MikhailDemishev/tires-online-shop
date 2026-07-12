@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 export type ProductCardProps = {
   product: Product;
   to: string;
+  title: string;
   children?: React.ReactNode;
   className?: string;
 };
@@ -14,6 +15,7 @@ export type ProductCardProps = {
 export const ProductCard = ({
   product,
   to,
+  title,
   className,
   children,
 }: ProductCardProps) => {
@@ -24,7 +26,7 @@ export const ProductCard = ({
       </div>
 
       <div className={s.bottom}>
-        <h3 className={s.title}>{product.title}</h3>
+        <h3 className={s.title}>{title}</h3>
         {children}
         <div className={s.priceBlock}>
           <span className={s.price}>{product.price} zl.</span>

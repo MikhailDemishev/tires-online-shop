@@ -11,6 +11,7 @@ export const WheelSpacerCard = ({ wheelSpacer }: Props) => {
     <ProductCard
       product={wheelSpacer}
       className={s.wheelSpacerCard}
+      title={wheelSpacer.title}
       to={`${ROUTES.wheelSpacers}/${wheelSpacer.id}`}
     >
       {/*отдеььные свойства */}

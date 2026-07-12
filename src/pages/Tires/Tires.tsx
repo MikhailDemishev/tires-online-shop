@@ -28,6 +28,9 @@ export const Tires = () => {
       filterType="tires"
       totalPages={data?.totalPages ?? 1}
       currentPage={data?.pageNumber ?? 1}
+      category={{
+        label: 'Шины',
+      }}
       className={s.tiresPage}
       isEmpty={!tires?.length}
       page="tires"

@@ -27,6 +27,9 @@ export const WheelSpacers = () => {
       className={s.wheelSpacersPage}
       totalPages={data?.totalPages ?? 1}
       currentPage={data?.pageNumber ?? 1}
+      category={{
+        label: 'Проставки',
+      }}
       isEmpty={!wheelSpacers?.length}
     >
       <ProductGrid

@@ -1,3 +1,4 @@
+import { ROUTES } from '@/app/router';
 import { useGetWheelByIdQuery } from '@/entities/wheel/api';
 import { WheelDetailsCard } from '@/entities/wheel/ui/WheelDetailsCard';
 import { ProductDetailsPageLayout } from '@/layouts/ProductDetailsPageLayout';
@@ -22,7 +23,13 @@ export const WheelDetails = () => {
 
   console.log('tires', data);
   return (
-    <ProductDetailsPageLayout title={data?.title ?? 'title'}>
+    <ProductDetailsPageLayout
+      title={data?.title ?? 'title'}
+      category={{
+        label: 'Диски',
+        to: ROUTES.wheels,
+      }}
+    >
       <WheelDetailsCard wheel={data} />
     </ProductDetailsPageLayout>
   );

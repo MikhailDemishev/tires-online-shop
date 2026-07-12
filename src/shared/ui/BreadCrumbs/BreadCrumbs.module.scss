@@ -1,0 +1,16 @@
+.breadcrumbs {
+  display: flex;
+  gap: 14px;
+
+  .breadcrumbsItem {
+    font-size: 12px;
+    line-height: 20px;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: '/';
+      position: absolute;
+      right: -7px;
+    }
+  }
+}

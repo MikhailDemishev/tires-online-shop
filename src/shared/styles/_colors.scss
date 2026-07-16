@@ -1,6 +1,7 @@
 :root {
   //texts
   --color-text-primary: #18181a;
+  --color-text-primary-subtle: #444648;
   --color-text-secondary: #ffffff;
   --color-text-primary-muted: #888888;
   --color-text-secondary-muted: #f2f2f3;
@@ -10,14 +11,21 @@
   --color-background-primary: #ffffff;
   --color-background-secondary: #232425;
   --color-background-tertiary: #18181a;
+  --color-background-accent: #fe5000;
 
   //icons
   --color-icon-primary: #18181a;
   --color-icon-secondary: #ffffff;
+  --color-icon-primary-muted: #111213;
 
   //borders
   --color-border-primary: #18181a;
+  --color-border-primary-muted: #606367;
   --color-border-secondary: #ffffff;
   --color-border-secondary-muted: #888888;
   --color-border-accent: #fe5000;
+
+  // status
+  --color-status-success: #14ae5c;
+  --color-status-disabled: #444444;
 }

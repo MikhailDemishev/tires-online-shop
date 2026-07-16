@@ -29,8 +29,7 @@ export const WheelSpacerDetails = () => {
         label: 'Проставки',
         to: ROUTES.wheelSpacers,
       }}
-    >
-      <WheelSpacersDetailsCard spacer={data} />
-    </ProductDetailsPageLayout>
+      productDetailsCard={<WheelSpacersDetailsCard spacer={data} />}
+    />
   );
 };

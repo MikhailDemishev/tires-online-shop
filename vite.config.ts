@@ -9,7 +9,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use '@/shared/styles/viewports' as *;`,
+        additionalData: `@use '@/shared/styles/viewports' as *; @use '@/shared/styles/visuallyHidden' as *;`,
       },
     },
   },

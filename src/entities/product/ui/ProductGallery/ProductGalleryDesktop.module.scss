@@ -1,0 +1,25 @@
+.galleryDesktop {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    min-height: 0;
+    object-fit: contain;
+  }
+}
+
+.smallImages {
+  display: flex;
+  gap: 20px;
+}
+
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+}

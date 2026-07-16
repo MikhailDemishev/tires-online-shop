@@ -22,6 +22,7 @@ export const WheelSpacersDetailsCard = ({ spacer, className }: Props) => {
   return (
     <ProductDetailsCard
       product={spacer}
+      title={spacer.productType}
       className={clsx(className, s.spacersDetailsCard)}
     />
   );

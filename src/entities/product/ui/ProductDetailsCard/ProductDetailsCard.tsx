@@ -1,52 +1,57 @@
-import type { Product } from '@/entities/product/model';
+import type {
+  ProductCharacteristic,
+  ProductDetails,
+} from '@/entities/product/model';
 import s from './ProductDetailsCard.module.scss';
 import clsx from 'clsx';
-
-export type ProductCharacteristic = {
-  label: string;
-  value: React.ReactNode;
-};
+import fallbackImage from '@/assets/images/fallbackProduct.jpg';
+import { ProductGalleryDesktop } from '@/entities/product/ui/ProductGallery';
+import { InStockIndicator } from '@/shared/ui/InStockIndicator';
+import { Button } from '@/shared/ui/Button';
+import { ProductAccordion } from '@/entities/product/ui/ProductAccordion';
 
 type ProductDetailsCardProps = {
-  product: Product;
-  characteristics?: ProductCharacteristic[];
+  product: ProductDetails;
+  title: string;
+  characteristics: ProductCharacteristic[];
   className?: string;
 };
 
 export const ProductDetailsCard = ({
   product,
+  title,
   className,
   characteristics,
 }: ProductDetailsCardProps) => {
   console.log(characteristics);
   return (
-    <div className={clsx(className, s.productDetailsCard)}>
-      <h2 className={s.title}>Заголовок карточки: {product.title}</h2>
-      <section className={s.characteristics}>
-        <h3 className={s.sectionTitle}>Характеристики</h3>
-
-        {/* <ul className={s.characteristicsList}>
-            {characteristics.map(({ label, value }) => (
-              <li key={label} className={s.characteristic}>
-                <p className={s.characteristicLabel}>{label}</p>
-                <p className={s.characteristicValue}>{value}</p>
-              </li>
-            ))}
-          </ul> */}
-      </section>
-    </div>
+    <section className={clsx(className, s.productDetailsCard)}>
+      <div className={s.productDetailsCardGallery}>
+        <ProductGalleryDesktop
+          url={product.url}
+          urls={product.urls}
+          fallbackImage={fallbackImage}
+        />
+      </div>
+      <div className={s.cardInfo}>
+        <div className={s.cardHeader}>
+          <div className={s.cardHeaderTop}>
+            <div className={s.cardHeaderTopLeft}>
+              <h2 className={s.cardTitle}>{title}</h2>
+              <InStockIndicator quantityInStock={product.quantityInStock} />
+            </div>
+            <div className={s.cardHeaderTopRight}>
+              <p className={s.cardPrice}>
+                {product.price} <span>zł.</span>
+              </p>
+            </div>
+          </div>
+          <Button className={s.cardButton}>
+            Добавить в корзину: {product.price} zł.
+          </Button>
+        </div>
+        <ProductAccordion characteristics={characteristics} />
+      </div>
+    </section>
   );
 };
-
-{
-  /* <ProductDetails
-  product={wheel}
-  characteristics={[
-    { label: 'Ширина', value: wheel.width },
-    { label: 'Диаметр', value: `${wheel.diameter}"` },
-    { label: 'DIA', value: wheel.dia },
-    { label: 'PCD', value: wheel.pcd },
-    { label: 'Материал', value: wheel.material },
-  ]}
-/> */
-}

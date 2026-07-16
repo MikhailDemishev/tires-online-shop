@@ -1,0 +1,89 @@
+.productAccordion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productAccordionTrigger {
+  width: 100%;
+}
+
+.productAccordionItem {
+}
+
+.productAccordionHeader {
+  padding: 16px 8px;
+  border-top: 1px solid var(--color-border-primary-muted);
+  border-bottom: 1px solid var(--color-border-primary-muted);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .productAccordionTrigger[data-state='open'] & {
+    margin-bottom: 10px;
+  }
+
+  .productAccordionTrigger[data-state='closed'] & {
+    margin-bottom: 0;
+  }
+}
+
+.productAccordionIcon {
+  width: 9px;
+  height: 6px;
+  flex-shrink: 0;
+  color: var(--color-icon-primary-muted);
+  .productAccordionTrigger[data-state='open'] & {
+    transform: rotate(180deg);
+  }
+}
+
+.productAccordionTitle {
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.productAccordionContent {
+}
+
+.productAccordionChars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 8px;
+}
+
+.productAccordionChar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.productAccordionCharLabel {
+  font-weight: 700;
+}
+
+.productAccordionLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.productAccordionLinkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  color: var(--color-icon-primary-muted);
+}
+
+.productAccordionLinkText {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}

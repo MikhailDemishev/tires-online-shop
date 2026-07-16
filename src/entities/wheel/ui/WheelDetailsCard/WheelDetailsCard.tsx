@@ -15,10 +15,56 @@ type Props = {
 };
 
 export const WheelDetailsCard = ({ wheel, className }: Props) => {
+  const wheelTitle = `${wheel.material} ${wheel.productType}`;
+  const characteristics = [
+    {
+      label: 'Название',
+      value: wheelTitle.toLocaleLowerCase(),
+    },
+    //производителя надо добавить в БД
+    // {
+    //   label: 'Производитель',
+    //   value: 'Неизвестен',
+    // },
+    {
+      label: 'Тип диска',
+      value: `${wheel.typeOfWheel} `,
+    },
+    {
+      label: 'Диаметр, дюйм',
+      value: `${wheel.diameter}"`,
+    },
+    {
+      label: 'Ширина, дюйм',
+      value: `${wheel.width}"`,
+    },
+    {
+      label: 'Вылет, ET',
+      value: `${wheel.et} ET`,
+    },
+    {
+      label: 'Центральное отверстие (DIA)',
+      value: `${wheel.centralBoreDiameter} `,
+    },
+    {
+      label: 'Разболтовка',
+      value: `${wheel.boltSpacing} `,
+    },
+    {
+      label: 'Материал',
+      value: `${wheel.material} `,
+    },
+    {
+      label: 'Цвет',
+      value: `${wheel.color} `,
+    },
+  ];
   return (
     <ProductDetailsCard
       product={wheel}
+      title={wheelTitle}
       className={clsx(className, s.tireDetailsCard)}
+      characteristics={characteristics}
     />
   );
 };

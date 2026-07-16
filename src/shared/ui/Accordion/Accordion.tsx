@@ -1,4 +1,6 @@
 import * as RadixAccordion from '@radix-ui/react-accordion';
+import clsx from 'clsx';
+import s from './Accordion.module.scss';
 import type { ReactNode } from 'react';
 
 type AccordionItem = {
@@ -42,7 +44,9 @@ export const Accordion = ({
             </RadixAccordion.Trigger>
           </RadixAccordion.Header>
 
-          <RadixAccordion.Content className={contentClassName}>
+          <RadixAccordion.Content
+            className={clsx(s.accordionContent, contentClassName)}
+          >
             {item.children}
           </RadixAccordion.Content>
         </RadixAccordion.Item>

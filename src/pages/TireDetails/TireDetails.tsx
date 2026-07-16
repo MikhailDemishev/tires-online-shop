@@ -29,8 +29,7 @@ export const TireDetails = () => {
         label: 'Шины 4x4',
         to: ROUTES.tires,
       }}
-    >
-      <TireDetailsCard tire={data} />
-    </ProductDetailsPageLayout>
+      productDetailsCard={<TireDetailsCard tire={data} />}
+    />
   );
 };

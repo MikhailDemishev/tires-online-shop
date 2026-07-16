@@ -3,40 +3,38 @@ import s from './ProductDetailsPageLayout.module.scss';
 import clsx from 'clsx';
 import { ROUTES } from '@/app/router';
 import { Breadcrumbs, type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
-import { useLocation } from 'react-router-dom';
 type Props = {
   title: string;
-  children: ReactNode;
+  productDetailsCard: ReactNode;
   category: BreadcrumbItem;
   className?: string;
 };
 
 export const ProductDetailsPageLayout = ({
   title,
-  children,
+  productDetailsCard,
   category,
   className,
 }: Props) => {
-  const { pathname } = useLocation();
-
-  console.log(pathname);
   return (
     <section className={clsx(className, s.productDetailsPageLayout)}>
       <div className="container">
         <div className={s.layoutWrapper}>
           <section className={s.header}>
-            <div>
-              <Breadcrumbs
-                items={[
-                  { label: 'Главная', to: ROUTES.home },
-                  category,
-                  { label: `${title}` },
-                ]}
-              />
-              <h1 className={s.title}>Заголовок страницы {title}</h1>
-            </div>
+            <Breadcrumbs
+              items={[
+                { label: 'Главная', to: ROUTES.home },
+                category,
+                { label: `${title}` },
+              ]}
+            />
+            <h1 className="visuallyHidden">Страница товара</h1>
           </section>
-          {children}
+          <div className={s.layoutContent}>
+            {productDetailsCard}
+            <section>сюда передадим advantages</section>
+            <section>сюда передадим похожие товары</section>
+          </div>
         </div>
       </div>
     </section>

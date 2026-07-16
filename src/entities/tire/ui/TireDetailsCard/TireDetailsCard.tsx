@@ -12,6 +12,7 @@ export const TireDetailsCard = ({ tire, className }: Props) => {
   return (
     <ProductDetailsCard
       product={tire}
+      title={tire.protector}
       className={clsx(className, s.tireDetailsCard)}
     />
   );

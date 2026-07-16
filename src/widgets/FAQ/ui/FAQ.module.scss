@@ -18,17 +18,6 @@
 .faqAccordion {
   padding: 16px 16px 88px 16px;
 
-  .faqAccordionContent {
-    will-change: height;
-    &[data-state='open'] {
-      animation: accordionDown 0.3s ease forwards;
-    }
-
-    &[data-state='closed'] {
-      animation: accordionUp 0.3s ease forwards;
-    }
-  }
-
   .faqAccordionTitle {
     font-weight: 500;
     font-size: 24px;
@@ -100,28 +89,4 @@
 
 .accent {
   color: var(--color-border-accent);
-}
-
-@keyframes accordionDown {
-  from {
-    height: 0;
-    opacity: 0;
-  }
-
-  to {
-    height: var(--radix-accordion-content-height);
-    opacity: 1;
-  }
-}
-
-@keyframes accordionUp {
-  from {
-    height: var(--radix-accordion-content-height);
-    opacity: 1;
-  }
-
-  to {
-    height: 0;
-    opacity: 0;
-  }
 }

@@ -29,8 +29,7 @@ export const WheelDetails = () => {
         label: 'Диски',
         to: ROUTES.wheels,
       }}
-    >
-      <WheelDetailsCard wheel={data} />
-    </ProductDetailsPageLayout>
+      productDetailsCard={<WheelDetailsCard wheel={data} />}
+    />
   );
 };

@@ -1,15 +1,18 @@
 .productDetailsPageLayout {
   background-color: var(--color-background-primary);
   .layoutWrapper {
-    padding: 86px 0;
+    padding: 32px 0 86px;
   }
 }
 
 .header {
+  margin-bottom: 32px;
+}
+
+.layoutContent {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
+  flex-direction: column;
+  gap: 100px;
 }
 
 .breadcrumbs {

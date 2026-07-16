@@ -1,0 +1,24 @@
+.inStockIndicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.inStockIndicatorIcon {
+  width: 8px;
+  height: 8px;
+}
+
+.inStockIndicatorText {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-primary-subtle);
+}
+
+.inStock {
+  color: var(--color-status-success);
+}
+
+.outOfStock {
+  color: var(--color-status-disabled);
+}

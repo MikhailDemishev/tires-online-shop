@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom';
 import s from './BreadCrumbs.module.scss';
 import { type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
+import clsx from 'clsx';
 
 type BreadcrumbsProps = {
   items: BreadcrumbItem[];
+  className?: string;
 };
 
-export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
+export const Breadcrumbs = ({ items, className }: BreadcrumbsProps) => {
   if (!items.length) return null;
 
   return (
     <nav aria-label="breadcrumbs">
-      <ul className={s.breadcrumbs}>
+      <ul className={clsx(className, s.breadcrumbs)}>
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
 

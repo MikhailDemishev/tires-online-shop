@@ -1,0 +1,64 @@
+.productDetailsCard {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 32px;
+}
+
+.productDetailsCardGallery {
+  width: 100%;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardHeaderTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cardHeaderTopLeft {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.cardHeaderTopRight {
+  display: flex;
+}
+
+.cardTitle {
+  font-family: 'Onder';
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+.cardPrice {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: -0.1em;
+  text-transform: uppercase;
+
+  > span {
+    font-size: 15px;
+    line-height: 32px;
+  }
+}
+
+.cardButton {
+  background-color: var(--color-background-accent);
+}

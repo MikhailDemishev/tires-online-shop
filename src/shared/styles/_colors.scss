@@ -3,26 +3,33 @@
   --color-text-primary: #18181a;
   --color-text-primary-subtle: #444648;
   --color-text-secondary: #ffffff;
-  --color-text-primary-muted: #888888;
+  --color-text-primary-muted: #6b6262;
+  --color-text-primary-faint: #888888;
   --color-text-secondary-muted: #f2f2f3;
   --color-text-accent: #fe5000;
 
   //bg
   --color-background-primary: #ffffff;
+  --color-background-primary-muted: #f7f7f7;
   --color-background-secondary: #232425;
   --color-background-tertiary: #18181a;
   --color-background-accent: #fe5000;
 
+  //overlay
+  --color-overlay-dark: rgba(0, 0, 0, 0.6);
+
   //icons
   --color-icon-primary: #18181a;
-  --color-icon-secondary: #ffffff;
   --color-icon-primary-muted: #111213;
+  --color-icon-secondary: #ffffff;
+  --color-icon-secondary-muted: #d9d9d9;
 
   //borders
   --color-border-primary: #18181a;
   --color-border-primary-muted: #606367;
   --color-border-secondary: #ffffff;
   --color-border-secondary-muted: #888888;
+  --color-border-secondary-faint: #d9d9d9;
   --color-border-accent: #fe5000;
 
   // status

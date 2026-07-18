@@ -4,8 +4,17 @@
   gap: 32px;
 }
 
+.productDetailsCardFavorites {
+  width: 23px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 .productDetailsCardGallery {
   width: 100%;
+  position: relative;
 }
 
 .cardInfo {
@@ -22,40 +31,38 @@
 
 .cardHeaderTop {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.cardHeaderTopLeft {
-  display: flex;
   flex-direction: column;
-  flex: 1;
-  min-width: 0;
+  gap: 4px;
 }
 
-.cardHeaderTopRight {
+.cardHeaderBottom {
   display: flex;
+  justify-content: space-between;
 }
 
 .cardTitle {
-  font-family: 'Onder';
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 40px;
-  vertical-align: middle;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1;
   text-transform: uppercase;
 }
 
 .cardPrice {
+  font-family: var(--font-onder);
   font-weight: 500;
-  font-size: 34px;
+  font-size: 20px;
   line-height: 40px;
-  letter-spacing: -0.1em;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
 
   > span {
+    font-family: 'Inter';
     font-size: 15px;
-    line-height: 32px;
+    line-height: 40px;
+    letter-spacing: -0.1em;
+    text-transform: uppercase;
   }
 }
 

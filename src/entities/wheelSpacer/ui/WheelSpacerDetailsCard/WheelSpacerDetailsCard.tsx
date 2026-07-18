@@ -19,11 +19,35 @@ type Props = {
 };
 
 export const WheelSpacersDetailsCard = ({ spacer, className }: Props) => {
+  const spacerCharacteristics = [
+    {
+      label: 'Название',
+      value: spacer.title,
+    },
+    // Производителя нужно добавить в БД
+    // {
+    //   label: 'Производитель',
+    //   value: wheelSpacer.manufacturer,
+    // },
+    {
+      label: 'Разболтовка (PCD)',
+      value: spacer.boltDistance,
+    },
+    {
+      label: 'Резьба болтов',
+      value: spacer.boltInfo,
+    },
+    {
+      label: 'Толщина, мм',
+      value: `${spacer.thickness}`,
+    },
+  ];
   return (
     <ProductDetailsCard
       product={spacer}
       title={spacer.productType}
       className={clsx(className, s.spacersDetailsCard)}
+      characteristics={spacerCharacteristics}
     />
   );
 };

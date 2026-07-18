@@ -1,26 +1,7 @@
 import type { ProductCharacteristic } from '@/entities/product/model';
 import s from './ProductAccordion.module.scss';
 import { Accordion } from '@/shared/ui/Accordion/Accordion';
-import { Arrow, Delivery, Guarantee, Manual } from '@/assets/icons';
-import { Link } from 'react-router-dom';
-
-const PRODUCT_INFO_LINKS = [
-  {
-    label: 'Доставка',
-    icon: <Delivery />,
-    to: '/delivery',
-  },
-  {
-    label: 'Гарантия',
-    icon: <Guarantee />,
-    to: '/guarantee',
-  },
-  {
-    label: 'Руководство по установке',
-    icon: <Manual />,
-    to: '/installation-guide',
-  },
-];
+import { Arrow } from '@/assets/icons';
 
 type ProductAccordionProps = {
   characteristics: ProductCharacteristic[];
@@ -35,12 +16,13 @@ export const ProductAccordion = ({
       itemClassName={s.productAccordionItem}
       triggerClassName={s.productAccordionTrigger}
       contentClassName={s.productAccordionContent}
+      defaultValue="characteristics"
       items={[
         {
-          value: 'manufacturer',
+          value: 'characteristics',
           header: (
             <div className={s.productAccordionHeader}>
-              <span className={s.productAccordionTitle}>Описание</span>
+              <span className={s.productAccordionTitle}>Характеристики</span>
               <Arrow className={s.productAccordionIcon} />
             </div>
           ),
@@ -59,20 +41,16 @@ export const ProductAccordion = ({
           value: 'description',
           header: (
             <div className={s.productAccordionHeader}>
-              <span className={s.productAccordionTitle}>Характеристики</span>
+              <span className={s.productAccordionTitle}>Описание</span>
               <Arrow className={s.productAccordionIcon} />
             </div>
           ),
           children: (
             <ul className={s.productAccordionChars}>
-              {PRODUCT_INFO_LINKS.map(({ label, icon, to }) => (
-                <li key={to} className={s.productAccordionChar}>
-                  <Link to={to} className={s.productAccordionLink}>
-                    <span className={s.productAccordionLinkIcon}>{icon}</span>
-                    <span className={s.productAccordionLinkText}>{label}</span>
-                  </Link>
-                </li>
-              ))}
+              <li className={s.productAccordionChar}>
+                здесь будет описание. пока его нет на бэке
+              </li>
+              ,
             </ul>
           ),
         },

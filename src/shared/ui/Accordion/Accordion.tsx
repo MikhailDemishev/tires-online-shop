@@ -11,26 +11,27 @@ type AccordionItem = {
 
 type AccordionProps = {
   items: AccordionItem[];
-  type?: 'single' | 'multiple';
   className?: string;
   itemClassName?: string;
+  defaultValue?: string;
   contentClassName?: string;
   triggerClassName?: string;
 };
 
 export const Accordion = ({
   items,
-  type = 'single',
   className,
   itemClassName,
   triggerClassName,
+  defaultValue,
   contentClassName,
 }: AccordionProps) => {
   return (
     <RadixAccordion.Root
-      type={type}
-      collapsible={type === 'single' ? true : undefined}
+      type={'single'}
+      collapsible
       className={className}
+      defaultValue={defaultValue}
     >
       {items.map((item) => (
         <RadixAccordion.Item

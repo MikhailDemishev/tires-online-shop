@@ -9,6 +9,7 @@ import { ProductGalleryDesktop } from '@/entities/product/ui/ProductGallery';
 import { InStockIndicator } from '@/shared/ui/InStockIndicator';
 import { Button } from '@/shared/ui/Button';
 import { ProductAccordion } from '@/entities/product/ui/ProductAccordion';
+import { AddToFavoritesBtn } from '@/features/favorite/ui/AddToFavoritesBtn';
 
 type ProductDetailsCardProps = {
   product: ProductDetails;
@@ -24,6 +25,10 @@ export const ProductDetailsCard = ({
   characteristics,
 }: ProductDetailsCardProps) => {
   console.log(characteristics);
+  const inStock = product.quantityInStock > 0;
+
+  //temp
+  //const inStock = false;
   return (
     <section className={clsx(className, s.productDetailsCard)}>
       <div className={s.productDetailsCardGallery}>
@@ -31,24 +36,27 @@ export const ProductDetailsCard = ({
           url={product.url}
           urls={product.urls}
           fallbackImage={fallbackImage}
+          inStock={inStock}
         />
+        <AddToFavoritesBtn className={s.productDetailsCardFavorites} />
       </div>
       <div className={s.cardInfo}>
         <div className={s.cardHeader}>
           <div className={s.cardHeaderTop}>
-            <div className={s.cardHeaderTopLeft}>
-              <h2 className={s.cardTitle}>{title}</h2>
-              <InStockIndicator quantityInStock={product.quantityInStock} />
-            </div>
-            <div className={s.cardHeaderTopRight}>
-              <p className={s.cardPrice}>
-                {product.price} <span>zł.</span>
-              </p>
-            </div>
+            <h2 className={s.cardTitle}>{title}</h2>
+            <InStockIndicator inStock={inStock} />
           </div>
-          <Button className={s.cardButton}>
-            Добавить в корзину: {product.price} zł.
-          </Button>
+          <div className={s.cardHeaderBottom}>
+            {inStock ? (
+              <Button className={s.cardButton}>Добавить в корзину</Button>
+            ) : (
+              <span>нет в наличии</span>
+            )}
+
+            <p className={s.cardPrice}>
+              {product.price} <span>zł.</span>
+            </p>
+          </div>
         </div>
         <ProductAccordion characteristics={characteristics} />
       </div>

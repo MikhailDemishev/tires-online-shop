@@ -1,0 +1,46 @@
+.guaranteeBanner {
+  min-height: clamp(500px, 65vh, 727px);
+  position: relative;
+  background-image: url('/src/assets/images/guaranteeBanner.jpg');
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-secondary);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-overlay-dark);
+  }
+}
+
+.guaranteeBannerTitle {
+  font-family: var(--font-onder);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 73px;
+}
+
+.guaranteeBannerText {
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.guaranteeBannerLink {
+  width: 341px;
+  background-color: var(--color-background-accent);
+}
+
+.guaranteeBannerContent {
+  position: relative;
+  z-index: 1;
+  min-height: clamp(500px, 65vh, 727px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

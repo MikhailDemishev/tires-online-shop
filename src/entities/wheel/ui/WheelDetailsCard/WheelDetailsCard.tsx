@@ -16,7 +16,7 @@ type Props = {
 
 export const WheelDetailsCard = ({ wheel, className }: Props) => {
   const wheelTitle = `${wheel.material} ${wheel.productType}`;
-  const characteristics = [
+  const wheelCharacteristics = [
     {
       label: 'Название',
       value: wheelTitle.toLocaleLowerCase(),
@@ -64,7 +64,7 @@ export const WheelDetailsCard = ({ wheel, className }: Props) => {
       product={wheel}
       title={wheelTitle}
       className={clsx(className, s.tireDetailsCard)}
-      characteristics={characteristics}
+      characteristics={wheelCharacteristics}
     />
   );
 };

@@ -4,12 +4,21 @@
   gap: 20px;
   height: 100%;
   flex: 1;
+  position: relative;
+
+  .productCardFavorites {
+    width: 20px;
+    height: 17px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
 
   .imageWrapper {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background: #f7f7f7;
+    background: var(--color-background-primary-muted);
   }
 
   .image {
@@ -49,7 +58,7 @@
   .stockBlock {
     display: flex;
     flex-direction: column;
-    color: var(--color-text-primary-muted);
+    color: var(--color-text-primary-faint);
   }
   .stockBlockUpper {
     display: flex;

@@ -3,25 +3,23 @@ import s from './InStockIndicator.module.scss';
 import clsx from 'clsx';
 
 type InStockIndicatorProps = {
-  quantityInStock: number;
+  inStock: boolean;
   className?: string;
 };
 
-export const InStockIndicator = ({
-  quantityInStock,
-}: InStockIndicatorProps) => {
+export const InStockIndicator = ({ inStock }: InStockIndicatorProps) => {
   return (
     <div className={s.inStockIndicator}>
       <Dot
         className={clsx(
           s.inStockIndicatorIcon,
-          quantityInStock > 0 ? s.inStock : s.outOfStock,
+          inStock ? s.inStock : s.outOfStock,
         )}
       />
-      {quantityInStock > 0 ? (
-        <span className={clsx(s.inStockIndicatorText)}>в наличии</span>
+      {inStock ? (
+        <span className={clsx(s.inStockIndicatorText)}>В наличии</span>
       ) : (
-        <span className={clsx(s.inStockIndicatorText)}>не в наличии</span>
+        <span className={clsx(s.inStockIndicatorText)}>Нет в наличии</span>
       )}
     </div>
   );

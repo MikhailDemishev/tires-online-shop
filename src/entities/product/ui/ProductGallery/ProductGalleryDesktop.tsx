@@ -6,6 +6,7 @@ type ProductGalleryDesktopProps = {
   url: string;
   urls: string;
   fallbackImage: string;
+  inStock: boolean;
   className?: string;
 };
 
@@ -13,6 +14,7 @@ export const ProductGalleryDesktop = ({
   url,
   urls,
   fallbackImage,
+  inStock,
   className,
 }: ProductGalleryDesktopProps) => {
   // после исправления бэка
@@ -24,17 +26,12 @@ export const ProductGalleryDesktop = ({
   //     : [];
 
   //временно
-  const images = [url, urls];
+  const images = [url, urls, fallbackImage];
 
   return (
-    <div className={clsx(className, s.galleryDesktop)}>
-      <div className={s.imageWrap}>
-        <img
-          src={url || fallbackImage}
-          alt="Zdjęcie produktu"
-          onError={(event) => handleImageError(event, fallbackImage)}
-        />
-      </div>
+    <div
+      className={clsx(className, s.galleryDesktop, !inStock && s.outOfStock)}
+    >
       <div className={s.smallImages}>
         {images.map((image, index) => (
           <div className={s.imageWrap} key={`${image}-${index}`}>
@@ -45,6 +42,13 @@ export const ProductGalleryDesktop = ({
             />
           </div>
         ))}
+      </div>
+      <div className={s.imageWrap}>
+        <img
+          src={url || fallbackImage}
+          alt="Zdjęcie produktu"
+          onError={(event) => handleImageError(event, fallbackImage)}
+        />
       </div>
     </div>
   );

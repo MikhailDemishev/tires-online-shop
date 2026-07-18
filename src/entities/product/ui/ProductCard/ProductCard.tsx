@@ -3,6 +3,7 @@ import s from './ProductCard.module.scss';
 import clsx from 'clsx';
 import { Dots } from '@/assets/icons';
 import { Link } from 'react-router-dom';
+import { AddToFavoritesBtn } from '@/features/favorite/ui/AddToFavoritesBtn';
 
 export type ProductCardProps = {
   product: Product;
@@ -21,6 +22,7 @@ export const ProductCard = ({
 }: ProductCardProps) => {
   return (
     <Link className={clsx(className, s.productCard)} to={to}>
+      <AddToFavoritesBtn className={s.productCardFavorites} />
       <div className={s.imageWrapper}>
         <img className={s.image} src={product.url} alt={product.title} />
       </div>
@@ -32,7 +34,10 @@ export const ProductCard = ({
           <span className={s.price}>{product.price} zl.</span>
           <div className={s.stockBlock}>
             <div className={s.stockBlockUpper}>
-              <span className={s.stockBlockQuantity}> {product.price} шт.</span>
+              <span className={s.stockBlockQuantity}>
+                {' '}
+                {product.quantityInStock} шт.
+              </span>
               <Dots className={s.stockBlockIcon} />
             </div>
             <span className={s.stockBlockDescription}>Остаток на складе</span>

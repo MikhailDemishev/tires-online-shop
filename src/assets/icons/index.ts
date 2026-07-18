@@ -22,3 +22,4 @@ export { default as Calendar } from './Calendar.svg?react';
 export { default as Guarantee } from './Guarantee.svg?react';
 export { default as Delivery } from './Delivery.svg?react';
 export { default as Manual } from './Manual.svg?react';
+export { default as Circle } from './Circle.svg?react';

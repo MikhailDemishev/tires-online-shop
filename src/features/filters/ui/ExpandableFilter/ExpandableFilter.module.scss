@@ -1,0 +1,24 @@
+.expandableFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+
+  .expandableFilterLabel {
+    text-transform: uppercase;
+    padding: 12px 14px;
+    border: 1px solid var(--color-background-tertiary);
+  }
+
+  .expandableFilterFields {
+    padding: 8px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .expandableFilterButton {
+    width: fit-content;
+    padding: 0 14px;
+  }
+}

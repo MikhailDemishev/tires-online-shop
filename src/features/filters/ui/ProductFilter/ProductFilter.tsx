@@ -2,7 +2,7 @@ import {
   type ProductFilterFormValues,
   type ProductFilterType,
 } from '@/features/filters/model';
-import { FILTER_VALUES } from '@/features/filters/config';
+import { FILTER_VALUES, protectors } from '@/features/filters/config';
 
 import s from './ProductFilter.module.scss';
 import clsx from 'clsx';
@@ -18,6 +18,10 @@ import { useEffect, useState } from 'react';
 import { Checkbox } from '@/shared/ui/Checkbox';
 import { PriceRangeFilter } from '@/features/filters/ui/PriceRangeFilter';
 import { useGetManufacturersQuery } from '@/entities/manufacturer/api';
+import { ExpandableFilter } from '@/features/filters/ui/ExpandableFilter';
+
+const INITIAL_VISIBLE_MANUFACTURERS = 4;
+const INITIAL_VISIBLE_PROTECTORS = 4;
 
 export type ProductFilterProps = {
   className?: string;
@@ -38,7 +42,8 @@ export const ProductFilter = ({
     priceFrom: searchParams.get('priceFrom') ?? '',
     priceTo: searchParams.get('priceTo') ?? '',
     inStock: false,
-    manufacturer: searchParams.getAll('manufacturer') ?? [],
+    manufacturer: searchParams.getAll('manufacturer'),
+    protector: searchParams.getAll('protector'),
   };
 
   const { register, watch, reset, setValue } = useForm<ProductFilterFormValues>(
@@ -50,13 +55,22 @@ export const ProductFilter = ({
   const { data, isLoading, isError } = useGetManufacturersQuery();
   const manufacturers = data ?? [];
 
-  const INITIAL_VISIBLE_MANUFACTURERS = 4;
-  const [visibleCount, setVisibleCount] = useState(
+  const [initialSelectedProtectors] = useState(() =>
+    searchParams.getAll('protector'),
+  );
+
+  const sortedProtectors = [
+    ...protectors.filter((p) => initialSelectedProtectors.includes(p.name)),
+    ...protectors.filter((p) => !initialSelectedProtectors.includes(p.name)),
+  ];
+
+  const [visibleManufacturerCount, setVisibleManufacturerCount] = useState(
     INITIAL_VISIBLE_MANUFACTURERS,
   );
 
-  const visibleManufacturers = manufacturers.slice(0, visibleCount);
-  const hasMore = visibleCount < manufacturers.length;
+  const [visibleProtectorCount, setVisibleProtectorCount] = useState(
+    INITIAL_VISIBLE_PROTECTORS,
+  );
 
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout>;
@@ -84,8 +98,10 @@ export const ProductFilter = ({
       priceTo: '',
       inStock: false,
       manufacturer: [],
+      protector: [],
     });
-    setVisibleCount(INITIAL_VISIBLE_MANUFACTURERS);
+    setVisibleManufacturerCount(INITIAL_VISIBLE_MANUFACTURERS);
+    setVisibleProtectorCount(INITIAL_VISIBLE_PROTECTORS);
     setSearchParams({});
   };
 
@@ -116,32 +132,32 @@ export const ProductFilter = ({
           !isError &&
           !isLoading &&
           manufacturers.length > 0 && (
-            <div className={s.manufacturerFilter}>
-              <span className={s.manufacturerFilterLabel}>бренд</span>
-              <div className={s.manufacturerFilterFields}>
-                {visibleManufacturers.map((manufacturer) => (
-                  <Checkbox
-                    key={manufacturer.id}
-                    label={manufacturer.name}
-                    value={manufacturer.name}
-                    {...register('manufacturer')}
-                  />
-                ))}
-              </div>
-              {hasMore && (
-                <Button
-                  type="button"
-                  variant="unset"
-                  className={s.manufacturerFilterButton}
-                  onClick={() =>
-                    setVisibleCount((c) => c + INITIAL_VISIBLE_MANUFACTURERS)
-                  }
-                >
-                  Еще
-                </Button>
-              )}
-            </div>
+            <ExpandableFilter
+              filterLabel="бренд"
+              name="manufacturer"
+              visibleCount={visibleManufacturerCount}
+              options={manufacturers}
+              register={register}
+              onShowMore={() =>
+                setVisibleManufacturerCount(
+                  (c) => c + INITIAL_VISIBLE_MANUFACTURERS,
+                )
+              }
+            />
           )}
+
+        {page === 'tires' && (
+          <ExpandableFilter
+            filterLabel="протектор"
+            name="protector"
+            visibleCount={visibleProtectorCount}
+            options={sortedProtectors}
+            register={register}
+            onShowMore={() =>
+              setVisibleProtectorCount((c) => c + INITIAL_VISIBLE_PROTECTORS)
+            }
+          />
+        )}
 
         <PriceRangeFilter
           register={register}

@@ -1,7 +1,6 @@
-import { FAQ_ACCORDION_ITEMS } from '@/widgets/FAQ/ui';
-
 import s from './FAQ.module.scss';
 import { Accordion } from '@/shared/ui/Accordion/Accordion';
+import { FAQ_ACCORDION_ITEMS } from './faqValues';
 
 export const FAQ = () => {
   return (

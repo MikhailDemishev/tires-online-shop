@@ -50,12 +50,20 @@ export const TireDetailsCard = ({ tire, className }: Props) => {
       value: loadSpeedIndexCode,
     },
   ];
+
+  const description = [
+    {
+      label: '',
+      value: tire.inf || 'Нет данных',
+    },
+  ];
   return (
     <ProductDetailsCard
       product={tire}
       title={tire.protector}
       className={clsx(className, s.tireDetailsCard)}
       characteristics={tireCharacteristics}
+      description={description}
     />
   );
 };

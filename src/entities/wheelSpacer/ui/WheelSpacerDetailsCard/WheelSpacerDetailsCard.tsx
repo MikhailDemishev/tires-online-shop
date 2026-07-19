@@ -42,12 +42,20 @@ export const WheelSpacersDetailsCard = ({ spacer, className }: Props) => {
       value: `${spacer.thickness}`,
     },
   ];
+
+  const description = [
+    {
+      label: '',
+      value: spacer.inf || 'Нет данных',
+    },
+  ];
   return (
     <ProductDetailsCard
       product={spacer}
       title={spacer.productType}
       className={clsx(className, s.spacersDetailsCard)}
       characteristics={spacerCharacteristics}
+      description={description}
     />
   );
 };

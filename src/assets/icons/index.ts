@@ -23,3 +23,8 @@ export { default as Guarantee } from './Guarantee.svg?react';
 export { default as Delivery } from './Delivery.svg?react';
 export { default as Manual } from './Manual.svg?react';
 export { default as Circle } from './Circle.svg?react';
+export { default as GoodRich } from './GoodRich.svg?react';
+export { default as CooperTires } from './CooperTires.svg?react';
+export { default as Maxxis } from './Maxxis.svg?react';
+export { default as Yokohama } from './Yokohama.svg?react';
+export { default as Toyo } from './Toyo.svg?react';

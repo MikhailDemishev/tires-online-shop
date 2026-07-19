@@ -59,12 +59,20 @@ export const WheelDetailsCard = ({ wheel, className }: Props) => {
       value: `${wheel.color} `,
     },
   ];
+
+  const description = [
+    {
+      label: '',
+      value: wheel.inf || 'Нет данных',
+    },
+  ];
   return (
     <ProductDetailsCard
       product={wheel}
       title={wheelTitle}
       className={clsx(className, s.tireDetailsCard)}
       characteristics={wheelCharacteristics}
+      description={description}
     />
   );
 };

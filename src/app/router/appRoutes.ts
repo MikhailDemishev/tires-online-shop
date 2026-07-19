@@ -14,7 +14,6 @@ import { Favorites } from '@/pages/Favorites';
 import { Cart } from '@/pages/Cart';
 import { Profile } from '@/pages/Profile';
 import { ReturnExchange } from '@/pages/ReturnExchange';
-import { Promotions } from '@/pages/Promotions';
 import { Payment } from '@/pages/Payment';
 import { WheelSpacerDetails } from '@/pages/WheelSpacerDetails';
 import { TireDetails } from '@/pages/TireDetails';
@@ -96,10 +95,6 @@ export const appRoutes = [
   {
     path: ROUTES.returnExchange,
     component: ReturnExchange,
-  },
-  {
-    path: ROUTES.promotions,
-    component: Promotions,
   },
   {
     path: ROUTES.payment,

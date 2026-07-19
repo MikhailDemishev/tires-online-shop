@@ -1,4 +1,4 @@
-import { ADVANTAGES } from '@/widgets/Advantages/config';
+import { ADVANTAGES } from '@/widgets/Home/config';
 import s from './Advantages.module.scss';
 import clsx from 'clsx';
 

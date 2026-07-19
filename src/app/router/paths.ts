@@ -18,6 +18,5 @@ export const ROUTES = {
   favorites: '/favorites',
   cart: '/cart',
   returnExchange: '/returnExchange',
-  promotions: '/promotions',
   payment: 'payment',
 } as const;

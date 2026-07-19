@@ -33,7 +33,7 @@
   width: 9px;
   height: 6px;
   flex-shrink: 0;
-  color: var(--color-icon-primary-muted);
+  color: var(--color-icon-primary-intense);
   .productAccordionTrigger[data-state='open'] & {
     transform: rotate(180deg);
   }
@@ -78,7 +78,7 @@
   justify-content: center;
   width: 64px;
   height: 64px;
-  color: var(--color-icon-primary-muted);
+  color: var(--color-icon-primary-intense);
 }
 
 .productAccordionLinkText {

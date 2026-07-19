@@ -15,6 +15,7 @@ type ProductDetailsCardProps = {
   product: ProductDetails;
   title: string;
   characteristics: ProductCharacteristic[];
+  description: ProductCharacteristic[];
   className?: string;
 };
 
@@ -23,6 +24,7 @@ export const ProductDetailsCard = ({
   title,
   className,
   characteristics,
+  description,
 }: ProductDetailsCardProps) => {
   console.log(characteristics);
   const inStock = product.quantityInStock > 0;
@@ -58,7 +60,10 @@ export const ProductDetailsCard = ({
             </p>
           </div>
         </div>
-        <ProductAccordion characteristics={characteristics} />
+        <ProductAccordion
+          characteristics={characteristics}
+          description={description}
+        />
       </div>
     </section>
   );

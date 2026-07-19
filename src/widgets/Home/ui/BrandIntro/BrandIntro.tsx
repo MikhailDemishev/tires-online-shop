@@ -1,5 +1,4 @@
-import { BRAND_STATS } from '@/widgets/BrandIntro/config';
-import { BRAND_SOCIALS } from '@/widgets/BrandIntro/config';
+import { BRAND_SOCIALS, BRAND_STATS } from '@/widgets/Home/config';
 import s from './BrandIntro.module.scss';
 import { Link } from 'react-router-dom';
 

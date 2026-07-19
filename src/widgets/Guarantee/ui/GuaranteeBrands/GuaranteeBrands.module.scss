@@ -1,0 +1,32 @@
+.guaranteeBrands {
+  padding: 100px 0 0;
+}
+
+.guaranteeBrandsList {
+  display: flex;
+  gap: 13px;
+}
+
+.guaranteeBrandsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.guaranteeBrandsIcon {
+  display: block;
+  aspect-ratio: 200/93;
+
+  > svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.guaranteeBrandsText {
+  font-family: var(--font-onder);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+}

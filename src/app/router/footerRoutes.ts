@@ -19,10 +19,6 @@ export const footerRoutes = {
       path: ROUTES.delivery,
     },
     {
-      label: 'Акции',
-      path: ROUTES.promotions,
-    },
-    {
       label: 'Отзывы',
       path: ROUTES.feedback,
     },
@@ -36,10 +32,6 @@ export const footerRoutes = {
     {
       label: 'Гарантия',
       path: ROUTES.guarantee,
-    },
-    {
-      label: 'Свяжитесь с нами',
-      path: ROUTES.contacts,
     },
   ],
 } as const;

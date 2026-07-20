@@ -4,4 +4,3 @@ export * from './WheelSpacerFilterFields';
 export * from './FilterValues';
 export * from './homeFilterTabs';
 export * from './filterPriceValues';
-export * from './ProtectorFields';

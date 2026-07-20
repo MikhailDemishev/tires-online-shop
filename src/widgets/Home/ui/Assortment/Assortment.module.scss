@@ -1,0 +1,70 @@
+.homeAssortment {
+  padding: 80px 0;
+}
+
+.protectors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.protectorLink {
+  display: block;
+  position: relative;
+  aspect-ratio: 630/200;
+}
+
+.protectorImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.protectorContent {
+  height: 100%;
+  position: relative;
+  padding: 16px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.protectorTitle {
+  font-family: var(--font-onder);
+  font-weight: 500;
+  font-size: clamp(18px, 0.9vw + 9px, 20px);
+  line-height: 40px;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.protectorBadges {
+  display: flex;
+  gap: 8px;
+  color: var(--color-success);
+}
+
+.protectorBadge {
+  width: fit-content;
+  background-color: var(--color-background-secondary-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 3px solid var(--color-success);
+}
+
+.protectorIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.protectorBadgeText {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 100%;
+}

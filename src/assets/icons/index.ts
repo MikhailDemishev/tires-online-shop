@@ -28,3 +28,4 @@ export { default as CooperTires } from './CooperTires.svg?react';
 export { default as Maxxis } from './Maxxis.svg?react';
 export { default as Yokohama } from './Yokohama.svg?react';
 export { default as Toyo } from './Toyo.svg?react';
+export { default as Mountain } from './Mountain.svg?react';

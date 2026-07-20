@@ -2,7 +2,7 @@ import {
   type ProductFilterFormValues,
   type ProductFilterType,
 } from '@/features/filters/model';
-import { FILTER_VALUES, protectors } from '@/features/filters/config';
+import { FILTER_VALUES } from '@/features/filters/config';
 
 import s from './ProductFilter.module.scss';
 import clsx from 'clsx';
@@ -19,6 +19,7 @@ import { Checkbox } from '@/shared/ui/Checkbox';
 import { PriceRangeFilter } from '@/features/filters/ui/PriceRangeFilter';
 import { useGetManufacturersQuery } from '@/entities/manufacturer/api';
 import { ExpandableFilter } from '@/features/filters/ui/ExpandableFilter';
+import { protectors } from '@/shared/config';
 
 const INITIAL_VISIBLE_MANUFACTURERS = 4;
 const INITIAL_VISIBLE_PROTECTORS = 4;

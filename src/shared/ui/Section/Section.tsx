@@ -6,6 +6,7 @@ type SectionProps = {
   children: React.ReactNode;
   className?: string;
   titleClassName?: string;
+  hasWrapper?: boolean;
 };
 
 export const Section = ({
@@ -13,12 +14,15 @@ export const Section = ({
   children,
   className,
   titleClassName,
+  hasWrapper,
 }: SectionProps) => {
   return (
     <section className={clsx(s.section, className)}>
       <div className="container">
-        <h2 className={clsx(s.title, titleClassName)}>{title}</h2>
-        {children}
+        <div className={clsx(hasWrapper && s.wrapper)}>
+          <h2 className={clsx(s.title, titleClassName)}>{title}</h2>
+          {children}
+        </div>
       </div>
     </section>
   );

@@ -1,32 +1,22 @@
 import { ADVANTAGES } from '@/widgets/Home/config';
 import s from './Advantages.module.scss';
 import clsx from 'clsx';
+import { Section } from '@/shared/ui/Section/Section';
 
 export const Advantages = () => {
   return (
-    <section className={s.homeAdvantages}>
-      <div className={clsx('container', s.wrapper)}>
-        <div className={s.advantages}>
-          <h2 className={s.title}>преимущества</h2>
-          <ul className={s.advantagesInner}>
-            {ADVANTAGES.map(
-              ({ id, Icon, iconClassName, title, description }) => (
-                <li key={id} className={s.advantageItem}>
-                  <Icon className={clsx(s.advantageIcon, s[iconClassName])} />
-                  <div className={s.advantageContent}>
-                    <h3 className={s.advantageTitle}>{title}</h3>
-                    <p className={s.advantageDescription}>{description}</p>
-                  </div>
-                </li>
-              ),
-            )}
-          </ul>
-        </div>
-        <div className={s.assortment}>
-          <h2 className={s.title}>наш ассортимент</h2>
-          <div>здесь будут значки видов шин</div>
-        </div>
-      </div>
-    </section>
+    <Section className={s.homeAdvantages} title="преимущества" hasWrapper>
+      <ul className={s.advantages}>
+        {ADVANTAGES.map(({ id, Icon, iconClassName, title, description }) => (
+          <li key={id} className={s.advantageItem}>
+            <Icon className={clsx(s.advantageIcon, s[iconClassName])} />
+            <div className={s.advantageContent}>
+              <h3 className={s.advantageTitle}>{title}</h3>
+              <p className={s.advantageDescription}>{description}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </Section>
   );
 };

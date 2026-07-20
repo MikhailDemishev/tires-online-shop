@@ -5,6 +5,7 @@ import s from './Home.module.scss';
 import { PromoBanner } from '@/widgets/Home/ui/PromoBanner';
 import { BrandIntro } from '@/widgets/Home/ui/BrandIntro';
 import { FAQ } from '@/widgets/Home/ui/FAQ';
+import { Assortment } from '@/widgets/Home/ui/Assortment';
 
 export const Home = () => {
   return (
@@ -15,6 +16,7 @@ export const Home = () => {
       <Advantages />
       <PromoBanner />
       <BrandIntro />
+      <Assortment />
       <FAQ />
     </section>
   );

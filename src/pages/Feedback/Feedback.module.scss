@@ -1,0 +1,29 @@
+.feedback {
+  background-color: var(--color-background-primary);
+  padding: 32px 0 100px;
+}
+
+.feedbackHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feedbackHeaderBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.feedbackTitle {
+  font-family: var(--font-onder);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
+  text-transform: uppercase;
+
+  span {
+    font-size: 14px;
+    line-height: 40px;
+  }
+}

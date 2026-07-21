@@ -17,10 +17,6 @@ export const headerRoutes = {
       path: ROUTES.guarantee,
     },
     {
-      label: 'Доставка',
-      path: ROUTES.delivery,
-    },
-    {
       label: 'Новости',
       path: ROUTES.news,
     },

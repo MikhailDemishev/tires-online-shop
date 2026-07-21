@@ -6,18 +6,11 @@ export const footerRoutes = {
       label: 'О нас',
       path: ROUTES.aboutUs,
     },
-    {
-      label: 'Контакты',
-      path: ROUTES.contacts,
-    },
-    {
-      label: 'Оплата',
-      path: ROUTES.payment,
-    },
-    {
-      label: 'Доставка',
-      path: ROUTES.delivery,
-    },
+    // {
+    //   label: 'Контакты',
+    //   path: ROUTES.contacts,
+    // },
+
     {
       label: 'Отзывы',
       path: ROUTES.feedback,
@@ -25,10 +18,6 @@ export const footerRoutes = {
   ],
 
   support: [
-    {
-      label: 'Возврат и обмен',
-      path: ROUTES.returnExchange,
-    },
     {
       label: 'Гарантия',
       path: ROUTES.guarantee,

@@ -1,0 +1,28 @@
+.feedbackItem {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.feedbackItemHeader {
+  display: flex;
+}
+
+.feedbackItemHeaderRight {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feedbackItemTitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.feedbackItemText {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.07px;
+}

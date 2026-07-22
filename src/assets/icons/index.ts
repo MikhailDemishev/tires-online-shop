@@ -35,3 +35,10 @@ export { default as SaharaTires } from './SaharaTires.svg?react';
 export { default as TractionTires } from './TractionTires.svg?react';
 export { default as CELTTires } from './CELTTires.svg?react';
 export { default as Star } from './Star.svg?react';
+
+//temp brands
+export { default as MountainBrand } from './MountainBrand.svg?react';
+export { default as TractionBrand } from './TractionBrand.svg?react';
+export { default as DakarBrand } from './DakarBrand.svg?react';
+export { default as CSTBrand } from './CSTBrand.svg?react';
+export { default as CEATBrand } from './CEATBrand.svg?react';

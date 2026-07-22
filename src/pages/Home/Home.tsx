@@ -6,6 +6,8 @@ import { PromoBanner } from '@/widgets/Home/ui/PromoBanner';
 import { BrandIntro } from '@/widgets/Home/ui/BrandIntro';
 import { FAQ } from '@/widgets/Home/ui/FAQ';
 import { Assortment } from '@/widgets/Home/ui/Assortment';
+import { OurBrands } from '@/widgets/Home/ui/OurBrands';
+import { HomeFeedBack } from '@/widgets/Home/ui/HomeFeedback';
 
 export const Home = () => {
   return (
@@ -17,6 +19,8 @@ export const Home = () => {
       <PromoBanner />
       <BrandIntro />
       <Assortment />
+      <OurBrands />
+      <HomeFeedBack />
       <FAQ />
     </section>
   );

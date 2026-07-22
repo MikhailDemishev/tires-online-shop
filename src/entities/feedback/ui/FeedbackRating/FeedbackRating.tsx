@@ -13,18 +13,13 @@ export const FeedbackRating = ({ rate, className }: FeedbackRatingProps) => {
         const fillPercent = Math.min(Math.max(rate - index, 0), 1) * 100;
 
         return (
-          <ul className={s.ratingBar}>
-            <li className={s.ratingBarItem} key={index}>
-              <Star className={s.ratingBarStar} />
+          <li className={s.ratingBarItem} key={`Star${index}`}>
+            <Star className={s.ratingBarStar} />
 
-              <span
-                className={s.filledStar}
-                style={{ width: `${fillPercent}%` }}
-              >
-                <Star className={s.ratingBarStar} />
-              </span>
-            </li>
-          </ul>
+            <span className={s.filledStar} style={{ width: `${fillPercent}%` }}>
+              <Star className={s.ratingBarStar} />
+            </span>
+          </li>
         );
       })}
     </ul>

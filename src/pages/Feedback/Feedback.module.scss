@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 32px;
 }
 
 .feedbackHeaderBottom {
@@ -25,5 +26,18 @@
   span {
     font-size: 14px;
     line-height: 40px;
+  }
+}
+
+//переопределение стилей элемента-отзыва
+
+.feedBackItems {
+  .item {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--color-border-secondary-subtle);
+  }
+
+  .itemHeader {
+    justify-content: space-between;
   }
 }

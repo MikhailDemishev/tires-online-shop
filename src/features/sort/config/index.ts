@@ -1,1 +1,2 @@
-export * from './sortOptions';
+export * from './productSortOptions';
+export * from './reviewSortOptions';

@@ -5,7 +5,8 @@ import clsx from 'clsx';
 import type { ProductFilterType } from '@/features/filters/model';
 import { ProductFilter } from '@/features/filters/ui/ProductFilter';
 import { Pagination } from '@/features/pagination/ui';
-import { ProductSort } from '@/features/sort/ui';
+import { Sort } from '@/features/sort/ui';
+import { PRODUCT_SORT_OPTIONS } from '@/features/sort/config';
 import { Breadcrumbs, type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
 import { ROUTES } from '@/app/router';
 
@@ -48,7 +49,7 @@ export const ProductPageLayout = ({
             </div>
 
             <div className={s.actions}>
-              <ProductSort />
+              <Sort sortOptions={PRODUCT_SORT_OPTIONS} />
             </div>
           </section>
 

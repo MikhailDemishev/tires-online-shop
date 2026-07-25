@@ -6,8 +6,3 @@ export type SortOption = {
   label: string;
   direction?: string;
 };
-
-export type SortOptions = {
-  default: string;
-  options: SortOption[];
-};

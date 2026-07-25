@@ -18,6 +18,7 @@ export const FeedbackItem = ({
   textClassName,
   headerClassName,
 }: FeedbackItemProps) => {
+  const formattedDate = new Date(review.createdDate).toLocaleDateString();
   return (
     <article className={clsx(className, s.feedbackItem)}>
       <div className={clsx(headerClassName, s.feedbackItemHeader)}>
@@ -25,7 +26,7 @@ export const FeedbackItem = ({
         <div className={s.feedbackItemHeaderRight}>
           <FeedbackRating rate={review.rate} />
           {hasDate && (
-            <span className={s.feedbackItemDate}>{review.createdDate}</span>
+            <span className={s.feedbackItemDate}>{formattedDate}</span>
           )}
         </div>
       </div>

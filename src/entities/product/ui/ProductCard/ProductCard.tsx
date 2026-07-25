@@ -4,6 +4,8 @@ import clsx from 'clsx';
 import { Dots } from '@/assets/icons';
 import { Link } from 'react-router-dom';
 import { AddToFavoritesBtn } from '@/features/favorite/ui/AddToFavoritesBtn';
+import fallbackImage from '@/assets/images/fallbackProduct.jpg';
+import { handleImageError } from '@/shared/lib/helpers';
 
 export type ProductCardProps = {
   product: Product;
@@ -24,7 +26,12 @@ export const ProductCard = ({
     <Link className={clsx(className, s.productCard)} to={to}>
       <AddToFavoritesBtn className={s.productCardFavorites} />
       <div className={s.imageWrapper}>
-        <img className={s.image} src={product.url} alt={product.title} />
+        <img
+          className={s.image}
+          src={product.url || fallbackImage}
+          alt={product.title}
+          onError={(event) => handleImageError(event, fallbackImage)}
+        />
       </div>
 
       <div className={s.bottom}>

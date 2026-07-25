@@ -18,8 +18,8 @@ export const baseApi = createApi({
     'Cart',
     'Favorites',
     'Orders',
-
     'News',
+    'Feedback',
   ],
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_BASE_URL,

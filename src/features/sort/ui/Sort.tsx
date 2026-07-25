@@ -1,22 +1,25 @@
 import { Select } from '@/shared/ui/Select';
 import s from './Sort.module.scss';
-import type { SortOptions } from '@/features/sort/model';
+import type { SortOption } from '@/features/sort/model';
 
 import { useSearchParams } from 'react-router-dom';
 import { findSortOption, findInitialSortValue } from '@/features/sort/lib';
+import clsx from 'clsx';
 
 export type SortProps = {
-  sortOptions: SortOptions;
+  sortOptions: SortOption[];
+  className?: string;
 };
 
-export const Sort = ({ sortOptions }: SortProps) => {
+export const Sort = ({ sortOptions, className }: SortProps) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const sortField = searchParams.get('sortField');
   const sortDirection = searchParams.get('sortDirection');
   const size = searchParams.get('size');
+  //Либо берем значение на основе данных из урл, либо дефолтное из конфига
   const sortValue =
-    findInitialSortValue(sortOptions.options, sortField, sortDirection)
-      ?.value ?? sortOptions.default;
+    findInitialSortValue(sortOptions, sortField, sortDirection)?.value ??
+    findSortOption(sortOptions, 'default')?.value;
 
   console.log('sortValue', sortValue);
 
@@ -35,13 +38,13 @@ export const Sort = ({ sortOptions }: SortProps) => {
 
     //4.  ищем параметры  поиска и направления в конфиге, которые передадим в url
 
-    const selectedOption = findSortOption(sortOptions.options, selectedValue);
+    const selectedOption = findSortOption(sortOptions, selectedValue);
 
     if (!selectedOption) {
       return;
     }
-    const newSortField = selectedOption?.searchParameter;
-    const newSortDirection = selectedOption?.direction;
+    const newSortField = selectedOption.searchParameter;
+    const newSortDirection = selectedOption.direction;
 
     // 5. Устанавливаем новую сортировку
     if (newSortField) params.set('sortField', newSortField);
@@ -58,9 +61,9 @@ export const Sort = ({ sortOptions }: SortProps) => {
   };
   return (
     <Select
-      options={sortOptions.options}
+      options={sortOptions}
       value={sortValue}
-      wrapperClassName={s.sortFilter}
+      wrapperClassName={clsx(className, s.sortFilter)}
       className={s.sortSelect}
       iconClassName={s.sortSelectIcon}
       onChange={handleSortChange}

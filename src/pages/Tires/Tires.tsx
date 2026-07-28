@@ -7,19 +7,11 @@ import type { TireParams } from '@/entities/tire/model';
 import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
 export const Tires = () => {
   const params = usePaginationParams<TireParams>();
-  const { data, isLoading, isError, error } = useGetTiresQuery(params);
+  const { data, isLoading, isError } = useGetTiresQuery(params);
   const tires = data?.content;
 
   console.log('tires', tires);
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (isError) {
-    console.error(error);
-    return <h1>Error</h1>;
-  }
   console.log('tires', data);
 
   return (
@@ -32,6 +24,8 @@ export const Tires = () => {
         label: 'Шины',
       }}
       className={s.tiresPage}
+      isLoading={isLoading}
+      isError={isError}
       isEmpty={!tires?.length}
       page="tires"
     >

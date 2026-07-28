@@ -1,15 +1,14 @@
 import { Instagram, Telegram } from '@/assets/icons';
-export const BRAND_SOCIALS = [
+import type { SocialItem } from '@/shared/ui/Socials';
+export const brandSocials: SocialItem[] = [
   {
-    id: 1,
     Icon: Instagram,
-    title: 'Наш Instagram',
-    to: '/',
+    href: 'https://www.instagram.com/insaturbo4x4/',
+    label: 'Наш Instagram',
   },
   {
-    id: 2,
     Icon: Telegram,
-    title: 'Наш Telegram',
-    to: '/',
+    href: 'https://t.me/tires4x4_bot',
+    label: 'Наш Telegram',
   },
-] as const;
+];

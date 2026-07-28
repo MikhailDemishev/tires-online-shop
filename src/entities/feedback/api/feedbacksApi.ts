@@ -5,7 +5,7 @@ import type {
 } from '@/entities/feedback/model';
 import { createPaginationParams } from '@/shared/lib/helpers';
 
-const BASE_URL = '/api/tires/producer';
+const BASE_URL = '/api/admin/feedback';
 
 export const feedBackApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

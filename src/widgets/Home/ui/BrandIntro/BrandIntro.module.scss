@@ -15,10 +15,25 @@
   justify-content: space-between;
 }
 
-.brandIntroLeftBottom {
+.brandIntroSocials.brandIntroSocials {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.brandIntroSocialLink.brandIntroSocialLink {
+  font-size: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--color-border-primary);
+  padding: 8px;
+  width: 203px;
+}
+
+.brandIntroSocialLabel.brandIntroSocialLabel {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .brandIntroTitle {

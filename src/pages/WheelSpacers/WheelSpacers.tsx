@@ -7,18 +7,9 @@ import { usePaginationParams } from '@/features/pagination/model/usePaginationPa
 import type { WheelSpacerParams } from '@/entities/wheelSpacer/model';
 export const WheelSpacers = () => {
   const params = usePaginationParams<WheelSpacerParams>();
-  const { data, isLoading, isError, error } = useGetWheelSpacersQuery(params);
+  const { data, isLoading, isError } = useGetWheelSpacersQuery(params);
   const wheelSpacers = data?.content;
   console.log(data?.content, 'spacers');
-
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (isError) {
-    console.error(error);
-    return <h1>Error</h1>;
-  }
 
   return (
     <ProductPageLayout
@@ -31,6 +22,8 @@ export const WheelSpacers = () => {
         label: 'Проставки',
       }}
       isEmpty={!wheelSpacers?.length}
+      isError={isError}
+      isLoading={isLoading}
     >
       <ProductGrid
         items={wheelSpacers ?? []}

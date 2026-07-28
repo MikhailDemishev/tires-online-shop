@@ -1,0 +1,28 @@
+.infoPageLayout {
+  background-color: var(--color-background-primary);
+  .layoutWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 0;
+  }
+
+  .layoutPagination {
+    align-self: center;
+    padding: 32px 0 68px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-family: var(--font-onder);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
+  text-transform: uppercase;
+}

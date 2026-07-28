@@ -9,15 +9,15 @@
   }
   .sortSelect {
     width: 100%;
-    padding: 14px 13px;
+    padding: 14px 26px 14px 13px;
     font-size: 14px;
     line-height: 20px;
     text-transform: uppercase;
-    border: none;
+    border: 1px solid var(--color-border-primary);
   }
 
   .sortSelectIcon {
-    right: 0;
+    right: 13px;
     width: 10px;
     height: 13px;
     color: var(--color-icon-primary);

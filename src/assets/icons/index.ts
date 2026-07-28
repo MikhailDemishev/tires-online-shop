@@ -35,6 +35,11 @@ export { default as SaharaTires } from './SaharaTires.svg?react';
 export { default as TractionTires } from './TractionTires.svg?react';
 export { default as CELTTires } from './CELTTires.svg?react';
 export { default as Star } from './Star.svg?react';
+export { default as LocationIcon } from './Location.svg?react';
+export { default as LongArrow } from './LongArrow.svg?react';
+export { default as Email } from './Email.svg?react';
+export { default as Phone } from './Phone.svg?react';
+export { default as LoaderIcon } from './LoaderIcon.svg?react';
 
 //temp brands
 export { default as MountainBrand } from './MountainBrand.svg?react';

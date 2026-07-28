@@ -1,0 +1,12 @@
+.loader {
+  width: 77px;
+  height: 77px;
+  animation: spin 1s linear infinite;
+  color: var(--color-icon-accent);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

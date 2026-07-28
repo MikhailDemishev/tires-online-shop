@@ -50,7 +50,6 @@ export const Footer = () => {
             items={footerSocials}
             className={s.footerSocials}
             linkClassName={s.footerSocialLink}
-            iconClassName={s.footerSocialIcon}
           />
         </div>
         <div className={s.footerBottom}>

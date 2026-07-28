@@ -1,10 +1,14 @@
 const DEFAULT_PAGE = 1;
-const DEFAULT_PAGE_SIZE = 8;
-
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-export const usePaginationParams = <T>() => {
+type PaginationOptions = {
+  defaultPageSize?: number;
+};
+
+export const usePaginationParams = <T>({
+  defaultPageSize = 8,
+}: PaginationOptions = {}) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
@@ -19,14 +23,14 @@ export const usePaginationParams = <T>() => {
     }
 
     if (!params.has('size')) {
-      params.set('size', String(DEFAULT_PAGE_SIZE));
+      params.set('size', String(defaultPageSize));
     }
     setSearchParams(params, { replace: true });
-  }, [searchParams, setSearchParams]);
+  }, [searchParams, setSearchParams, defaultPageSize]);
 
   return {
     ...Object.fromEntries(searchParams),
     page: Number(searchParams.get('page') ?? DEFAULT_PAGE),
-    size: Number(searchParams.get('size') ?? DEFAULT_PAGE_SIZE),
+    size: Number(searchParams.get('size') ?? defaultPageSize),
   } as T;
 };

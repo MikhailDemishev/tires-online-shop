@@ -1,7 +1,5 @@
 .socials {
   display: flex;
-  align-items: center;
-  gap: 12px;
 }
 
 .link {
@@ -15,6 +13,12 @@
   }
 }
 
+.labelBlock {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .icon {
   display: flex;
   align-items: center;
@@ -22,4 +26,5 @@
   width: 30px;
   height: 30px;
   flex-shrink: 0;
+  overflow: visible;
 }

@@ -8,18 +8,9 @@ import { usePaginationParams } from '@/features/pagination/model/usePaginationPa
 export const Wheels = () => {
   const params = usePaginationParams<WheelParams>();
 
-  const { data, isLoading, isError, error } = useGetWheelsQuery(params);
+  const { data, isLoading, isError } = useGetWheelsQuery(params);
   const wheels = data?.content;
   console.log('wheels', wheels);
-
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (isError) {
-    console.error(error);
-    return <h1>Error</h1>;
-  }
 
   return (
     <ProductPageLayout
@@ -32,6 +23,8 @@ export const Wheels = () => {
       }}
       filterType="wheels"
       isEmpty={!wheels?.length}
+      isError={isError}
+      isLoading={isLoading}
     >
       <ProductGrid
         items={wheels ?? []}

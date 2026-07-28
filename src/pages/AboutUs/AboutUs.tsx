@@ -1,3 +1,9 @@
+import { InfoPageLayout } from '@/layouts/InfoPageLayout';
+
 export const AboutUs = () => {
-  return <h1>About Us</h1>;
+  return (
+    <InfoPageLayout title="О нас">
+      <span>контент страницы о нас</span>
+    </InfoPageLayout>
+  );
 };

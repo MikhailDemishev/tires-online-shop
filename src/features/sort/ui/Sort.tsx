@@ -62,6 +62,7 @@ export const Sort = ({ sortOptions, className }: SortProps) => {
   return (
     <Select
       options={sortOptions}
+      name="sort"
       value={sortValue}
       wrapperClassName={clsx(className, s.sortFilter)}
       className={s.sortSelect}

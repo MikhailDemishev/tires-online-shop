@@ -14,6 +14,7 @@ type SelectProps = {
   placeholder?: string;
   iconClassName?: string;
   wrapperClassName?: string;
+  name?: string;
 } & ComponentPropsWithoutRef<'select'>;
 
 export const Select = ({
@@ -22,11 +23,12 @@ export const Select = ({
   className,
   iconClassName,
   wrapperClassName,
+  name,
   ...props
 }: SelectProps) => {
   return (
     <div className={clsx(wrapperClassName, s.selectWrapper)}>
-      <select className={clsx(className, s.select)} {...props}>
+      <select className={clsx(className, s.select)} name={name} {...props}>
         {placeholder && <option value="">{placeholder}</option>}
 
         {options.map((option) => (

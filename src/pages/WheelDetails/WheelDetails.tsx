@@ -7,19 +7,7 @@ import { useParams } from 'react-router-dom';
 export const WheelDetails = () => {
   const { id } = useParams<{ id: string }>();
 
-  const { data, isLoading, isError, error } = useGetWheelByIdQuery(id!);
-
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (isError) {
-    console.error(error);
-    return <h1>Error</h1>;
-  }
-  if (!data) {
-    return null;
-  }
+  const { data, isLoading, isError } = useGetWheelByIdQuery(id!);
 
   console.log('tires', data);
   return (
@@ -29,7 +17,10 @@ export const WheelDetails = () => {
         label: 'Диски',
         to: ROUTES.wheels,
       }}
-      productDetailsCard={<WheelDetailsCard wheel={data} />}
+      productDetailsCard={data ? <WheelDetailsCard wheel={data} /> : null}
+      isError={isError}
+      isLoading={isLoading}
+      isEmpty={!data}
     />
   );
 };

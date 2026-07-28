@@ -1,6 +1,6 @@
-import { BRAND_SOCIALS, BRAND_STATS } from '@/widgets/Home/config';
+import { BRAND_STATS, brandSocials } from '@/widgets/Home/config';
 import s from './BrandIntro.module.scss';
-import { Link } from 'react-router-dom';
+import { Socials } from '@/shared/ui/Socials';
 
 export const BrandIntro = () => {
   return (
@@ -20,15 +20,13 @@ export const BrandIntro = () => {
                 планеты.
               </p>
             </div>
-
-            <div className={s.brandIntroLeftBottom}>
-              {BRAND_SOCIALS.map(({ id, Icon, title, to }) => (
-                <Link key={id} to={to} className={s.socialLink}>
-                  <span className={s.socialLinkText}>{title}</span>
-                  <Icon className={s.socialLinkIcon} />
-                </Link>
-              ))}
-            </div>
+            <Socials
+              items={brandSocials}
+              className={s.brandIntroSocials}
+              linkClassName={s.brandIntroSocialLink}
+              labelBlockClassName={s.brandIntroSocialLabel}
+              showLabel
+            ></Socials>
           </div>
           <div className={s.brandIntroRight}>
             <ul className={s.introStats}>

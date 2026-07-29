@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import s from './Button.module.scss';
 import { Slot } from '@radix-ui/react-slot';
 
-export type VariantBtn = 'primary' | 'secondary' | 'unset';
+export type VariantBtn = 'primary' | 'secondary' | 'dark' | 'unset';
 
 type Props = {
   variant?: VariantBtn;
@@ -27,7 +27,13 @@ export const Button = ({
   return (
     <Comp
       {...props}
-      className={clsx(s.root, s[variant], fullWidth && s.fullWidth, className)}
+      className={clsx(
+        s.root,
+        s.btn,
+        s[variant],
+        fullWidth && s.fullWidth,
+        className,
+      )}
       disabled={disabled || loading}
     >
       {loading ? <div>Грузится</div> : children}

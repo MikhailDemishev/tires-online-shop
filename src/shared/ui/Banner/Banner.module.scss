@@ -1,13 +1,21 @@
 .banner {
-  min-height: clamp(500px, 65vh, 727px);
+  --banner-height: clamp(500px, 65vh, 727px);
+  min-height: var(--banner-height);
   position: relative;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
-  .bannerContent {
-    min-height: clamp(500px, 65vh, 727px);
+  .bannerWrapper {
+    min-height: var(--banner-height);
     display: flex;
+    position: relative;
+  }
+
+  .bannerContent {
+    width: 750px;
+    display: flex;
+    align-self: center;
     flex-direction: column;
   }
 
@@ -28,25 +36,15 @@
     margin-bottom: 46px;
   }
 
-  .bannerLink {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.07px;
-    text-transform: uppercase;
-    color: var(--color-text-secondary);
-    text-align: center;
-    width: 341px;
-    padding: 14px 24px;
-    border: 2px solid var(--color-border-accent);
-    background-color: transparent;
+  .bannerLinks {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 
-    transition:
-      background-color 0.3s ease,
-      border-color 0.3s ease;
-
-    &:hover {
-      background-color: var(--color-border-accent);
-    }
+  .bannerBreadcrumbs {
+    position: absolute;
+    top: 20px;
   }
 }

@@ -43,4 +43,18 @@
 
   // semantic
   --color-success: #1d9d3d;
+
+  // buttons - separate logic!!!
+  --color-button-primary: #fe5000;
+  --color-button-primary-hover: #ff7c40;
+  --color-button-primary-disabled: #18181a;
+
+  --color-button-dark: #18181a;
+  --color-button-dark-hover: #444648;
+  --color-button-dark-disabled: #888888;
+
+  --color-button-secondary: #ffffff;
+  --color-button-secondary-hover: #fff1eb;
+  --color-button-secondary-border: #18181a;
+  --color-button-secondary-text: #18181a;
 }

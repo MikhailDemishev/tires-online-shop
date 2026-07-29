@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { ROUTES } from '@/app/router';
 import { Breadcrumbs, type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
 import { getPageState } from '@/layouts/lib';
-import { PageStateWidget } from '@/widgets/PageStateWidget';
+import { PageStateWidget } from '@/widgets/PageState/ui/PageStateWidget';
 
 type Props = {
   title: string;

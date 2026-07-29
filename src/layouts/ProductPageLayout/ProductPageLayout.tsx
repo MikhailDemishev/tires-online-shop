@@ -10,7 +10,7 @@ import { PRODUCT_SORT_OPTIONS } from '@/features/sort/config';
 import { Breadcrumbs, type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
 import { ROUTES } from '@/app/router';
 import { getPageState } from '@/layouts/lib';
-import { PageStateWidget } from '@/widgets/PageStateWidget';
+import { PageStateWidget } from '@/widgets/PageState/ui/PageStateWidget';
 
 type Props = {
   title: string;

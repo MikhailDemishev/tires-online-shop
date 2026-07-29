@@ -2,14 +2,23 @@ import s from './GuaranteeBanner.module.scss';
 import { ROUTES } from '@/app/router';
 import { Banner } from '@/shared/ui/Banner';
 
-export const GuaranteeBanner = () => {
+type GuaranteeBannerProps = {
+  pageTitle: string;
+};
+
+export const GuaranteeBanner = ({ pageTitle }: GuaranteeBannerProps) => {
   return (
     <Banner
-      to={ROUTES.tires}
       className={s.guaranteeBanner}
       bannerTitle="гарантии качества"
-      linkName="перейти в каталог"
       contentClassName={s.guaranteeBannerContent}
+      breadcrumbs={[{ label: 'Главная', to: '/' }, { label: pageTitle }]}
+      links={[
+        {
+          to: ROUTES.tires,
+          linkName: 'перейти в каталог',
+        },
+      ]}
     >
       <>
         <span>Официальная гарантия производителей,</span>

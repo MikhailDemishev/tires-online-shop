@@ -1,4 +1,4 @@
-.guaranteeBanner {
+.supportBanner {
   background-image: url('/src/assets/images/guaranteeBanner.jpg');
   background-color: var(--color-background-secondary);
   color: var(--color-text-secondary);
@@ -11,7 +11,8 @@
   }
 }
 
-.guaranteeBannerContent {
+.supportContent {
   position: relative;
   z-index: 1;
+  padding-top: 128px;
 }

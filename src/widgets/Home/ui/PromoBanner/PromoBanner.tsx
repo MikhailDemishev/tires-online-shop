@@ -3,12 +3,15 @@ import { ROUTES } from '@/app/router';
 import { Banner } from '@/shared/ui/Banner';
 
 export const PromoBanner = () => {
-  const to = ROUTES.guarantee;
   return (
     <Banner
       bannerTitle="Гарантия качества"
-      linkName="подробнее"
-      to={to}
+      links={[
+        {
+          to: ROUTES.guarantee,
+          linkName: 'подробнее',
+        },
+      ]}
       className={s.promoBanner}
     >
       <>

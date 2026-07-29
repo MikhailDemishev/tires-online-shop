@@ -8,8 +8,12 @@ import { FAQ } from '@/widgets/Home/ui/FAQ';
 import { Assortment } from '@/widgets/Home/ui/Assortment';
 import { OurBrands } from '@/widgets/Home/ui/OurBrands';
 import { HomeFeedBack } from '@/widgets/Home/ui/HomeFeedback';
+import { useGetFeedbackQuery } from '@/entities/feedback/api/feedbacksApi';
 
 export const Home = () => {
+  const { data, isLoading, isError } = useGetFeedbackQuery({
+    size: 10,
+  });
   return (
     <section className={s.home}>
       <Hero>
@@ -20,7 +24,9 @@ export const Home = () => {
       <BrandIntro />
       <Assortment />
       <OurBrands />
-      <HomeFeedBack />
+      {!isLoading && !isError && data && (
+        <HomeFeedBack feedBackItems={data.content} />
+      )}
       <FAQ />
     </section>
   );

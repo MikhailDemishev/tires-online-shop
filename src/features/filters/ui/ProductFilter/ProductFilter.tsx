@@ -165,7 +165,12 @@ export const ProductFilter = ({
           watch={watch}
           setValue={setValue}
         />
-        <Button type="button" className={s.resetBtn} onClick={handleReset}>
+        <Button
+          type="button"
+          variant="dark"
+          className={s.resetBtn}
+          onClick={handleReset}
+        >
           Сбросить фильтры
         </Button>
       </form>

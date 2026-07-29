@@ -3,7 +3,7 @@ import s from './InfoPageLayout.module.scss';
 import clsx from 'clsx';
 import { Pagination } from '@/features/pagination/ui';
 import { Breadcrumbs } from '@/shared/ui/BreadCrumbs';
-import { PageStateWidget } from '@/widgets/PageStateWidget';
+import { PageStateWidget } from '@/widgets/PageState/ui/PageStateWidget';
 import { getPageState } from '@/layouts/lib';
 
 type Props = {

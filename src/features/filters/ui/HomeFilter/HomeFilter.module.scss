@@ -1,8 +1,7 @@
 .homeFilter {
-  width: 381px;
-  .tabs {
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 
   .submitBtn {
     width: 100%;
@@ -24,7 +23,7 @@
 .homeFilterForm {
   background-color: var(--color-background-primary);
   padding: 40px 20px;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 36px;
 }

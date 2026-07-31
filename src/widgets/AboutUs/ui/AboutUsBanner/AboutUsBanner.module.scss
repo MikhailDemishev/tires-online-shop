@@ -1,5 +1,5 @@
-.supportBanner {
-  background-image: url('/src/assets/images/supportBanner.png');
+.aboutUsBanner {
+  background-image: url('/src/assets/images/aboutUsBanner.png');
   background-color: var(--color-background-secondary);
   color: var(--color-text-secondary);
 
@@ -11,8 +11,7 @@
   }
 }
 
-.supportContent {
+.aboutUsBannerContent {
   position: relative;
   z-index: 1;
-  padding-top: 128px;
 }

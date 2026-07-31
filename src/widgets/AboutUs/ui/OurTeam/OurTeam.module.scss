@@ -1,0 +1,38 @@
+.ourTeam {
+  padding: 100px 0 0;
+}
+
+.ourTeamWrapper {
+  display: grid;
+  grid-template-columns: minmax(520px, 693px) 1fr;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.ourTeamImage {
+  aspect-ratio: 693/686;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.quoteMarks {
+  display: flex;
+  gap: 9px;
+}
+
+.quoteMark {
+  width: 26px;
+  height: 43px;
+}
+
+.quoteText {
+  font-size: 20px;
+  line-height: 1;
+}

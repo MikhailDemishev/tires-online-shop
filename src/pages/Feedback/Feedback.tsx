@@ -17,11 +17,7 @@ export const Feedback = () => {
 
   const feedBackItems = data?.content ?? [];
 
-  const totalRating = feedBackItems?.length
-    ? feedBackItems.reduce((sum, { rate }) => sum + rate, 0) /
-      feedBackItems.length
-    : 0;
-  const totalRounded = Math.round(totalRating * 10) / 10;
+  const totalRating = data?.averageRate;
   return (
     <InfoPageLayout
       title="Отзывы"
@@ -32,15 +28,18 @@ export const Feedback = () => {
       isEmpty={!feedBackItems.length}
       headerNode={
         <div className={s.feedbackHeader}>
-          <div className={s.feedbackRating}>
-            <span className={s.ratingTotal}>{totalRounded}</span>
-            <div className={s.ratingStats}>
-              <FeedbackRating rate={totalRating} />
-              <span className={s.ratingCount}>
-                {`${feedBackItems.length} отзывов`}
-              </span>
+          {totalRating && (
+            <div className={s.feedbackRating}>
+              <span className={s.ratingTotal}>{totalRating}</span>
+              <div className={s.ratingStats}>
+                <FeedbackRating rate={totalRating} />
+                <span className={s.ratingCount}>
+                  {`${feedBackItems.length} отзывов`}
+                </span>
+              </div>
             </div>
-          </div>
+          )}
+
           <Sort sortOptions={REVIEW_SORT_OPTIONS} className={s.feedBackSort} />
         </div>
       }

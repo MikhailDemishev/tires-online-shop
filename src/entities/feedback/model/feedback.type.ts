@@ -17,6 +17,7 @@ export type FeedbackFullResponse = {
   totalPages: number;
   isFirst: boolean;
   isLast: boolean;
+  averageRate: number;
 };
 
 export type FeefbackDetails = Feedback;

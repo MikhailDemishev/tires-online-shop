@@ -24,10 +24,10 @@ export const Home = () => {
       <BrandIntro />
       <Assortment />
       <OurBrands />
+      <FAQ />
       {!isLoading && !isError && data && (
         <HomeFeedBack feedBackItems={data.content} />
       )}
-      <FAQ />
     </section>
   );
 };

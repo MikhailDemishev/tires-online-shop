@@ -60,12 +60,7 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
           ))}
         </div>
 
-        <Button
-          type="submit"
-          variant="dark"
-          className={s.submitBtn}
-          disabled={isDisabled}
-        >
+        <Button type="submit" className={s.submitBtn} disabled={isDisabled}>
           Подобрать
         </Button>
       </form>

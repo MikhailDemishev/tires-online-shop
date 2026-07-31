@@ -24,7 +24,7 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 40px;
-    color: var(--color-text-secondary);
+    color: inherit;
   }
 
   .bannerDescription {
@@ -33,7 +33,7 @@
     color: var(--color-text-secondary-muted);
     display: flex;
     flex-direction: column;
-    margin-bottom: 46px;
+    margin-bottom: 32px;
   }
 
   .bannerLinks {
@@ -46,5 +46,9 @@
   .bannerBreadcrumbs {
     position: absolute;
     top: 20px;
+  }
+
+  .bannerImage {
+    position: absolute;
   }
 }

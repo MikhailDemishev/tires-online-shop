@@ -18,6 +18,8 @@ export type BannerProps = {
   className?: string;
   contentClassName?: string;
   children: ReactNode;
+  image?: ReactNode;
+  imageClassName?: string;
 };
 
 export const Banner = ({
@@ -26,6 +28,8 @@ export const Banner = ({
   breadcrumbs,
   bannerTitle,
   contentClassName,
+  image,
+  imageClassName,
   children,
 }: BannerProps) => {
   return (
@@ -51,6 +55,9 @@ export const Banner = ({
                 </Button>
               ))}
             </div>
+          )}
+          {image && (
+            <div className={clsx(s.bannerImage, imageClassName)}>{image}</div>
           )}
         </div>
       </div>

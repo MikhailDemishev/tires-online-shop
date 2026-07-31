@@ -7,11 +7,13 @@
   --color-text-primary-faint: #888888;
   --color-text-secondary: #ffffff;
   --color-text-secondary-muted: #f2f2f3;
+  --color-text-tertiary: #252a38;
   --color-text-accent: #fe5000;
 
   //bg
   --color-background-primary: #ffffff;
   --color-background-primary-muted: #f7f7f7;
+  --color-background-primary-faint: #f6f6f6;
   --color-background-secondary: #232425;
   --color-background-secondary-muted: #f2f2f3;
   --color-background-tertiary: #18181a;
@@ -47,11 +49,11 @@
   // buttons - separate logic!!!
   --color-button-primary: #fe5000;
   --color-button-primary-hover: #ff7c40;
-  --color-button-primary-disabled: #18181a;
+  --color-button-primary-disabled: rgba(254, 80, 0, 0.4);
 
   --color-button-dark: #18181a;
   --color-button-dark-hover: #444648;
-  --color-button-dark-disabled: #888888;
+  --color-button-dark-disabled: rgba(24, 24, 26, 0.4);
 
   --color-button-secondary: #ffffff;
   --color-button-secondary-hover: #fff1eb;

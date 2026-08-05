@@ -4,16 +4,17 @@ import { LocationIcon, LongArrow } from '@/assets/icons';
 import { Socials } from '@/shared/ui/Socials';
 import { socials } from './contactsSocials';
 import { contactsInfo } from './contactInfo';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export const Contacts = () => {
+  const { t } = useTranslation();
   return (
-    <InfoPageLayout title="Наши контакты" className={s.contacts}>
+    <InfoPageLayout title="pages.contacts.title" className={s.contacts}>
       <div className={s.contactsWrapper}>
         <div className={s.contactsContent}>
           <div className={s.contactsTop}>
             <p className={s.contactsDescription}>
-              Мы всегда на связи и готовы помочь с подбором шин и аксессуаров
-              для вашего 4x4
+              {t('pages.contacts.description')}
             </p>
             <div className={s.contactsInfo}>
               {contactsInfo.map(({ Icon, value, href }) => (
@@ -51,7 +52,8 @@ export const Contacts = () => {
           <div className={s.contactsAddress}>
             <LocationIcon className={s.contactsIcon} />
             <span>
-              <strong>Адрес:</strong> Jerzego Badury 20, 56-416 Goszcz, Польша
+              <strong> {t('pages.contacts.address')}</strong>{' '}
+              {t('pages.contacts.addressValue')}
             </span>
           </div>
         </div>

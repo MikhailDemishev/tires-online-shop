@@ -3,23 +3,23 @@ import type { SortOption } from '@/features/sort/model';
 export const PRODUCT_SORT_OPTIONS: SortOption[] = [
   {
     value: 'default',
-    label: 'по умолчанию',
+    label: 'filter.sort.default',
   },
   {
     value: 'recommended',
     searchParameter: 'recommended',
-    label: 'популярные',
+    label: 'filter.sort.popular',
   },
   {
     value: 'price-asc',
     searchParameter: 'price',
-    label: 'дешевле',
+    label: 'filter.sort.cheaper',
     direction: 'asc',
   },
   {
     value: 'price-desc',
     searchParameter: 'price',
-    label: 'дороже',
+    label: 'filter.sort.expensive',
     direction: 'desc',
   },
 ];

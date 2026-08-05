@@ -3,30 +3,30 @@ import type { SortOption } from '@/features/sort/model';
 export const REVIEW_SORT_OPTIONS: SortOption[] = [
   {
     value: 'default',
-    label: 'по умолчанию',
+    label: 'feedback.sort.default',
   },
   {
     value: 'rate-desc',
     searchParameter: 'rate',
-    label: 'сначала высокие',
+    label: 'feedback.sort.highest',
     direction: 'desc',
   },
   {
     value: 'rate-asc',
     searchParameter: 'rate',
-    label: 'сначала низкие',
+    label: 'feedback.sort.lowest',
     direction: 'asc',
   },
   {
     value: 'date-desc',
     searchParameter: 'createdDate',
-    label: 'сначала новые',
+    label: 'feedback.sort.newest',
     direction: 'desc',
   },
   {
     value: 'date-asc',
     searchParameter: 'createdDate',
-    label: 'сначала старые',
+    label: 'feedback.sort.oldest',
     direction: 'asc',
   },
 ];

@@ -14,6 +14,7 @@ import {
 } from '@/features/filters/config';
 import { type ProductFilterFormValues } from '@/features/filters/model';
 import { Range } from 'react-range';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type PriceRangeFilterProps = {
   register: UseFormRegister<ProductFilterFormValues>;
@@ -28,13 +29,16 @@ export const PriceRangeFilter = ({
 }: PriceRangeFilterProps) => {
   const priceFrom = Number(watch('priceFrom') || MIN_PRICE);
   const priceTo = Number(watch('priceTo') || MAX_PRICE);
+  const { t } = useTranslation();
   const handlePriceInput = (e: React.InputEvent<HTMLInputElement>) => {
     e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '');
   };
 
   return (
     <div className={s.priceRangeFilter}>
-      <span className={s.priceRangeFilterTitle}>Цена</span>
+      <span className={s.priceRangeFilterTitle}>
+        {t('filter.priceRange.price')}
+      </span>
 
       <Range
         values={[priceFrom, priceTo]}
@@ -62,7 +66,7 @@ export const PriceRangeFilter = ({
       <div className={s.priceRangeFilterInputs}>
         {filterPriceFields.map(({ label, name }) => (
           <label key={name} className={s.priceRangeFilterField}>
-            <span className={s.priceRangeFilterlabel}>{label}</span>
+            <span className={s.priceRangeFilterlabel}>{t(label)}</span>
 
             <Input
               type="text"

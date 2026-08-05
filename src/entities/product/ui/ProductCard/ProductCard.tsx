@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { AddToFavoritesBtn } from '@/features/favorite/ui/AddToFavoritesBtn';
 import fallbackImage from '@/assets/images/fallbackProduct.jpg';
 import { handleImageError } from '@/shared/lib/helpers';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export type ProductCardProps = {
   product: Product;
@@ -22,6 +23,7 @@ export const ProductCard = ({
   className,
   children,
 }: ProductCardProps) => {
+  const { t } = useTranslation();
   return (
     <Link className={clsx(className, s.productCard)} to={to}>
       <AddToFavoritesBtn className={s.productCardFavorites} />
@@ -43,11 +45,13 @@ export const ProductCard = ({
             <div className={s.stockBlockUpper}>
               <span className={s.stockBlockQuantity}>
                 {' '}
-                {product.quantityInStock} шт.
+                {product.quantityInStock} {t('cards.productCard.pieces')}
               </span>
               <Dots className={s.stockBlockIcon} />
             </div>
-            <span className={s.stockBlockDescription}>Остаток на складе</span>
+            <span className={s.stockBlockDescription}>
+              {t('cards.productCard.stock')}
+            </span>
           </div>
         </div>
       </div>

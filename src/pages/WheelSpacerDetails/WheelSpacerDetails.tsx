@@ -14,7 +14,7 @@ export const WheelSpacerDetails = () => {
     <ProductDetailsPageLayout
       title={data?.title ?? 'title'}
       category={{
-        label: 'Проставки',
+        label: 'pages.wheelSpacers.title',
         to: ROUTES.wheelSpacers,
       }}
       productDetailsCard={

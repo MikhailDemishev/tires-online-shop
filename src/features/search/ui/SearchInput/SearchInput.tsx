@@ -5,6 +5,7 @@ import { SearchIcon } from '@/assets/icons';
 
 import s from './SearchInput.module.scss';
 import { Input } from '@/shared/ui/Input';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export type SearchInputProps = {
   className?: string;
@@ -20,13 +21,16 @@ export const SearchInput = ({
   className,
   inputClassName,
   value,
-  placeholder = 'Поиск',
+  placeholder,
   onSearchChange,
 }: SearchInputProps) => {
+  const { t } = useTranslation();
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const nextValue = event.currentTarget.value;
     onSearchChange(nextValue);
   };
+
+  const resolvedPlaceholder = placeholder ?? t('header.search.placeholder');
 
   return (
     <div className={clsx(s.searchInput, className)}>
@@ -36,8 +40,8 @@ export const SearchInput = ({
         className={clsx(s.searchInputField, inputClassName)}
         type="search"
         value={value}
-        placeholder={placeholder}
-        aria-label={placeholder}
+        placeholder={resolvedPlaceholder}
+        aria-label={resolvedPlaceholder}
         autoComplete="off"
         onChange={handleChange}
       />

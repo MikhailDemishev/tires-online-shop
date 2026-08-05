@@ -1,38 +1,32 @@
 export const GUARANTEE_ACCORDION_ITEMS = [
   {
     value: 'original-products',
-    header: 'Только оригинальная продукция',
-    children:
-      'Мы работаем напрямую с официальными дистрибьюторами и производителями. Все представленные на сайте товары являются подлинными и имеют сертификаты от производителя.',
+    header: 'pages.guarantee.guaranteeAccordion.originalProducts.header',
+    content: 'pages.guarantee.guaranteeAccordion.originalProducts.content',
   },
   {
     value: 'manufacturer-warranty',
-    header: 'Официальная гарантия производителя',
-    children:
-      'На всю продукцию распространяется гарантия производителя от брака и производственных дефектов материала. Срок и условия гарантии зависят от бренда и указаны в документации к товару. Подробнее уточняйте у менеджера.',
+    header: 'pages.guarantee.guaranteeAccordion.manufacturerWarranty.header',
+    content: 'pages.guarantee.guaranteeAccordion.manufacturerWarranty.content',
   },
   {
     value: 'returns',
-    header: '30 дней на возврат',
-    children:
-      'Если товар не подошёл по размеру или комплектации — вернуть его можно в течение 30 дней с момента покупки. Товар должен быть без следов эксплуатации, в оригинальной упаковке, с сохранёнными заводскими наклейками и полной комплектностью. Шины и диски с признаками установки или использования возврату не подлежат.',
+    header: 'pages.guarantee.guaranteeAccordion.returns.header',
+    content: 'pages.guarantee.guaranteeAccordion.returns.content',
   },
   {
     value: 'quality-control',
-    header: 'Контроль качества перед отправкой',
-    children:
-      'Перед отгрузкой каждый комплект проходит визуальный осмотр: проверяем целостность резины, дисков и проставок, отсутствие повреждений от транспортировки и соответствие заявленным параметрам. Отправляем только то, за что готовы поручиться.',
+    header: 'pages.guarantee.guaranteeAccordion.qualityControl.header',
+    content: 'pages.guarantee.guaranteeAccordion.qualityControl.content',
   },
   {
     value: 'installation-warranty',
-    header: 'Гарантия на установку у партнёров',
-    children:
-      'Наш шиномонтаж специализируется на бездорожной технике и учитывает все нюансы установки — от балансировки до момента затяжки крепежа проставок. На выполненные работы предоставляется гарантия отдельно от гарантии на сам товар.',
+    header: 'pages.guarantee.guaranteeAccordion.installationWarranty.header',
+    content: 'pages.guarantee.guaranteeAccordion.installationWarranty.content',
   },
   {
     value: 'support',
-    header: 'Поддержка специалистов 4×4',
-    children:
-      'Перед покупкой и после неё вы можете проконсультироваться с нашими специалистами по подбору шин, дисков и проставок под конкретный автомобиль и тип бездорожья.',
+    header: 'pages.guarantee.guaranteeAccordion.support.header',
+    content: 'pages.guarantee.guaranteeAccordion.support.content',
   },
 ] as const;

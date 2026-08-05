@@ -11,13 +11,14 @@ import { Breadcrumbs, type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
 import { ROUTES } from '@/app/router';
 import { getPageState } from '@/layouts/lib';
 import { PageStateWidget } from '@/widgets/PageState/ui/PageStateWidget';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type Props = {
   title: string;
   children: ReactNode;
   totalPages: number;
   currentPage: number;
-  category: BreadcrumbItem;
+  category?: BreadcrumbItem;
   isError: boolean;
   isLoading: boolean;
   isEmpty?: boolean;
@@ -42,12 +43,14 @@ export const ProductPageLayout = ({
 }: Props) => {
   // Backend uses 0-based page numbering, Pagination uses 1-based.
   const displayPage = currentPage + 1;
+  const { t } = useTranslation();
 
   const pageState = getPageState({
     isLoading,
     isError,
     isEmpty,
   });
+
   return (
     <section className={clsx(className, s.productPageLayout)}>
       <div className="container">
@@ -57,10 +60,19 @@ export const ProductPageLayout = ({
           <div className={s.layoutWrapper}>
             <section className={s.header}>
               <div>
-                <Breadcrumbs
-                  items={[{ label: 'Главная', to: ROUTES.home }, category]}
-                />
-                <h1 className={s.title}>{title}</h1>
+                {category && (
+                  <Breadcrumbs
+                    items={[
+                      { label: t('pages.home.title'), to: ROUTES.home },
+                      {
+                        ...category,
+                        label: t(category.label),
+                      },
+                    ]}
+                  />
+                )}
+
+                <h1 className={s.title}>{t(title)}</h1>
               </div>
 
               <div className={s.actions}>

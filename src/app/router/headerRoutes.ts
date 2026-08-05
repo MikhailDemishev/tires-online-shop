@@ -5,38 +5,38 @@ import { ROUTES } from './paths';
 export const headerRoutes = {
   pages: [
     {
-      label: 'О нас',
+      labelKey: 'header.topMenu.aboutUs',
       path: ROUTES.aboutUs,
     },
     {
-      label: 'Контакты',
+      labelKey: 'header.topMenu.contacts',
       path: ROUTES.contacts,
     },
     {
-      label: 'Гарантия',
+      labelKey: 'header.topMenu.guarantee',
       path: ROUTES.guarantee,
     },
     {
-      label: 'Новости',
+      labelKey: 'header.topMenu.news',
       path: ROUTES.news,
     },
     {
-      label: 'Отзывы',
+      labelKey: 'header.topMenu.feedback',
       path: ROUTES.feedback,
     },
   ],
 
   catalog: [
     {
-      label: 'Шины 4x4',
+      labelKey: 'header.catalog.tires',
       path: ROUTES.tires,
     },
     {
-      label: 'Диски',
+      labelKey: 'header.catalog.wheels',
       path: ROUTES.wheels,
     },
     {
-      label: 'Дисковые проставки',
+      labelKey: 'header.catalog.wheelSpacers',
       path: ROUTES.wheelSpacers,
     },
   ],

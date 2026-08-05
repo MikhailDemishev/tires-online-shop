@@ -4,12 +4,18 @@ import { protectors } from '@/shared/config';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/app/router';
 import { Mountain } from '@/assets/icons';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export const Assortment = () => {
   const protectorsSamples = protectors.slice(0, 4);
+  const { t } = useTranslation();
 
   return (
-    <Section className={s.homeAssortment} title="наш ассортимент" hasWrapper>
+    <Section
+      className={s.homeAssortment}
+      title={t('pages.home.assortment.title')}
+      hasWrapper
+    >
       <ul className={s.protectors}>
         {protectorsSamples.map(({ id, name, image }) => (
           <li key={id} className={s.protectorItem}>

@@ -10,18 +10,14 @@ export const Tires = () => {
   const { data, isLoading, isError } = useGetTiresQuery(params);
   const tires = data?.content;
 
-  console.log('tires', tires);
-
-  console.log('tires', data);
-
   return (
     <ProductPageLayout
-      title="Tires"
-      filterType="tires"
+      title="pages.tires.title"
+      filterType={'tires'}
       totalPages={data?.totalPages ?? 1}
       currentPage={data?.pageNumber ?? 1}
       category={{
-        label: 'Шины',
+        label: 'pages.tires.title',
       }}
       className={s.tiresPage}
       isLoading={isLoading}

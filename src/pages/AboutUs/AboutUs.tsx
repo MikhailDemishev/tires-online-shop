@@ -6,7 +6,7 @@ import { OurValues } from '@/widgets/AboutUs/ui/OurValues';
 import { HelpBanner } from '@/widgets/AboutUs/ui/HelpBanner';
 
 export const AboutUs = () => {
-  const title = 'О нас';
+  const title = 'pages.aboutUs.title';
   return (
     <section className={s.aboutUs}>
       <h1 className="visuallyHidden">{title}</h1>

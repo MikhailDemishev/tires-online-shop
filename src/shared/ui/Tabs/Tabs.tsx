@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import s from './Tabs.module.scss';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type TabsItem<T extends string> = {
   value: T;
@@ -19,6 +20,7 @@ export const Tabs = <T extends string>({
   onChange,
   className,
 }: TabsProps<T>) => {
+  const { t } = useTranslation();
   return (
     <div className={clsx(s.tabs, className)}>
       {items.map((item) => (
@@ -28,7 +30,7 @@ export const Tabs = <T extends string>({
           className={clsx(s.tab, item.value === value && s.active)}
           onClick={() => onChange(item.value)}
         >
-          {item.label}
+          {t(item.label)}
         </button>
       ))}
     </div>

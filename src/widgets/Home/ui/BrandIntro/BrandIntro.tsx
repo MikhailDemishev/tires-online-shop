@@ -1,23 +1,25 @@
 import { BRAND_STATS, brandSocials } from '@/widgets/Home/config';
 import s from './BrandIntro.module.scss';
 import { Socials } from '@/shared/ui/Socials';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export const BrandIntro = () => {
+  const { t } = useTranslation();
   return (
     <section className={s.brandIntro}>
       <div className={'container'}>
         <div className={s.brandIntroWrapper}>
           <div className={s.brandIntroLeft}>
             <div className={s.brandIntroLeftTop}>
-              <h2 className={s.brandIntroTitle}>кто мы</h2>
+              <h2 className={s.brandIntroTitle}>
+                {t('pages.home.brandIntro.title')}
+              </h2>
               <p className={s.brandIntroDescription}>
-                INSA TURBO — семейный бренд с глобальным мышлением. Мы соединили
-                инженерные инновации и экологический манифест, чтобы создавать{' '}
+                {t('pages.home.brandIntro.description.beforeAccent')}{' '}
                 <span className={s.accent}>
-                  лучшие восстановленные шины для любого транспорта.{' '}
+                  {t('pages.home.brandIntro.description.accent')}{' '}
                 </span>
-                Бескомпромиссное качество, которое работает на благо общества и
-                планеты.
+                {t('pages.home.brandIntro.description.afterAccent')}{' '}
               </p>
             </div>
             <Socials
@@ -38,7 +40,7 @@ export const BrandIntro = () => {
                     </span>
                     <div className={s.introContent}>
                       <h3 className={s.introTitle}>{value}</h3>
-                      <p className={s.introDescription}>{description}</p>
+                      <p className={s.introDescription}>{t(description)}</p>
                     </div>
                   </li>
                 ),
@@ -48,8 +50,9 @@ export const BrandIntro = () => {
         </div>
         <div className={s.brandIntroBottom}>
           <p className={s.brandIntroBottomText}>
-            Европейский масштаб: <span className={s.large}>500 000+</span> шин в
-            год
+            {t('pages.home.brandIntro.bottom.beforeValue')}{' '}
+            <span className={s.large}>500 000+</span>{' '}
+            {t('pages.home.brandIntro.bottom.afterValue')}
           </p>
         </div>
       </div>

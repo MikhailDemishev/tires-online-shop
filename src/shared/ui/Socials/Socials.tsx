@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import s from './Socials.module.scss';
 import clsx from 'clsx';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export type SocialItem = {
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -25,6 +26,7 @@ export const Socials = ({
   showLabel = false,
   children,
 }: SocialsProps) => {
+  const { t } = useTranslation();
   return (
     <div className={clsx(s.socials, className)}>
       {items.map((item) => {
@@ -36,12 +38,12 @@ export const Socials = ({
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={label}
+            aria-label={t(label)}
             className={clsx(s.link, linkClassName)}
           >
             <span className={clsx(s.labelBlock, labelBlockClassName)}>
               <Icon className={s.icon} />
-              {showLabel && <span>{label}</span>}
+              {showLabel && <span>{t(label)}</span>}
             </span>
 
             {children?.(item)}

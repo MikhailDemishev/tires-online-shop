@@ -14,7 +14,7 @@ export const Search = () => {
   const debouncedTitle = useDebounce(title, 500);
   const params = usePaginationParams<SearchParams>();
 
-  const { data, isLoading, isError, error } = useGetSearchResultsQuery(
+  const { data, isLoading, isError } = useGetSearchResultsQuery(
     debouncedTitle
       ? {
           ...params,
@@ -25,21 +25,14 @@ export const Search = () => {
 
   const foundProducts = data?.content;
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (isError) {
-    console.error(error);
-    return <h1>Error</h1>;
-  }
-
   return (
     <ProductPageLayout
       title="Search Results"
       className={s.searchPage}
       totalPages={data?.totalPages ?? 1}
       currentPage={data?.pageNumber ?? 1}
+      isError={isError}
+      isLoading={isLoading}
     >
       {!title ? (
         <div>Введите запрос</div>

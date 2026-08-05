@@ -1,6 +1,6 @@
 export const FOOTER_COLUMNS = [
-  { id: 'information', title: 'Информация' },
-  { id: 'support', title: 'Поддержка' },
-  { id: 'contacts', title: 'Контакты' },
-  { id: 'address', title: 'Наш адрес' },
+  { id: 'information', title: 'footer.columns.information' },
+  { id: 'support', title: 'footer.columns.support' },
+  { id: 'contacts', title: 'footer.columns.contacts' },
+  { id: 'address', title: 'footer.columns.address' },
 ] as const;

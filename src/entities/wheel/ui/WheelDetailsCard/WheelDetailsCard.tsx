@@ -8,6 +8,7 @@ import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
 import clsx from 'clsx';
 import type { Wheel } from '@/entities/wheel/model';
 import s from './WheelDetailsCard.module.scss';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type Props = {
   wheel: Wheel;
@@ -16,46 +17,48 @@ type Props = {
 
 export const WheelDetailsCard = ({ wheel, className }: Props) => {
   const wheelTitle = `${wheel.material} ${wheel.productType}`;
+  const { t } = useTranslation();
+
   const wheelCharacteristics = [
     {
-      label: 'Название',
+      label: t('cards.productDetailCard.accordion.wheels.name'),
       value: wheelTitle.toLocaleLowerCase(),
     },
     //производителя надо добавить в БД
     // {
-    //   label: 'Производитель',
+    //   label: t('cards.productDetailCard.accordion.wheels.manufacturer'),
     //   value: 'Неизвестен',
     // },
     {
-      label: 'Тип диска',
+      label: t('cards.productDetailCard.accordion.wheels.type'),
       value: `${wheel.typeOfWheel} `,
     },
     {
-      label: 'Диаметр, дюйм',
+      label: t('cards.productDetailCard.accordion.wheels.diameter'),
       value: `${wheel.diameter}"`,
     },
     {
-      label: 'Ширина, дюйм',
+      label: t('cards.productDetailCard.accordion.wheels.width'),
       value: `${wheel.width}"`,
     },
     {
-      label: 'Вылет, ET',
+      label: t('cards.productDetailCard.accordion.wheels.et'),
       value: `${wheel.et} ET`,
     },
     {
-      label: 'Центральное отверстие (DIA)',
+      label: t('cards.productDetailCard.accordion.wheels.dia'),
       value: `${wheel.centralBoreDiameter} `,
     },
     {
-      label: 'Разболтовка',
+      label: t('cards.productDetailCard.accordion.wheels.pcd'),
       value: `${wheel.boltSpacing} `,
     },
     {
-      label: 'Материал',
+      label: t('cards.productDetailCard.accordion.wheels.material'),
       value: `${wheel.material} `,
     },
     {
-      label: 'Цвет',
+      label: t('cards.productDetailCard.accordion.wheels.color'),
       value: `${wheel.color} `,
     },
   ];

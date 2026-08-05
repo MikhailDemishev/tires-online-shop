@@ -3,7 +3,7 @@ import type { FilterField } from '@/features/filters/model';
 export const WheelFilterFields: FilterField[] = [
   {
     name: 'width',
-    placeholder: 'Ширина',
+    placeholder: 'filter.wheels.width',
     options: [
       { value: '6', label: '6' },
       { value: '7', label: '7' },
@@ -13,7 +13,7 @@ export const WheelFilterFields: FilterField[] = [
   },
   {
     name: 'diameter',
-    placeholder: 'Диаметр',
+    placeholder: 'filter.wheels.diameter',
     options: [
       { value: '15', label: 'R15' },
       { value: '16', label: 'R16' },

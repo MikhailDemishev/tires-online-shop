@@ -3,6 +3,7 @@ import s from './HomeFeedback.module.scss';
 import { type Feedback } from '@/entities/feedback/model';
 import { Section } from '@/shared/ui/Section/Section';
 import useEmblaCarousel from 'embla-carousel-react';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type HomeFeedBackProps = {
   feedBackItems: Feedback[];
@@ -13,8 +14,9 @@ export const HomeFeedBack = ({ feedBackItems }: HomeFeedBackProps) => {
     align: 'start',
     loop: false,
   });
+  const { t } = useTranslation();
   return (
-    <Section className={s.homeFeedBack} title="отзывы">
+    <Section className={s.homeFeedBack} title={t('pages.home.reviews.title')}>
       <div className={s.homeFeedBackViewport} ref={emblaRef}>
         <ul className={s.homeFeedBackItems}>
           {feedBackItems.map((item) => (

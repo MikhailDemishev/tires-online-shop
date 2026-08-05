@@ -3,23 +3,23 @@ import { ROUTES } from './paths';
 export const footerRoutes = {
   information: [
     {
-      label: 'О нас',
+      labelKey: 'footer.routes.aboutUs',
       path: ROUTES.aboutUs,
     },
     // {
-    //   label: 'Контакты',
+    //   labelKey: 'footer.routes.contacts',
     //   path: ROUTES.contacts,
     // },
 
     {
-      label: 'Отзывы',
+      labelKey: 'footer.routes.feedback',
       path: ROUTES.feedback,
     },
   ],
 
   support: [
     {
-      label: 'Гарантия',
+      labelKey: 'footer.routes.guarantee',
       path: ROUTES.guarantee,
     },
   ],

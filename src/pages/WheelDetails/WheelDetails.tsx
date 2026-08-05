@@ -14,7 +14,7 @@ export const WheelDetails = () => {
     <ProductDetailsPageLayout
       title={data?.title ?? 'title'}
       category={{
-        label: 'Диски',
+        label: 'pages.wheels.title',
         to: ROUTES.wheels,
       }}
       productDetailsCard={data ? <WheelDetailsCard wheel={data} /> : null}

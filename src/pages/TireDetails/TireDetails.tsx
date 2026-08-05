@@ -14,7 +14,7 @@ export const TireDetails = () => {
     <ProductDetailsPageLayout
       title={data?.title ?? 'title'}
       category={{
-        label: 'Шины 4x4',
+        label: 'pages.tires.title',
         to: ROUTES.tires,
       }}
       productDetailsCard={data ? <TireDetailsCard tire={data} /> : null}

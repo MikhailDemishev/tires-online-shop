@@ -3,7 +3,7 @@ import type { FilterField } from '@/features/filters/model';
 export const TireFilterFields: FilterField[] = [
   {
     name: 'width',
-    placeholder: 'Ширина',
+    placeholder: 'filter.tires.width',
     options: [
       { value: '195', label: '195' },
       { value: '205', label: '205' },
@@ -18,7 +18,7 @@ export const TireFilterFields: FilterField[] = [
   },
   {
     name: 'profile',
-    placeholder: 'Профиль',
+    placeholder: 'filter.tires.profile',
     options: [
       { value: '55', label: '55' },
       { value: '60', label: '60' },
@@ -31,7 +31,7 @@ export const TireFilterFields: FilterField[] = [
   },
   {
     name: 'diameter',
-    placeholder: 'Диаметр',
+    placeholder: 'filter.tires.diameter',
     options: [
       { value: '15', label: 'R15' },
       { value: '16', label: 'R16' },
@@ -41,7 +41,7 @@ export const TireFilterFields: FilterField[] = [
   },
   {
     name: 'season',
-    placeholder: 'Сезон',
+    placeholder: 'filter.tires.season',
     options: [{ value: 'All-Season', label: 'Всесезонные' }],
   },
 ];

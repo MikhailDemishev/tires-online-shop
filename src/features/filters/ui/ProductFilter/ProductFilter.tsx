@@ -20,6 +20,7 @@ import { PriceRangeFilter } from '@/features/filters/ui/PriceRangeFilter';
 import { useGetManufacturersQuery } from '@/entities/manufacturer/api';
 import { ExpandableFilter } from '@/features/filters/ui/ExpandableFilter';
 import { protectors } from '@/shared/config';
+import { useTranslation } from '@/shared/lib/hooks';
 
 const INITIAL_VISIBLE_MANUFACTURERS = 4;
 const INITIAL_VISIBLE_PROTECTORS = 4;
@@ -37,6 +38,7 @@ export const ProductFilter = ({
 }: ProductFilterProps) => {
   const fields = FILTER_VALUES[filterType].fields;
   const [searchParams, setSearchParams] = useSearchParams();
+  const { t } = useTranslation();
 
   const defaultValues = {
     ...getFormValuesFromSearchParams(fields, searchParams),
@@ -76,14 +78,16 @@ export const ProductFilter = ({
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout>;
 
-    const subscription = watch((values) => {
+    const subscription = watch((values, { name }) => {
       clearTimeout(timeoutId);
+
+      const delay = name === 'priceFrom' || name === 'priceTo' ? 700 : 300;
 
       timeoutId = setTimeout(() => {
         setSearchParams((currentParams) =>
           createSearchParams(values as ProductFilterFormValues, currentParams),
         );
-      }, 300);
+      }, delay);
     });
 
     return () => {
@@ -112,7 +116,7 @@ export const ProductFilter = ({
         <Checkbox
           className={s.inStockCheckbox}
           labelClassName={s.label}
-          label="в наличии"
+          label={t('filter.additional.inStock')}
           {...register('inStock')}
         />
         <div className={s.filterFields}>
@@ -120,7 +124,7 @@ export const ProductFilter = ({
             <Select
               key={field.name}
               options={field.options}
-              placeholder={field.placeholder}
+              placeholder={t(field.placeholder)}
               wrapperClassName={s.productFilterSelectWrapper}
               className={s.productFilterSelect}
               iconClassName={s.productFilterSelectIcon}
@@ -134,7 +138,7 @@ export const ProductFilter = ({
           !isLoading &&
           manufacturers.length > 0 && (
             <ExpandableFilter
-              filterLabel="бренд"
+              filterLabel={t('filter.additional.brand')}
               name="manufacturer"
               visibleCount={visibleManufacturerCount}
               options={manufacturers}
@@ -149,7 +153,7 @@ export const ProductFilter = ({
 
         {page === 'tires' && (
           <ExpandableFilter
-            filterLabel="протектор"
+            filterLabel={t('filter.additional.protector')}
             name="protector"
             visibleCount={visibleProtectorCount}
             options={sortedProtectors}
@@ -171,7 +175,7 @@ export const ProductFilter = ({
           className={s.resetBtn}
           onClick={handleReset}
         >
-          Сбросить фильтры
+          {t('filter.actions.reset')}
         </Button>
       </form>
     </div>

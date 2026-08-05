@@ -2,11 +2,15 @@
   --gap: 27px;
   display: flex;
   gap: var(--gap);
+  align-items: center;
 
   .btn {
     width: 24px;
     height: 24px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:not(:last-child)::after {
       content: '';

@@ -12,6 +12,7 @@ import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
 import clsx from 'clsx';
 import type { WheelSpacer } from '@/entities/wheelSpacer/model';
 import s from './WheelSpacerDetailsCard.module.scss';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type Props = {
   spacer: WheelSpacer;
@@ -19,9 +20,10 @@ type Props = {
 };
 
 export const WheelSpacersDetailsCard = ({ spacer, className }: Props) => {
+  const { t } = useTranslation();
   const spacerCharacteristics = [
     {
-      label: 'Название',
+      label: t('cards.productDetailCard.accordion.wheelSpacers.name'),
       value: spacer.title,
     },
     // Производителя нужно добавить в БД
@@ -30,19 +32,18 @@ export const WheelSpacersDetailsCard = ({ spacer, className }: Props) => {
     //   value: wheelSpacer.manufacturer,
     // },
     {
-      label: 'Разболтовка (PCD)',
+      label: t('cards.productDetailCard.accordion.wheelSpacers.pcd'),
       value: spacer.boltDistance,
     },
     {
-      label: 'Резьба болтов',
+      label: t('cards.productDetailCard.accordion.wheelSpacers.boltThread'),
       value: spacer.boltInfo,
     },
     {
-      label: 'Толщина, мм',
+      label: t('cards.productDetailCard.accordion.wheelSpacers.thickness'),
       value: `${spacer.thickness}`,
     },
   ];
-
   const description = [
     {
       label: '',

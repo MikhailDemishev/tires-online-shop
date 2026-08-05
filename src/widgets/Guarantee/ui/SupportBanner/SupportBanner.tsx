@@ -1,16 +1,19 @@
 import s from './SupportBanner.module.scss';
 import { ROUTES } from '@/app/router';
+import { useTranslation } from '@/shared/lib/hooks';
 import { Banner, type BannerLink } from '@/shared/ui/Banner';
 
 export const SupportBanner = () => {
+  const { t } = useTranslation();
+
   const links: BannerLink[] = [
     {
       to: ROUTES.contacts,
-      linkName: 'связаться с нами',
+      linkName: t('general.links.contactUs'),
     },
     {
       to: ROUTES.tires,
-      linkName: 'перейти в каталог',
+      linkName: t('general.links.toCatalog'),
       btnVariant: 'secondary',
     },
   ];
@@ -18,13 +21,13 @@ export const SupportBanner = () => {
   return (
     <Banner
       className={s.supportBanner}
-      bannerTitle="остались вопросы?"
+      bannerTitle={t('pages.guarantee.supportBanner.title')}
       contentClassName={s.supportBannerContent}
       links={links}
     >
       <>
-        <span>Поможем разобраться с гарантией, возвратом</span>
-        <span>и совместимостью товаров</span>
+        <span>{t('pages.guarantee.supportBanner.descriptionLine1')}</span>
+        <span>{t('pages.guarantee.supportBanner.descriptionLine2')}</span>
       </>
     </Banner>
   );

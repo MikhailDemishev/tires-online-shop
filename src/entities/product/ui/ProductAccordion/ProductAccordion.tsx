@@ -2,6 +2,7 @@ import type { ProductCharacteristic } from '@/entities/product/model';
 import s from './ProductAccordion.module.scss';
 import { Accordion } from '@/shared/ui/Accordion/Accordion';
 import { Arrow } from '@/assets/icons';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type ProductAccordionProps = {
   characteristics: ProductCharacteristic[];
@@ -12,16 +13,17 @@ export const ProductAccordion = ({
   characteristics,
   description,
 }: ProductAccordionProps) => {
+  const { t } = useTranslation();
   const PRODUCT_ACCORDION_ITEMS = [
     {
       value: 'characteristics',
-      header: 'Характеристики',
+      header: t('cards.productDetailCard.accordion.headers.header1'),
       children: characteristics ?? [],
     },
 
     {
       value: 'description',
-      header: 'Описание',
+      header: t('cards.productDetailCard.accordion.headers.header2'),
       children: description ?? [],
     },
   ];

@@ -1,8 +1,10 @@
+import { useTranslation } from '@/shared/lib/hooks';
 import s from './GuaranteeAccordion.module.scss';
 import { Accordion } from '@/shared/ui/Accordion/Accordion';
 import { GUARANTEE_ACCORDION_ITEMS } from '@/widgets/Guarantee/config';
 
 export const GuaranteeAccordion = () => {
+  const { t } = useTranslation();
   return (
     <Accordion
       className={s.guaranteeAccordion}
@@ -10,10 +12,10 @@ export const GuaranteeAccordion = () => {
       triggerClassName={s.guaranteeAccordionTrigger}
       contentClassName={s.guaranteeAccordionContent}
       defaultValue="characteristics"
-      items={GUARANTEE_ACCORDION_ITEMS.map(({ value, header, children }) => ({
+      items={GUARANTEE_ACCORDION_ITEMS.map(({ value, header, content }) => ({
         value,
-        header: <p className={s.guaranteeAccordionTitle}> {header}</p>,
-        children: <p className={s.guaranteeAccordionText}>{children}</p>,
+        header: <p className={s.guaranteeAccordionTitle}> {t(header)}</p>,
+        children: <p className={s.guaranteeAccordionText}>{t(content)}</p>,
       }))}
     />
   );

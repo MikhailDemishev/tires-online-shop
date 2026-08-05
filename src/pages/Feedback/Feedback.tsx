@@ -7,6 +7,7 @@ import { REVIEW_SORT_OPTIONS } from '@/features/sort/config';
 import { InfoPageLayout } from '@/layouts/InfoPageLayout';
 import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
 import { useGetFeedbackQuery } from '@/entities/feedback/api/feedbacksApi';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export const Feedback = () => {
   const params = usePaginationParams<FeedbackParams>({
@@ -18,9 +19,11 @@ export const Feedback = () => {
   const feedBackItems = data?.content ?? [];
 
   const totalRating = data?.averageRate;
+  const { t } = useTranslation();
+
   return (
     <InfoPageLayout
-      title="Отзывы"
+      title={t('feedback.title')}
       totalPages={data?.totalPages ?? 1}
       currentPage={data?.pageNumber ?? 1}
       isLoading={isLoading}
@@ -34,7 +37,7 @@ export const Feedback = () => {
               <div className={s.ratingStats}>
                 <FeedbackRating rate={totalRating} />
                 <span className={s.ratingCount}>
-                  {`${feedBackItems.length} отзывов`}
+                  {`${feedBackItems.length} ${t('feedback.ratingCount')}`}
                 </span>
               </div>
             </div>

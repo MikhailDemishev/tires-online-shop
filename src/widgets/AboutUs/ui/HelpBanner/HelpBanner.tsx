@@ -1,17 +1,19 @@
 import s from './HelpBanner.module.scss';
 import { ROUTES } from '@/app/router';
 import { helpBanner } from '@/assets/images';
+import { useTranslation } from '@/shared/lib/hooks';
 import { Banner, type BannerLink } from '@/shared/ui/Banner';
 
 export const HelpBanner = () => {
+  const { t } = useTranslation();
   const links: BannerLink[] = [
     {
       to: ROUTES.tires,
-      linkName: 'перейти в каталог',
+      linkName: t('general.links.toCatalog'),
     },
     {
       to: ROUTES.contacts,
-      linkName: 'связаться с нами',
+      linkName: t('general.links.contactUs'),
       btnVariant: 'secondary',
     },
   ];
@@ -19,10 +21,10 @@ export const HelpBanner = () => {
   return (
     <Banner
       className={s.helpBanner}
-      bannerTitle="Мы поможем подобрать идеальный комплект для вашего автомобиля"
+      bannerTitle={t('pages.aboutUs.helpBanner.title')}
       contentClassName={s.helpBannerContent}
       links={links}
-      image={<img src={helpBanner} className="" alt="" />}
+      image={<img src={helpBanner} alt="" />}
       imageClassName={s.helpBannerImg}
     >
       <></>

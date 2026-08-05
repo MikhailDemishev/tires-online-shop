@@ -2,23 +2,20 @@ import { Leaf, ShieldIcon, UserCheckIcon } from '@/assets/icons';
 
 export const ourValues = [
   {
-    title: 'Честность',
-    description:
-      'Мы всегда говорим правду о состоянии и характеристиках каждой шины',
+    title: 'pages.aboutUs.ourValues.items.honesty.title',
+    description: 'pages.aboutUs.ourValues.items.honesty.description',
     Icon: ShieldIcon,
     iconSize: { width: 40, height: 45 },
   },
   {
-    title: 'Экспертность',
-    description:
-      'Мы глубоко знаем наш продукт и предлагаем оптимальные решения для внедорожников',
+    title: 'pages.aboutUs.ourValues.items.expertise.title',
+    description: 'pages.aboutUs.ourValues.items.expertise.description',
     Icon: UserCheckIcon,
     iconSize: { width: 45, height: 38 },
   },
   {
-    title: 'Надёжность',
-    description:
-      'Мы поддерживаем концепцию разумного потребления, предлагая качественные восстановленные шины',
+    title: 'pages.aboutUs.ourValues.items.reliability.title',
+    description: 'pages.aboutUs.ourValues.items.reliability.description',
     Icon: Leaf,
     iconSize: { width: 35, height: 35 },
   },

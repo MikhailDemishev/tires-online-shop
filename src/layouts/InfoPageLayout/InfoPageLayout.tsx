@@ -5,6 +5,7 @@ import { Pagination } from '@/features/pagination/ui';
 import { Breadcrumbs } from '@/shared/ui/BreadCrumbs';
 import { PageStateWidget } from '@/widgets/PageState/ui/PageStateWidget';
 import { getPageState } from '@/layouts/lib';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type Props = {
   title: string;
@@ -37,6 +38,7 @@ export const InfoPageLayout = ({
     isError,
     isEmpty,
   });
+  const { t } = useTranslation();
 
   return (
     <section className={clsx(className, s.infoPageLayout)}>
@@ -48,11 +50,14 @@ export const InfoPageLayout = ({
             <section className={s.header}>
               <div className={s.headerTop}>
                 <Breadcrumbs
-                  items={[{ label: 'Главная', to: '/' }, { label: title }]}
+                  items={[
+                    { label: t('pages.home.title'), to: '/' },
+                    { label: t(title) },
+                  ]}
                 />
               </div>
               <div className={s.headerBottom}>
-                <h1 className={s.title}>{title}</h1>
+                <h1 className={s.title}>{t(title)}</h1>
                 {headerNode}
               </div>
             </section>

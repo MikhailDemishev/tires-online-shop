@@ -14,7 +14,7 @@ export const WheelSpacerFilterFields: FilterField[] = [
   },
   {
     name: 'boltInfo',
-    placeholder: 'Центр. отверстие (DIA)',
+    placeholder: 'filter.wheelSpacers.boltInfo',
     options: [
       { value: '1/2x20', label: '1/2×20' },
       { value: '12x1,25', label: '12×1,25' },
@@ -23,7 +23,7 @@ export const WheelSpacerFilterFields: FilterField[] = [
   },
   {
     name: 'thickness',
-    placeholder: 'Толщина',
+    placeholder: 'filter.wheelSpacers.thickness',
     options: [
       { value: '30', label: '30' },
       { value: '40', label: '40' },

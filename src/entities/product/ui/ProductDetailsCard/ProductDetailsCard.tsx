@@ -10,6 +10,7 @@ import { InStockIndicator } from '@/shared/ui/InStockIndicator';
 import { Button } from '@/shared/ui/Button';
 import { ProductAccordion } from '@/entities/product/ui/ProductAccordion';
 import { AddToFavoritesBtn } from '@/features/favorite/ui/AddToFavoritesBtn';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type ProductDetailsCardProps = {
   product: ProductDetails;
@@ -28,6 +29,8 @@ export const ProductDetailsCard = ({
 }: ProductDetailsCardProps) => {
   console.log(characteristics);
   const inStock = product.quantityInStock > 0;
+
+  const { t } = useTranslation();
 
   //temp
   //const inStock = false;
@@ -50,9 +53,9 @@ export const ProductDetailsCard = ({
           </div>
           <div className={s.cardHeaderBottom}>
             {inStock ? (
-              <Button className={s.cardButton}>Добавить в корзину</Button>
+              <Button className={s.cardButton}>{t('cards.addToCart')}</Button>
             ) : (
-              <span>нет в наличии</span>
+              <span>{t('cards.notInStock')}</span>
             )}
 
             <p className={s.cardPrice}>

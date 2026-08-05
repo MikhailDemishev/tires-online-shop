@@ -1,23 +1,24 @@
 import { ABOUT_STATS, aboutImages } from '@/widgets/AboutUs/config';
 import s from './AboutOverview.module.scss';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export const AboutOverview = () => {
+  const { t } = useTranslation();
   return (
     <section className={s.aboutOverview}>
       <div className="container">
-        <h2 className="visuallyHidden">About Overview</h2>
+        <h2 className="visuallyHidden">
+          {t('pages.aboutUs.aboutUsOverview.mainTitle')}
+        </h2>
 
         <div className={s.aboutOverviewWrapper}>
           <div className={s.aboutOverviewLeft}>
             <div className={s.aboutOverviewInfo}>
               <h3 className={s.aboutOverviewTitle}>
-                Мы делаем бездорожье доступным — вы выбираете маршрут без
-                ограничений
+                {t('pages.aboutUs.aboutUsOverview.title')}
               </h3>
               <p className={s.aboutOverviewDescription}>
-                С 1988 года мы помогаем владельцам внедорожников находить
-                надёжные шины для сложных маршрутов — честно рассказываем о
-                характеристиках и подбираем комплект под конкретный автомобиль.
+                {t('pages.aboutUs.aboutUsOverview.description')}
               </p>
             </div>
             <ul className={s.aboutOverviewGallery}>
@@ -36,7 +37,9 @@ export const AboutOverview = () => {
             {ABOUT_STATS.map(({ value, description }) => (
               <li key={value} className={s.aboutOverviewStat}>
                 <span className={s.aboutOverviewStatValue}>{value}</span>
-                <p className={s.aboutOverviewStatDescription}>{description}</p>
+                <p className={s.aboutOverviewStatDescription}>
+                  {t(description)}
+                </p>
               </li>
             ))}
           </ul>

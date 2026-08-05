@@ -1,10 +1,10 @@
 export const ABOUT_STATS = [
   {
     value: '1988',
-    description: 'год основания магазина',
+    description: 'pages.aboutUs.aboutUsOverview.stats.foundationYear',
   },
   {
     value: '30+',
-    description: 'лет опыта Insa Turbo в восстановлении шин',
+    description: 'pages.aboutUs.aboutUsOverview.stats.insaTurboExperience',
   },
 ] as const;

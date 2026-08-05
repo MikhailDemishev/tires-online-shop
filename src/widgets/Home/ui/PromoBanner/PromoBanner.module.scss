@@ -1,4 +1,9 @@
 .promoBanner {
   background-image: url('/src/assets/images/promoBanner.png');
   background-color: var(--color-background-secondary);
+  color: var(--color-text-secondary);
+  .promoBannerContent.promoBannerContent {
+    align-self: start;
+    padding-top: 80px;
+  }
 }

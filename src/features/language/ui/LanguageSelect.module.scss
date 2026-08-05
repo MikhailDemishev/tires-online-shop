@@ -1,0 +1,17 @@
+.languageSelectWrapper {
+  // background-color: gold;
+
+  .languageSelect {
+    border: none;
+    width: fit-content;
+    color: rgb(from var(--color-text-secondary) r g b / 75%);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.07px;
+    display: flex;
+    align-self: center;
+  }
+  .languageSelectOption {
+    color: var(--color-text-primary);
+  }
+}

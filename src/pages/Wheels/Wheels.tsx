@@ -10,16 +10,15 @@ export const Wheels = () => {
 
   const { data, isLoading, isError } = useGetWheelsQuery(params);
   const wheels = data?.content;
-  console.log('wheels', wheels);
 
   return (
     <ProductPageLayout
-      title="Wheels"
+      title="pages.wheels.title"
       className={s.wheelsPage}
       totalPages={data?.totalPages ?? 1}
       currentPage={data?.pageNumber ?? 1}
       category={{
-        label: 'Диски',
+        label: 'pages.wheels.title',
       }}
       filterType="wheels"
       isEmpty={!wheels?.length}

@@ -6,7 +6,7 @@ import { ReturnProcessSection } from '@/widgets/Guarantee/ui/ReturnProcessSectio
 import { OurGarantees } from '@/widgets/Guarantee/ui/OurGarantees';
 import { GuaranteeBrands } from '@/widgets/Guarantee/ui/GuaranteeBrands';
 export const Guarantee = () => {
-  const title = 'Гарантия';
+  const title = 'pages.guarantee.title';
   return (
     <section className={s.guarantee}>
       <h1 className="visuallyHidden">{title}</h1>

@@ -10,6 +10,7 @@ import { Button } from '@/shared/ui/Button';
 import { Select } from '@/shared/ui/Select';
 import { useNavigate } from 'react-router-dom';
 import { createSearchParams } from '@/shared/lib/helpers';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export type HomeFilterProps = {
   className?: string;
@@ -24,6 +25,7 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
   const values = watch();
   const isDisabled = !fields.some((field) => values[field.name]);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const onSubmit = (data: HomeFilterFormValues) => {
     const params = createSearchParams(data);
@@ -51,7 +53,7 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
             <Select
               key={field.name}
               options={field.options}
-              placeholder={field.placeholder}
+              placeholder={t(field.placeholder)}
               className={s.homeFilterFormSelect}
               iconClassName={s.homeFilterFormSelectIcon}
               defaultValue=""
@@ -61,7 +63,7 @@ export const HomeFilter = ({ className }: HomeFilterProps) => {
         </div>
 
         <Button type="submit" className={s.submitBtn} disabled={isDisabled}>
-          Подобрать
+          {t('filter.actions.submit')}
         </Button>
       </form>
     </div>

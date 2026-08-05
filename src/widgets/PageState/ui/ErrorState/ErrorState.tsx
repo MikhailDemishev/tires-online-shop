@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 import { ROUTES } from '@/app/router';
 import s from './ErrorState.module.scss';
 import { Button } from '@/shared/ui/Button';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export const ErrorState = () => {
+  const { t } = useTranslation();
   return (
     <div className={s.errorState}>
       <p className={s.errorCode} aria-hidden="true">
@@ -12,12 +14,12 @@ export const ErrorState = () => {
 
       <div className={s.errorBottom}>
         <p className={s.errorText}>
-          <span>Кажется, что-то произошло не так</span>
-          <span>Попробуйте перезагрузить страницу</span>
+          <span>{t('pages.notFound.text.first')}</span>
+          <span>{t('pages.notFound.text.second')}</span>
         </p>
         <Button asChild>
           <Link className={s.errorLink} to={ROUTES.tires}>
-            Перейти в каталог
+            {t('pages.notFound.toCatalog')}
           </Link>
         </Button>
       </div>

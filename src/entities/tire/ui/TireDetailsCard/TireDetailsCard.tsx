@@ -3,6 +3,7 @@ import s from './TireDetailsCard.module.scss';
 import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
 import clsx from 'clsx';
 import { matchSpeedIndexCode } from '@/entities/tire/lib/helpers';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type Props = {
   tire: TireDetails;
@@ -16,37 +17,39 @@ export const TireDetailsCard = ({ tire, className }: Props) => {
     ? `${tire.loadIndex}${speedIndexCode}`
     : '';
 
+  const { t } = useTranslation();
+
   const tireCharacteristics = [
     {
-      label: 'Название',
+      label: t('cards.productDetailCard.accordion.tires.name'),
       value: tire.title,
     },
     {
-      label: 'Производитель',
+      label: t('cards.productDetailCard.accordion.tires.manufacturer'),
       value: tire.manufacturer,
     },
     {
-      label: 'Тип шины',
+      label: t('cards.productDetailCard.accordion.tires.type'),
       value: tire.typeOfTire,
     },
     {
-      label: 'Ширина, мм',
+      label: t('cards.productDetailCard.accordion.tires.width'),
       value: `${tire.width}`,
     },
     {
-      label: 'Профиль, %',
+      label: t('cards.productDetailCard.accordion.tires.profile'),
       value: `${tire.profile}`,
     },
     {
-      label: 'Диаметр, дюйм',
+      label: t('cards.productDetailCard.accordion.tires.diameter'),
       value: `${tire.diameter}"`,
     },
     {
-      label: 'Сезонность',
+      label: t('cards.productDetailCard.accordion.tires.season'),
       value: tire.season,
     },
     {
-      label: 'Индекс нагрузки и скорости',
+      label: t('cards.productDetailCard.accordion.tires.loadSpeedIndex'),
       value: loadSpeedIndexCode,
     },
   ];

@@ -5,8 +5,10 @@ import { NavBar } from '@/shared/ui/NavBar';
 import { footerRoutes } from '@/app/router/footerRoutes';
 import { Socials } from '@/shared/ui/Socials';
 import { Logo } from '@/shared/ui/Logo/Logo';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className={s.footer}>
       <div className={'container'}>
@@ -15,7 +17,7 @@ export const Footer = () => {
             {FOOTER_COLUMNS.map(({ id, title }) => (
               <FooterColumn
                 key={id}
-                title={title}
+                title={t(title)}
                 className={s.column}
                 titleClassName={s.columnTitle}
               >
@@ -33,15 +35,8 @@ export const Footer = () => {
                     navLinkClassName={s.footerNavBarLink}
                   />
                 )}
-                {id === 'contacts' && (
-                  <p>
-                    +48 500 405 819 insaturbo4x4.help@gmail.com Пн - Пт: 8:00 -
-                    20:00
-                  </p>
-                )}
-                {id === 'address' && (
-                  <p>Jerzego Badury 20, 56-416 Goszcz, Польша</p>
-                )}
+                {id === 'contacts' && <p>{t('footer.contacts')}</p>}
+                {id === 'address' && <p>{t('footer.address')}</p>}
               </FooterColumn>
             ))}
           </ul>

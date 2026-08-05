@@ -4,6 +4,7 @@ import s from './ExpandableFilter.module.scss';
 import { Checkbox } from '@/shared/ui/Checkbox';
 import type { NamedEntity } from '@/shared/model/namedEntity';
 import { Button } from '@/shared/ui/Button';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type ExpandableFilterProps = {
   filterLabel: string;
@@ -24,6 +25,7 @@ export const ExpandableFilter = ({
 }: ExpandableFilterProps) => {
   const visibleOptions = options.slice(0, visibleCount);
   const hasMore = visibleCount < options.length;
+  const { t } = useTranslation();
   return (
     <div className={s.expandableFilter}>
       <span className={s.expandableFilterLabel}>{filterLabel}</span>
@@ -44,7 +46,7 @@ export const ExpandableFilter = ({
           className={s.expandableFilterButton}
           onClick={onShowMore}
         >
-          Еще
+          {t('filter.additional.more')}
         </Button>
       )}
     </div>

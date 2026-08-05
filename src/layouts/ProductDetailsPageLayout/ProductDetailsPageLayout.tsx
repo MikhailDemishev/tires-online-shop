@@ -5,6 +5,7 @@ import { ROUTES } from '@/app/router';
 import { Breadcrumbs, type BreadcrumbItem } from '@/shared/ui/BreadCrumbs';
 import { getPageState } from '@/layouts/lib';
 import { PageStateWidget } from '@/widgets/PageState/ui/PageStateWidget';
+import { useTranslation } from '@/shared/lib/hooks';
 
 type Props = {
   title: string;
@@ -31,6 +32,7 @@ export const ProductDetailsPageLayout = ({
     isError,
     isEmpty,
   });
+  const { t } = useTranslation();
   return (
     <section className={clsx(className, s.productDetailsPageLayout)}>
       <div className="container">
@@ -41,9 +43,12 @@ export const ProductDetailsPageLayout = ({
             <section className={s.header}>
               <Breadcrumbs
                 items={[
-                  { label: 'Главная', to: ROUTES.home },
-                  category,
-                  { label: `${title}` },
+                  { label: t('pages.home.title'), to: ROUTES.home },
+                  {
+                    ...category,
+                    label: t(category.label),
+                  },
+                  { label: title },
                 ]}
               />
               <h1 className="visuallyHidden">Страница товара</h1>

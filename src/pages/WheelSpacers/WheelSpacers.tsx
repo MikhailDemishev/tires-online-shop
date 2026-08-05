@@ -9,17 +9,16 @@ export const WheelSpacers = () => {
   const params = usePaginationParams<WheelSpacerParams>();
   const { data, isLoading, isError } = useGetWheelSpacersQuery(params);
   const wheelSpacers = data?.content;
-  console.log(data?.content, 'spacers');
 
   return (
     <ProductPageLayout
-      title="WheelSpacers"
+      title="pages.wheelSpacers.title"
       filterType="wheelSpacers"
       className={s.wheelSpacersPage}
       totalPages={data?.totalPages ?? 1}
       currentPage={data?.pageNumber ?? 1}
       category={{
-        label: 'Проставки',
+        label: 'pages.wheelSpacers.title',
       }}
       isEmpty={!wheelSpacers?.length}
       isError={isError}

@@ -11,14 +11,27 @@
   min-height: var(--banner-height);
   display: flex;
   position: relative;
+  align-self: center;
+  align-items: center;
+}
+
+.bannerInner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 62%) 1fr;
+  gap: 20px;
+
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .bannerContent {
-  display: flex;
-  align-self: center;
-  flex-direction: column;
   width: 100%;
   max-width: 673px;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: $mobile) {
     max-width: 100%;
@@ -66,5 +79,5 @@
 }
 
 .bannerImage {
-  position: absolute;
+  // position: absolute;
 }

@@ -55,8 +55,8 @@ export const ProductDetailsPageLayout = ({
             </section>
             <div className={s.layoutContent}>
               {productDetailsCard}
-              <section>сюда передадим advantages</section>
-              <section>сюда передадим похожие товары</section>
+              {/* <section>сюда передадим advantages</section>
+              <section>сюда передадим похожие товары</section> */}
             </div>
           </div>
         )}

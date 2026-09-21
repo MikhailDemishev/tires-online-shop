@@ -18,9 +18,9 @@ export const HeaderControls = ({
   controls,
   isLanguageSelect = false,
 }: HeaderControlsProps) => {
-  //temporary
   const isAuthenticated = false;
   const dispatch = useAppDispatch();
+
   return (
     <div className={s.headerControls}>
       {isLanguageSelect && <LanguageSelect className={s.btn} />}

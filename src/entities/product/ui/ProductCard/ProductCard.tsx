@@ -8,6 +8,9 @@ import fallbackImage from '@/assets/images/fallbackProduct.jpg';
 import { handleImageError } from '@/shared/lib/helpers';
 import { useTranslation } from '@/shared/lib/hooks';
 import { Text } from '@/shared/ui/Text';
+import { Button } from '@/shared/ui/Button';
+import { useAppDispatch } from '@/app/store';
+import { openModal } from '@/app/store/slices';
 
 export type ProductCardProps = {
   product: Product;
@@ -31,6 +34,8 @@ export const ProductCard = ({
       : +product.quantityInStock <= 50
         ? s.stockMedium
         : s.stockHigh;
+
+  const dispatch = useAppDispatch();
   return (
     <Link className={clsx(className, s.productCard)} to={to}>
       <AddToFavoritesBtn
@@ -50,7 +55,6 @@ export const ProductCard = ({
         <Text as={'h3'} variant="bodySmall" className={s.title}>
           {title}
         </Text>
-
         {children}
         <div className={s.priceBlock}>
           <span className={s.price}>{product.price} zł</span>
@@ -67,6 +71,12 @@ export const ProductCard = ({
             </span>
           </div>
         </div>
+        <Button
+          className={s.productCardButton}
+          onClick={() => dispatch(openModal({ type: 'SupportRequest' }))}
+        >
+          {t('cards.submitRequest')}
+        </Button>
       </div>
     </Link>
   );

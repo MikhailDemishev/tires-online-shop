@@ -35,7 +35,7 @@ export const FeedbackItem = ({
         className={clsx(textClassName, s.feedbackItemText)}
         variant="bodySmall"
       >
-        {review.text}
+        {review.text.pl}
       </Text>
     </article>
   );

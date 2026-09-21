@@ -434,7 +434,7 @@ export const ru = {
     },
     wheelSpacers: {
       boltDistance: 'PCD',
-      boltInfo: 'Центральное отверстие (DIA)',
+      boltInfo: 'DIA',
       thickness: 'Толщина',
     },
     additional: {
@@ -467,6 +467,7 @@ export const ru = {
     },
   },
   cards: {
+    submitRequest: 'Оставить заявку',
     addToCart: 'добавить в корзину',
     inStock: 'В наличии',
     notInStock: 'Нет в наличии',
@@ -551,6 +552,34 @@ export const ru = {
       learnMore: 'подробнее',
       toCatalog: 'перейти в каталог',
       contactUs: 'связаться с нами',
+    },
+  },
+
+  supportRequest: {
+    title: 'Остались вопросы?',
+    subtitle: 'Оставьте заявку — мы свяжемся с вами в ближайшее время',
+    successTitle: 'Заявка отправлена',
+    successText: 'Мы свяжемся с вами в ближайшее время',
+    customerName: 'Как к вам обращаться',
+    email: 'Email',
+    phone: 'Контактный телефон',
+    comment: 'Комментарий',
+    privacyConsent:
+      'Я ознакомлен(а) с Политикой конфиденциальности и даю согласие на обработку моих персональных данных',
+    submit: 'Отправить',
+
+    errors: {
+      nameRequired: 'Укажите имя и (или) фамилию',
+      maxLength256: 'Введите не более 256 символов',
+      nameInvalid: 'Имя не должно содержать цифры или специальные символы',
+      invalidEmail: 'Введите корректный email',
+      emailLocalPartMax64:
+        'Локальная часть email должна содержать не более 64 символов',
+      phoneMin10: 'Телефон должен содержать минимум 10 символов',
+      phoneMax15: 'Телефон не может содержать более 15 символов',
+      invalidPhone: 'Некорректный формат номера телефона',
+      privacyConsentRequired:
+        'Необходимо дать согласие на обработку персональных данных',
     },
   },
 };

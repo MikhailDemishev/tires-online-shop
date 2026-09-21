@@ -1,7 +1,7 @@
 @use '@/shared/styles/viewports' as *;
 
 .overlay {
-  background-color: var(--color-br-900-opasity);
+  background-color: var(--color-overlay-dark);
   position: fixed;
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -32,12 +32,13 @@
   align-items: center;
   justify-content: center;
   padding: 12px;
-  color: var(--color-light-primary);
+  color: var(--color-icon-primary);
   border-radius: 50%;
-  background-color: var(--color-light-white);
+  background-color: var(--color-background-primary);
   position: absolute;
   top: -40px;
   right: -40px;
+  z-index: 2222;
 
   .icon {
     width: 100%;

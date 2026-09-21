@@ -6,12 +6,12 @@ import { DialogTitle } from '@radix-ui/react-dialog';
 import { Modal, ModalContent } from '@/shared/ui/Modal';
 // import { Button } from '@/shared/ui/Button';
 
-type AuthGuardModalProps = {
+type AuthModalProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
 
-export const AuthModal = ({ open, onOpenChange }: AuthGuardModalProps) => {
+export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
   // const navigate = useNavigate();
   // const location = useLocation();
   // const { t } = useTranslation();

@@ -1,6 +1,10 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-export type ModalType = 'AuthGuard' | 'OrderCreated' | 'Auth';
+export type ModalType =
+  | 'AuthGuard'
+  | 'OrderCreated'
+  | 'Auth'
+  | 'SupportRequest';
 
 type OpenModalPayload = {
   type: ModalType;

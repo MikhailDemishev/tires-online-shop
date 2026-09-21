@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from '@/app/store/';
 
 import { closeModal, selectIsOpen, selectModalType } from '@/app/store/slices';
 import { AuthModal } from '@/features/auth/ui/AuthModal';
+import { SupportRequestModal } from '@/features/supportRequest/ui/supportRequestModal/SupportRequestModal';
 
 export const GlobalModals = () => {
   const isOpen = useAppSelector(selectIsOpen);
@@ -13,13 +14,13 @@ export const GlobalModals = () => {
       return (
         <AuthModal open={isOpen} onOpenChange={() => dispatch(closeModal())} />
       );
-    // case 'AuthGuard':
-    //   return (
-    //     <AuthGuardModal
-    //       open={isOpen}
-    //       onOpenChange={() => dispatch(closeModal())}
-    //     />
-    //   );
+    case 'SupportRequest':
+      return (
+        <SupportRequestModal
+          open={isOpen}
+          onOpenChange={() => dispatch(closeModal())}
+        />
+      );
 
     // case 'OrderCreated':
     //   return (

@@ -1,6 +1,6 @@
 import { forwardRef, type InputHTMLAttributes } from 'react';
 
-import styles from './Input.module.scss';
+import s from './Input.module.scss';
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   isError?: boolean;
@@ -11,7 +11,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         ref={ref}
-        className={`${styles.input} ${isError ? styles.error : ''} ${className}`}
+        className={`${s.input} ${isError ? s.error : ''} ${className}`}
         {...props}
       />
     );

@@ -433,7 +433,7 @@ export const pl = {
 
     wheelSpacers: {
       boltDistance: 'PCD',
-      boltInfo: 'Otwór centralny (DIA)',
+      boltInfo: 'DIA',
       thickness: 'Grubość',
     },
 
@@ -468,6 +468,7 @@ export const pl = {
     },
   },
   cards: {
+    submitRequest: 'Wyślij zgłoszenie',
     addToCart: 'dodaj do koszyka',
     inStock: 'Dostępne',
     notInStock: 'Niedostępne',
@@ -552,6 +553,34 @@ export const pl = {
       learnMore: 'Dowiedz się więcej',
       toCatalog: 'przejdź do katalogu',
       contactUs: 'skontaktuj się z nami',
+    },
+  },
+  supportRequest: {
+    title: 'Masz pytania?',
+    subtitle: 'Wyślij zgłoszenie — skontaktujemy się z Tobą wkrótce',
+    successTitle: 'Zgłoszenie wysłane',
+    successText: 'Wkrótce się z Tobą skontaktujemy',
+    customerName: 'Jak możemy się do Ciebie zwracać?',
+    email: 'E-mail',
+    phone: 'Numer telefonu kontaktowego',
+    comment: 'Komentarz',
+    privacyConsent:
+      'Zapoznałem(-am) się z Polityką prywatności i wyrażam zgodę na przetwarzanie moich danych osobowych',
+    submit: 'Wyślij',
+
+    errors: {
+      nameRequired: 'Podaj imię i/lub nazwisko',
+      maxLength256: 'Wprowadź nie więcej niż 256 znaków',
+      nameInvalid:
+        'Imię i nazwisko nie mogą zawierać cyfr ani znaków specjalnych',
+      invalidEmail: 'Podaj prawidłowy adres e-mail',
+      emailLocalPartMax64:
+        'Część lokalna adresu e-mail nie może zawierać więcej niż 64 znaki',
+      phoneMin10: 'Numer telefonu musi zawierać co najmniej 10 znaków',
+      phoneMax15: 'Numer telefonu nie może zawierać więcej niż 15 znaków',
+      invalidPhone: 'Nieprawidłowy format numeru telefonu',
+      privacyConsentRequired:
+        'Musisz wyrazić zgodę na przetwarzanie danych osobowych',
     },
   },
 };

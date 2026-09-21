@@ -14,6 +14,8 @@ import { Button } from '@/shared/ui/Button';
 import { ProductAccordion } from '@/entities/product/ui/ProductAccordion';
 import { useTranslation } from '@/shared/lib/hooks';
 import { Text } from '@/shared/ui/Text';
+import { useAppDispatch } from '@/app/store';
+import { openModal } from '@/app/store/slices';
 
 type ProductDetailsCardProps = {
   product: ProductDetails;
@@ -33,6 +35,9 @@ export const ProductDetailsCard = ({
   const inStock = product.quantityInStock > 0;
 
   const { t } = useTranslation();
+
+  //temp open contactform
+  const dispatch = useAppDispatch();
 
   //temp
   //const inStock = false;
@@ -70,7 +75,12 @@ export const ProductDetailsCard = ({
           />
           <div className={s.cardHeaderBottom}>
             {inStock ? (
-              <Button className={s.cardButton}>{t('cards.addToCart')}</Button>
+              <Button
+                className={s.cardButton}
+                onClick={() => dispatch(openModal({ type: 'SupportRequest' }))}
+              >
+                {t('cards.submitRequest')}
+              </Button>
             ) : (
               <span>{t('cards.notInStock')}</span>
             )}

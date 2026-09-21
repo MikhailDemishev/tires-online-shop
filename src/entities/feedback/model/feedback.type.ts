@@ -2,9 +2,11 @@ export type Feedback = {
   id: number;
   user: string;
   imageUrl: string;
-  text: string;
-  textPl: string;
-  textRu: string;
+  text: {
+    en: string;
+    pl: string;
+    ru: string;
+  };
   rate: number;
   createdDate: string;
 };

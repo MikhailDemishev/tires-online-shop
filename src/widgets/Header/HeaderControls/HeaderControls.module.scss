@@ -20,6 +20,11 @@
     align-items: center;
     justify-content: center;
 
+    //temp disable controls
+    &:not(:first-child) {
+      pointer-events: none !important;
+    }
+
     &:not(:last-child)::after {
       content: '';
       position: absolute;

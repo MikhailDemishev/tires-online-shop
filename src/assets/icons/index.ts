@@ -1,6 +1,7 @@
 export { default as SearchIcon } from './search.svg?react';
 export { default as Arrow } from './Arrow.svg?react';
 export { default as Tick } from './Tick.svg?react';
+export { default as CircleCheck } from './CircleCheck.svg?react';
 export { default as CloseIcon } from './CloseIcon.svg?react';
 export { default as HeartIcon } from './Heart.svg?react';
 export { default as CartIcon } from './Cart.svg?react';

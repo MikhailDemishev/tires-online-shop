@@ -8,6 +8,28 @@
   //   }
 }
 
-.error {
-  border-color: red;
+.error.error.error {
+  border: 1px solid var(--color-warning);
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.errorMessage {
+  color: var(--color-warning);
+}
+
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  // color: var(--color-text-secondary);
+}
+
+.required {
+  margin-left: 10px;
+  color: var(--color-warning);
 }

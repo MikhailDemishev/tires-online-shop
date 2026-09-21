@@ -24,6 +24,10 @@
     }
   }
 
+  .productCardButton {
+    margin-top: 16px;
+  }
+
   .imageWrapper {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -116,7 +120,7 @@
   .stockMedium {
     rect:nth-child(2),
     rect:nth-child(3) {
-      fill: var(--color-warning);
+      fill: var(--color-medium-quantity);
     }
   }
 

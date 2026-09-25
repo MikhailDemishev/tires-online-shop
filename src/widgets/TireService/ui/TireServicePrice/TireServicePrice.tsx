@@ -4,6 +4,7 @@ import { CloseIcon } from '@/assets/icons';
 import { useTranslation } from '@/shared/lib/hooks';
 import { TIRE_SERVICES } from '../../config';
 import { Section } from '@/shared/ui/Section/Section';
+import { ServicePriceContent } from './ServicePriceContent';
 
 type ServicePriceProps = {
   activeItem: string;
@@ -26,7 +27,7 @@ export const TireServicePrice = ({
           contentClassName={s.servicePriceAccordionContent}
           activeItem={activeItem}
           onActiveItemChange={onActiveItemChange}
-          items={TIRE_SERVICES.map(({ value, title, accordionChildren }) => ({
+          items={TIRE_SERVICES.map(({ value, title, price }) => ({
             value,
             header: (
               <div className={s.servicePriceAccordionHeader}>
@@ -34,11 +35,7 @@ export const TireServicePrice = ({
                 <CloseIcon className={s.servicePriceAccordionIcon} />
               </div>
             ),
-            children: (
-              <p className={s.servicePriceAccordionText}>
-                {t(accordionChildren)}
-              </p>
-            ),
+            children: <ServicePriceContent price={price} />,
           }))}
         />
       </div>

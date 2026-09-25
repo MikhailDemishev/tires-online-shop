@@ -206,41 +206,174 @@ export const pl = {
       tireServiceServices: {
         title: 'Usługi',
         titlePrice: 'Cennik',
-        note: 'Ceny podane w cenniku są orientacyjne. Ostateczny koszt zależy od typu pojazdu, średnicy kół oraz stopnia skomplikowania prac. Dokładną cenę podamy podczas umawiania wizyty — przed rozpoczęciem jakichkolwiek prac. Jeśli masz pytania, chętnie odpowiemy na nie telefonicznie.',
+
+        note: 'Ceny podane w cenniku są orientacyjne. Ostateczny koszt zależy od typu pojazdu, średnicy kół oraz stopnia skomplikowania prac. Dokładną cenę podamy podczas umawiania wizyty — przed rozpoczęciem jakichkolwiek prac. W razie pytań chętnie odpowiemy telefonicznie.',
+
         seasonalTireChange: {
           title: 'Sezonowa wymiana opon',
           description:
-            'Sezonowa wymiana opon. Profesjonalny montaż i demontaż opon każdego typu. Ostrożna praca z felgami oraz prawidłowy montaż z uwzględnieniem kierunku bieżnika.',
+            'Sezonowa wymiana opon. Profesjonalny montaż i demontaż wszystkich typów opon. Ostrożna praca z felgami oraz prawidłowy montaż z uwzględnieniem kierunku bieżnika.',
+
+          price: {
+            description:
+              'Cena dotyczy kompletu 4 kół i obejmuje montaż/demontaż opon, wyważanie oraz montaż kół w samochodzie.',
+
+            columns: [
+              'Średnica kół',
+              'Felgi stalowe (SUV / 4×4)',
+              'Felgi aluminiowe (SUV / 4×4)',
+            ],
+
+            rows: [
+              ['do R15', '180 zł', '200 zł'],
+              ['R16', '200 zł', '220 zł'],
+              ['R17', '220 zł', '240 zł'],
+              ['R18', '240 zł', '260 zł'],
+              ['R19 i większe', 'na zapytanie', 'na zapytanie'],
+            ],
+
+            notes: [
+              'Ceny mogą się nieznacznie różnić w zależności od stopnia skomplikowania prac (np. zapieczone śruby, opony RunFlat lub system TPMS). Ostateczną cenę podamy podczas umawiania wizyty — przed rozpoczęciem jakichkolwiek prac. Usługi dodatkowe są płatne osobno.',
+            ],
+          },
         },
 
         wheelBalancing: {
           title: 'Wyważanie kół',
           description:
             'Precyzyjne wyważanie kół na nowoczesnym urządzeniu. Eliminujemy drgania, zapewniamy równomierne zużycie opon i komfortową jazdę przy każdej prędkości.',
+
+          price: {
+            description: 'Cena dotyczy kompletu 4 kół.',
+
+            columns: ['Średnica kół', 'Cena'],
+
+            rows: [
+              ['do R15', '100–120 zł'],
+              ['R16', '120–140 zł'],
+              ['R17', '140–160 zł'],
+              ['R18', '160–180 zł'],
+              ['R19 i większe', 'na zapytanie'],
+            ],
+
+            notes: [
+              'Cena zależy od rodzaju felg, obecności systemu TPMS, technologii RunFlat, średnicy kół oraz stopnia skomplikowania prac. Dokładną cenę podamy podczas umawiania wizyty.',
+            ],
+          },
         },
 
         tireRepair: {
           title: 'Naprawa opon (wulkanizacja)',
           description:
-            'Profesjonalna naprawa przebić, przecięć i innych uszkodzeń. Używamy profesjonalnych materiałów, przywracając szczelność i wydłużając żywotność opony.',
+            'Naprawa przebić, przecięć i innych uszkodzeń opon. Profesjonalna wulkanizacja wraz z oceną możliwości dalszej bezpiecznej eksploatacji opony.',
+
+          price: {
+            description: 'Cena dotyczy jednego koła.',
+
+            columns: ['Usługa', 'Cena'],
+
+            rows: [
+              ['Naprawa przebicia', '70–100 zł'],
+              ['Naprawa przecięcia boku opony', '120–180 zł'],
+              ['Wulkanizacja na gorąco', 'od 150 zł'],
+            ],
+
+            notesTitle: 'Warto wiedzieć:',
+
+            notes: [
+              'Koszt naprawy zależy od rodzaju i średnicy opony, stopnia uszkodzenia oraz konieczności demontażu koła.',
+              'Przecięcia boku oraz poważne uszkodzenia mogą nie nadawać się do naprawy — ostateczną decyzję podejmuje specjalista po oględzinach.',
+              'Po naprawie wykonywane jest wyważanie koła (wliczone w cenę).',
+              'W przypadku opon RunFlat oraz kół z systemem TPMS cena może być wyższa.',
+              'Dokładną cenę podamy przed rozpoczęciem jakichkolwiek prac — wszystkie zmiany uzgadniamy z klientem z wyprzedzeniem.',
+            ],
+          },
         },
 
         wheelRepair: {
           title: 'Naprawa i prostowanie felg',
           description:
-            'Usuwamy odkształcenia felg stalowych i aluminiowych. Przywracamy ich geometrię oraz usuwamy bicie i uszkodzenia powstałe wskutek wjechania w dziury lub uderzenia w krawężnik.',
+            'Diagnostyka i przywracanie prawidłowej geometrii felg stalowych i aluminiowych. Usuwamy odkształcenia, bicie oraz inne uszkodzenia.',
+
+          price: {
+            description:
+              'Cena dotyczy jednego koła i zależy od rozmiaru, rodzaju felgi oraz stopnia uszkodzenia.',
+
+            columns: ['Usługa', 'Cena'],
+
+            rows: [
+              ['Prostowanie felgi stalowej', '80–150 zł'],
+              ['Prostowanie felgi aluminiowej (do 16")', '120–200 zł'],
+              ['Prostowanie felgi aluminiowej (17–18")', '160–280 zł'],
+              ['Prostowanie felgi aluminiowej (19" i większej)', 'od 260 zł'],
+              ['Spawanie felgi (dodatkowo)', 'od 100 zł'],
+            ],
+
+            notesTitle: 'Warto wiedzieć:',
+
+            notes: [
+              'Cena zależy od rozmiaru felgi, materiału (stal/aluminium) oraz stopnia uszkodzenia (niewielkie bicie, poważne odkształcenie, pęknięcie).',
+              'Ostateczną cenę podamy po diagnostyce — przed rozpoczęciem jakichkolwiek prac.',
+              'Po prostowaniu felgi wykonywane jest wyważanie koła (wliczone w cenę lub płatne osobno — szczegóły należy ustalić podczas umawiania wizyty).',
+              'Nie wszystkie uszkodzenia nadają się do naprawy: pęknięcia ramion felgi lub w okolicy otworów montażowych często uniemożliwiają jej dalszą bezpieczną eksploatację.',
+              'W bardziej skomplikowanych przypadkach (duże odkształcenia, pęknięcia, duże rozmiary felg) cena może być wyższa od podanej — każdy przypadek jest oceniany indywidualnie przez specjalistę.',
+            ],
+          },
         },
 
         seasonalStorage: {
-          title: 'Sezonowe przechowywanie',
+          title: 'Sezonowe przechowywanie opon',
           description:
-            'Bezpieczne przechowywanie kompletu opon w czystym i suchym pomieszczeniu. Odpowiednie warunki przechowywania wydłużają żywotność opon.',
+            'Sezonowe przechowywanie opon i kompletnych kół w odpowiednich warunkach. Twój komplet będzie gotowy na kolejny sezon bez konieczności przechowywania go w domu.',
+
+          price: {
+            description:
+              'Cena dotyczy kompletu 4 kół za jeden sezon (około 6 miesięcy).',
+
+            columns: ['Średnica kół', 'Cena'],
+
+            rows: [
+              ['do R16', '140–180 zł'],
+              ['R17–R18', '180–240 zł'],
+              ['R19 i większe', '240–300 zł'],
+            ],
+
+            notes: [
+              'Cena zależy od rozmiaru kół oraz rodzaju przechowywania (same opony lub kompletne koła). Dokładną cenę podamy podczas przyjmowania kompletu do przechowania.',
+            ],
+          },
         },
 
         additionalServices: {
           title: 'Usługi dodatkowe',
           description:
-            'Kolcowanie opon, czernienie opon oraz inne usługi dodatkowe.',
+            'Dodatkowe usługi związane z obsługą opon i kół: czyszczenie piast, wymiana zaworów, mycie kół, utylizacja opon oraz obsługa opon RunFlat i systemu TPMS.',
+
+          price: {
+            description:
+              'Ceny dotyczą jednej usługi, o ile nie podano inaczej.',
+
+            columns: ['Usługa', 'Cena'],
+
+            rows: [
+              ['Czyszczenie piast (komplet)', '30–50 zł'],
+              ['Wymiana zaworów (komplet, gumowe)', '20–40 zł'],
+              ['Wymiana zaworów (komplet, chromowane/metalowe)', '40–60 zł'],
+              ['Mycie kół (komplet)', '20–40 zł'],
+              ['Utylizacja starych opon (1 szt.)', '10–15 zł'],
+              ['Dopłata za opony RunFlat (1 koło)', '15–20 zł'],
+              ['Dopłata za obsługę TPMS (komplet)', '10–20 zł'],
+              ['Kolcowanie opon', 'na zapytanie'],
+            ],
+
+            notesTitle: 'Warto wiedzieć:',
+
+            notes: [
+              'Koszt kolcowania zależy od liczby kolców, rozmiaru opony oraz rodzaju kolców. Dokładną cenę podamy po oględzinach opon.',
+              'Kolcowanie wykonujemy wyłącznie w oponach posiadających fabryczne otwory na kolce (oznaczenie Studdable).',
+              'Wszystkie usługi dodatkowe uzgadniamy z klientem przed rozpoczęciem prac.',
+            ],
+          },
         },
       },
       tireServiceAdvantages: {
@@ -469,6 +602,7 @@ export const pl = {
   },
   cards: {
     submitRequest: 'Wyślij zgłoszenie',
+    request: 'Zgłoszenie',
     addToCart: 'dodaj do koszyka',
     inStock: 'Dostępne',
     notInStock: 'Niedostępne',

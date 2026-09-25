@@ -75,7 +75,7 @@ export const ProductCard = ({
           className={s.productCardButton}
           onClick={() => dispatch(openModal({ type: 'SupportRequest' }))}
         >
-          {t('cards.submitRequest')}
+          {t('cards.request')}
         </Button>
       </div>
     </Link>

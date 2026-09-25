@@ -1,5 +1,6 @@
 import type {
   ProductCharacteristic,
+  ProductDescription,
   ProductDetails,
 } from '@/entities/product/model';
 import s from './ProductDetailsCard.module.scss';
@@ -21,7 +22,7 @@ type ProductDetailsCardProps = {
   product: ProductDetails;
   title: string;
   characteristics: ProductCharacteristic[];
-  description: ProductCharacteristic[];
+  description: ProductDescription[];
   className?: string;
 };
 

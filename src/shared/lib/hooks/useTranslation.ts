@@ -15,7 +15,7 @@ export const useTranslation = () => {
     throw new Error('useTranslation must be used within I18nProvider');
   }
 
-  const { language, setLanguage: setContextLanguage, t } = context;
+  const { language, setLanguage: setContextLanguage, t, tObject } = context;
 
   const getValidLanguage = useCallback((value: string): Language => {
     return SUPPORTED_LANGUAGES.includes(value as Language)
@@ -44,6 +44,7 @@ export const useTranslation = () => {
 
   return {
     t,
+    tObject,
     language,
     setLanguage,
   };

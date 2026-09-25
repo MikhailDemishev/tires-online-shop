@@ -206,41 +206,173 @@ export const en = {
       tireServiceServices: {
         title: 'Services',
         titlePrice: 'Price List',
-        note: 'The prices listed are approximate. The final cost depends on the type of vehicle, wheel diameter, and complexity of the work. We will confirm the exact cost when you book the service — before any work begins. If you have any questions, we will be happy to answer them by phone.',
+
+        note: 'The prices listed are approximate. The final cost depends on the vehicle type, wheel diameter, and complexity of the work. We will confirm the exact price when you book — before any work begins. If you have any questions, we will be happy to answer them by phone.',
+
         seasonalTireChange: {
           title: 'Seasonal Tire Change',
           description:
-            'Seasonal tire change. Professional installation and removal of all types of tires. Careful handling of wheels and correct installation according to the tire tread direction.',
+            'Seasonal tire change. Professional installation and removal of all types of tires. Careful handling of rims and correct installation according to the tire tread direction.',
+
+          price: {
+            description:
+              'The price is for a set of 4 wheels and includes tire mounting/removal, balancing, and installation of the wheels on the vehicle.',
+
+            columns: [
+              'Wheel diameter',
+              'Steel rims (SUV / 4×4)',
+              'Alloy rims (SUV / 4×4)',
+            ],
+
+            rows: [
+              ['up to R15', '180 zł', '200 zł'],
+              ['R16', '200 zł', '220 zł'],
+              ['R17', '220 zł', '240 zł'],
+              ['R18', '240 zł', '260 zł'],
+              ['R19 and above', 'on request', 'on request'],
+            ],
+
+            notes: [
+              'Prices may vary slightly depending on the complexity of the work (e.g. seized bolts, RunFlat tires, or TPMS). We will confirm the final price when you book — before any work begins. Additional services are charged separately.',
+            ],
+          },
         },
 
         wheelBalancing: {
           title: 'Wheel Balancing',
           description:
             'Precise wheel balancing using modern equipment. We eliminate vibrations, ensure even tire wear, and provide a comfortable ride at any speed.',
+
+          price: {
+            description: 'The price is for a set of 4 wheels.',
+
+            columns: ['Wheel diameter', 'Price'],
+
+            rows: [
+              ['up to R15', '100–120 zł'],
+              ['R16', '120–140 zł'],
+              ['R17', '140–160 zł'],
+              ['R18', '160–180 zł'],
+              ['R19 and above', 'on request'],
+            ],
+
+            notes: [
+              'The price depends on the type of rims, TPMS, RunFlat technology, wheel diameter, and complexity of the work. We will confirm the exact price when you book.',
+            ],
+          },
         },
 
         tireRepair: {
           title: 'Tire Repair (Vulcanization)',
           description:
-            'Professional repair of punctures, cuts, and other damage. We use professional materials to restore airtightness and extend the life of your tire.',
+            'Repair of punctures, cuts, and other tire damage. Professional vulcanization with an assessment of whether the tire can continue to be used safely.',
+
+          price: {
+            description: 'The price is per wheel.',
+
+            columns: ['Service', 'Price'],
+
+            rows: [
+              ['Puncture repair', '70–100 zł'],
+              ['Sidewall cut repair', '120–180 zł'],
+              ['Hot vulcanization', 'from 150 zł'],
+            ],
+
+            notesTitle: 'Important to know:',
+
+            notes: [
+              'The repair cost depends on the type and diameter of the tire, the extent of the damage, and whether wheel removal is required.',
+              'Sidewall cuts and major damage may not be repairable — the final decision is made by the technician after inspection.',
+              'Wheel balancing is performed after the repair and is included in the price.',
+              'The price may be higher for RunFlat tires and tires equipped with TPMS.',
+              'We will confirm the exact price before any work begins — any changes will be agreed with you in advance.',
+            ],
+          },
         },
 
         wheelRepair: {
-          title: 'Wheel Repair and Straightening',
+          title: 'Rim Repair and Straightening',
           description:
-            'We repair deformations of steel and alloy wheels, restore their geometry, and eliminate runout and damage caused by potholes and curbs.',
+            'Inspection and restoration of steel and alloy rim geometry. We repair deformation, runout, and other types of damage.',
+
+          price: {
+            description:
+              'The price is per wheel and depends on the rim size, type, and extent of the damage.',
+
+            columns: ['Service', 'Price'],
+
+            rows: [
+              ['Steel rim straightening', '80–150 zł'],
+              ['Alloy rim straightening (up to 16")', '120–200 zł'],
+              ['Alloy rim straightening (17–18")', '160–280 zł'],
+              ['Alloy rim straightening (19" and above)', 'from 260 zł'],
+              ['Rim welding (additional service)', 'from 100 zł'],
+            ],
+
+            notesTitle: 'Important to know:',
+
+            notes: [
+              'The price depends on the rim size, material (steel/alloy), and extent of the damage (minor runout, severe deformation, or cracks).',
+              'We will confirm the final price after inspection — before any work begins.',
+              'Wheel balancing is performed after rim straightening (either included in the price or charged separately — please confirm when booking).',
+              'Not all damage can be repaired: cracks in the spokes or around the bolt holes often make a rim unsafe for further use.',
+              'For complex cases (severe deformation, cracks, or large rim sizes), the price may be higher than indicated — each case is assessed individually by the technician.',
+            ],
+          },
         },
 
         seasonalStorage: {
-          title: 'Seasonal Storage',
+          title: 'Seasonal Tire Storage',
           description:
-            'Reliable storage of your tire set in a clean, dry facility. Proper storage conditions help extend the service life of your tires.',
+            'Seasonal storage of tires and complete wheels under suitable conditions. Your set will be ready for the next season without taking up space at home.',
+
+          price: {
+            description:
+              'The price is for a set of 4 wheels for one season (approximately 6 months).',
+
+            columns: ['Wheel diameter', 'Price'],
+
+            rows: [
+              ['up to R16', '140–180 zł'],
+              ['R17–R18', '180–240 zł'],
+              ['R19 and above', '240–300 zł'],
+            ],
+
+            notes: [
+              'The price depends on the wheel size and type of storage (tires only or complete wheels). We will confirm the exact price when we accept the set for storage.',
+            ],
+          },
         },
 
         additionalServices: {
           title: 'Additional Services',
           description:
-            'Tire studding, tire blackening, and other related services.',
+            'Additional tire and wheel services: hub treatment, valve replacement, wheel washing, tire disposal, and services for RunFlat tires and TPMS.',
+
+          price: {
+            description: 'Prices are per service unless otherwise stated.',
+
+            columns: ['Service', 'Price'],
+
+            rows: [
+              ['Hub treatment (set)', '30–50 zł'],
+              ['Valve replacement (set, rubber)', '20–40 zł'],
+              ['Valve replacement (set, chrome/metal)', '40–60 zł'],
+              ['Wheel washing (set)', '20–40 zł'],
+              ['Old tire disposal (1 pc.)', '10–15 zł'],
+              ['RunFlat surcharge (per wheel)', '15–20 zł'],
+              ['TPMS service surcharge (set)', '10–20 zł'],
+              ['Tire studding', 'on request'],
+            ],
+
+            notesTitle: 'Important to know:',
+
+            notes: [
+              'The cost of tire studding depends on the number of studs, tire size, and type of studs. We will confirm the exact price after inspecting the tires.',
+              'Studding is only available for tires with factory-made stud holes (marked Studdable).',
+              'All additional services are agreed with the customer before any work begins.',
+            ],
+          },
         },
       },
 
@@ -469,6 +601,7 @@ export const en = {
 
   cards: {
     submitRequest: 'Submit a request',
+    request: 'Request',
     addToCart: 'add to cart',
     inStock: 'In Stock',
     notInStock: 'Out of Stock',

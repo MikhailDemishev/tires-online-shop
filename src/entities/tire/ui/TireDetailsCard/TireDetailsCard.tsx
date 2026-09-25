@@ -3,6 +3,7 @@ import s from './TireDetailsCard.module.scss';
 import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
 import clsx from 'clsx';
 import { getLoadSpeedIndex } from '@/entities/product/lib/helpers';
+import type { ProductDescription } from '@/entities/product/model';
 
 type Props = {
   tire: Tire;
@@ -51,12 +52,20 @@ export const TireDetailsCard = ({ tire, className, title, t }: Props) => {
     },
   ];
 
-  const description = [
+  const description: ProductDescription[] = [
     {
       label: '',
-      value: tire.inf || 'Нет данных',
+      value: tire.inf,
     },
   ];
+
+  //  label: string;
+  //   value: {
+  //       en: string;
+  //       pl: string;
+  //       ru: string;
+  //   };
+
   return (
     <ProductDetailsCard
       product={tire}

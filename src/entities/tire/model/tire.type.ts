@@ -13,7 +13,11 @@ export type Tire = {
   season: string;
   url: string;
   urls: string;
-  inf: string;
+  inf: {
+    en: string;
+    pl: string;
+    ru: string;
+  };
   quantityInStock: number;
   inStock: boolean;
   price: number;

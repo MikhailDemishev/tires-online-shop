@@ -8,6 +8,7 @@ import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
 import clsx from 'clsx';
 import type { Wheel } from '@/entities/wheel/model';
 import s from './WheelDetailsCard.module.scss';
+import type { ProductDescription } from '@/entities/product/model';
 
 type Props = {
   wheel: Wheel;
@@ -66,10 +67,10 @@ export const WheelDetailsCard = ({ wheel, className, t, title }: Props) => {
     },
   ];
 
-  const description = [
+  const description: ProductDescription[] = [
     {
       label: '',
-      value: wheel.inf || 'Нет данных',
+      value: wheel.inf,
     },
   ];
   return (

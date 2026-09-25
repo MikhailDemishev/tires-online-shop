@@ -16,7 +16,11 @@ export type Wheel = {
   productType: string;
   url: string;
   urls: string;
-  inf: string;
+  inf: {
+    en: string;
+    pl: string;
+    ru: string;
+  };
   price: number;
   quantityInStock: number;
   inStock: boolean;

@@ -12,6 +12,7 @@ import { ProductDetailsCard } from '@/entities/product/ui/ProductDetailsCard';
 import clsx from 'clsx';
 import type { WheelSpacer } from '@/entities/wheelSpacer/model';
 import s from './WheelSpacerDetailsCard.module.scss';
+import type { ProductDescription } from '@/entities/product/model';
 
 type Props = {
   spacer: WheelSpacer;
@@ -46,10 +47,10 @@ export const WheelSpacersDetailsCard = ({
       value: `${spacer.thickness}`,
     },
   ];
-  const description = [
+  const description: ProductDescription[] = [
     {
       label: '',
-      value: spacer.inf || 'Нет данных',
+      value: spacer.inf,
     },
   ];
   return (

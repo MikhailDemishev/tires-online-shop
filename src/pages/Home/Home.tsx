@@ -11,13 +11,14 @@ import { HomeFeedBack } from '@/widgets/Home/ui/HomeFeedback';
 import { useGetFeedbackQuery } from '@/entities/feedback/api/feedbacksApi';
 import { Seo } from '@/features/seo/ui';
 import { useSeo } from '@/features/seo/lib';
+import { ROUTES } from '@/app/router';
 
 export const Home = () => {
   const { data, isLoading, isError } = useGetFeedbackQuery({
     size: 10,
   });
 
-  const seo = useSeo(undefined, undefined, '/index');
+  const seo = useSeo(undefined, undefined, ROUTES.home);
 
   return (
     <>

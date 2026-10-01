@@ -1,12 +1,11 @@
 import { InfoPageLayout } from '@/layouts/InfoPageLayout';
 import s from './Contacts.module.scss';
 import { ContactsBlock } from '@/widgets/Contacts';
-import { ROUTES } from '@/app/router';
 import { useSeo } from '@/features/seo/lib';
 import { Seo } from '@/features/seo/ui';
 
 export const Contacts = () => {
-  const seo = useSeo(undefined, undefined, ROUTES.contacts);
+  const seo = useSeo(undefined, undefined, '/about-us');
   return (
     <>
       <Seo

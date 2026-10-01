@@ -12,6 +12,7 @@ export const AboutUs = () => {
   const title = 'pages.aboutUs.title';
 
   const seo = useSeo(undefined, undefined, ROUTES.aboutUs);
+
   return (
     <>
       <Seo

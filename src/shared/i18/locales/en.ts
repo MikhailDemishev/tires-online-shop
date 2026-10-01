@@ -179,15 +179,66 @@ export const en = {
       reviews: {
         title: 'Reviews',
       },
+      seo: {
+        title: 'New Off-road 4x4 Tires – AT & MT | Insa Turbo 4x4',
+        description:
+          'New off-road 4x4 tires for demanding terrain. AT and MT tires in popular sizes. Check the range, availability and order online.',
+        keywords:
+          'off-road tires, 4x4 tires, AT tires, MT tires, new tires, Insa Turbo, off-road 4x4 tires, off road tires',
+        h1: 'New Off-road 4x4 Tires – AT & MT',
+      },
     },
+    // EN
+    // EN
+
     tires: {
       title: 'Tires 4X4',
+      seo: {
+        keywords: {
+          base: '4x4 tires, off-road tires',
+          sizePrefix: '',
+        },
+        description: {
+          productType: '– off-road 4x4 tire for',
+          currency: 'PLN.',
+          text: 'Match the tread to the routes you take beyond paved roads',
+        },
+      },
     },
+
     wheels: {
       title: 'Wheels',
+      seo: {
+        keywords: {
+          base: '4x4 wheels, off-road wheels',
+          wheelPrefix: '',
+          wheelSuffix: ' wheel',
+        },
+        description: {
+          productType: '4x4 wheel',
+          currency: 'PLN.',
+          text: 'Give your off-road build a bolder look with the bolt pattern and offset it needs',
+        },
+      },
     },
+
     wheelSpacers: {
       title: 'Wheel Spacers',
+      seo: {
+        keywords: {
+          base: 'wheel spacers, rim spacers, 4x4 spacers',
+          dynamicPrefix: '',
+          dynamicSuffix: ' spacers',
+          thicknessUnit: 'mm',
+        },
+        description: {
+          productType: '4x4 wheel spacer',
+          thicknessUnit: 'mm',
+          thread: 'thread',
+          currency: 'PLN.',
+          text: 'Widen the track for a more pronounced off-road stance',
+        },
+      },
     },
     search: {
       title: 'Search Results',

@@ -179,15 +179,65 @@ export const ru = {
       reviews: {
         title: 'Отзывы',
       },
+
+      seo: {
+        title: 'Новые внедорожные шины 4x4 – AT и MT | Insa Turbo 4x4',
+        description:
+          'Новые внедорожные шины 4x4 для езды по бездорожью. Шины AT и MT в популярных размерах. Ознакомьтесь с ассортиментом, наличием и оформите заказ онлайн.',
+        keywords:
+          'внедорожные шины, шины 4x4, шины AT, шины MT, новые шины, Insa Turbo, внедорожные шины 4x4, шины off road',
+      },
     },
+    // RU
+
     tires: {
       title: 'Шины 4X4',
+      seo: {
+        keywords: {
+          base: 'шины 4x4, внедорожные шины',
+          sizePrefix: 'шины ',
+        },
+        description: {
+          productType: '– внедорожная шина 4x4 за',
+          currency: 'PLN.',
+          text: 'Подберите протектор для своих маршрутов вне асфальта',
+        },
+      },
     },
+
     wheels: {
       title: 'Диски',
+      seo: {
+        keywords: {
+          base: 'диски 4x4, внедорожные диски',
+          wheelPrefix: 'диск ',
+          wheelSuffix: '',
+        },
+        description: {
+          productType: 'диск 4x4',
+          currency: 'PLN.',
+          text: 'Подчеркните внедорожный стиль машины, выбрав подходящую разболтовку и вылет',
+        },
+      },
     },
+
     wheelSpacers: {
       title: 'Проставки',
+      seo: {
+        keywords: {
+          base: 'проставки для колёс, проставки для дисков, проставки 4x4',
+          dynamicPrefix: 'проставки ',
+          dynamicSuffix: '',
+          thicknessUnit: 'мм',
+        },
+        description: {
+          productType: 'Проставка для колёс 4x4',
+          thicknessUnit: 'мм',
+          thread: 'резьба',
+          currency: 'PLN.',
+          text: 'Расширьте колею и придайте автомобилю более выразительный вид',
+        },
+      },
     },
 
     search: {

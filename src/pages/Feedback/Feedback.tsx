@@ -8,6 +8,9 @@ import { InfoPageLayout } from '@/layouts/InfoPageLayout';
 import { usePaginationParams } from '@/features/pagination/model/usePaginationParams';
 import { useGetFeedbackQuery } from '@/entities/feedback/api/feedbacksApi';
 import { useTranslation } from '@/shared/lib/hooks';
+import { Seo } from '@/features/seo/ui';
+import { useSeo } from '@/features/seo/lib';
+import { ROUTES } from '@/app/router';
 
 export const Feedback = () => {
   const params = usePaginationParams<FeedbackParams>({
@@ -21,44 +24,56 @@ export const Feedback = () => {
   const totalRating = data?.averageRate;
   const totalReviews = data?.totalElements;
   const { t } = useTranslation();
+  const seo = useSeo(undefined, undefined, ROUTES.feedback);
 
   return (
-    <InfoPageLayout
-      title={t('feedback.title')}
-      totalPages={data?.totalPages ?? 1}
-      currentPage={data?.pageNumber ?? 1}
-      isLoading={isLoading}
-      isError={isError}
-      isEmpty={!feedBackItems.length}
-      headerNode={
-        <div className={s.feedbackHeader}>
-          {totalRating && (
-            <div className={s.feedbackRating}>
-              <span className={s.ratingTotal}>{totalRating}</span>
-              <div className={s.ratingStats}>
-                <FeedbackRating rate={totalRating} />
-                <span className={s.ratingCount}>
-                  {`${totalReviews} ${t('feedback.ratingCount')}`}
-                </span>
+    <>
+      <Seo
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonical={seo.canonical}
+      />
+      <InfoPageLayout
+        title={t('feedback.title')}
+        totalPages={data?.totalPages ?? 1}
+        currentPage={data?.pageNumber ?? 1}
+        isLoading={isLoading}
+        isError={isError}
+        isEmpty={!feedBackItems.length}
+        headerNode={
+          <div className={s.feedbackHeader}>
+            {totalRating && (
+              <div className={s.feedbackRating}>
+                <span className={s.ratingTotal}>{totalRating}</span>
+                <div className={s.ratingStats}>
+                  <FeedbackRating rate={totalRating} />
+                  <span className={s.ratingCount}>
+                    {`${totalReviews} ${t('feedback.ratingCount')}`}
+                  </span>
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          <Sort sortOptions={REVIEW_SORT_OPTIONS} className={s.feedBackSort} />
-        </div>
-      }
-    >
-      <ul className={s.feedBackItems}>
-        {feedBackItems.map((item) => (
-          <li key={String(item.id)}>
-            <FeedbackItem
-              review={item}
-              className={s.item}
-              headerClassName={s.itemHeader}
+            <Sort
+              sortOptions={REVIEW_SORT_OPTIONS}
+              className={s.feedBackSort}
             />
-          </li>
-        ))}
-      </ul>
-    </InfoPageLayout>
+          </div>
+        }
+      >
+        <ul className={s.feedBackItems}>
+          {feedBackItems.map((item) => (
+            <li key={String(item.id)}>
+              <FeedbackItem
+                review={item}
+                className={s.item}
+                headerClassName={s.itemHeader}
+              />
+            </li>
+          ))}
+        </ul>
+      </InfoPageLayout>
+    </>
   );
 };

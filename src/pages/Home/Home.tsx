@@ -9,25 +9,38 @@ import { Assortment } from '@/widgets/Home/ui/Assortment';
 import { OurBrands } from '@/widgets/Home/ui/OurBrands';
 import { HomeFeedBack } from '@/widgets/Home/ui/HomeFeedback';
 import { useGetFeedbackQuery } from '@/entities/feedback/api/feedbacksApi';
+import { Seo } from '@/features/seo/ui';
+import { useSeo } from '@/features/seo/lib';
 
 export const Home = () => {
   const { data, isLoading, isError } = useGetFeedbackQuery({
     size: 10,
   });
+
+  const seo = useSeo(undefined, undefined, '/index');
+
   return (
-    <section className={s.home}>
-      <Hero>
-        <HomeFilter />
-      </Hero>
-      <Advantages />
-      <PromoBanner />
-      <BrandIntro />
-      <Assortment />
-      <OurBrands />
-      <FAQ />
-      {!isLoading && !isError && data && (
-        <HomeFeedBack feedBackItems={data.content} />
-      )}
-    </section>
+    <>
+      <Seo
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonical={seo.canonical}
+      />
+      <section className={s.home}>
+        <Hero>
+          <HomeFilter />
+        </Hero>
+        <Advantages />
+        <PromoBanner />
+        <BrandIntro />
+        <Assortment />
+        <OurBrands />
+        <FAQ />
+        {!isLoading && !isError && data && (
+          <HomeFeedBack feedBackItems={data.content} />
+        )}
+      </section>
+    </>
   );
 };

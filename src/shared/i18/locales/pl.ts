@@ -180,15 +180,67 @@ export const pl = {
       reviews: {
         title: 'Opinie',
       },
+
+      seo: {
+        title: 'Opony terenowe 4x4 – AT, MT i nowe | Insa Turbo 4x4',
+        description:
+          'Opony terenowe 4x4 do jazdy w terenie. Nowe opony AT i MT w popularnych rozmiarach. Sprawdź ofertę, dostępność i zamów online.',
+        keywords:
+          'opony terenowe, opony 4x4, opony AT, opony MT, nowe opony, Insa Turbo, opony terenowe 4x4, opony off road',
+        h1: 'Opony terenowe 4x4 – AT, MT i nowe',
+      },
     },
+    // PL
+
     tires: {
       title: 'Opony 4X4',
+      seo: {
+        keywords: {
+          base: 'opony 4x4, opony terenowe',
+          sizePrefix: '',
+        },
+        description: {
+          productType: '– opona terenowa 4x4 za',
+          currency: 'zł.',
+          text: 'Dobierz bieżnik do swoich tras poza asfaltem i przygotuj auto na wyjazd',
+        },
+      },
     },
+
     wheels: {
       title: 'Felgi',
+      seo: {
+        keywords: {
+          base: 'felgi 4x4, felgi terenowe',
+          wheelPrefix: 'felga ',
+          wheelSuffix: '',
+        },
+        description: {
+          productType: 'Felga',
+          productTypeSuffix: '4x4',
+          currency: 'zł.',
+          text: 'Nadaj autu terenowy charakter, dobierając właściwe osadzenie kół',
+        },
+      },
     },
+
     wheelSpacers: {
       title: 'Dystanse',
+      seo: {
+        keywords: {
+          base: 'dystanse do kół, dystanse do felg, dystanse 4x4',
+          dynamicPrefix: 'dystanse ',
+          dynamicSuffix: '',
+          thicknessUnit: 'mm',
+        },
+        description: {
+          productType: 'Dystans do kół 4x4',
+          thicknessUnit: 'mm',
+          thread: 'gwint',
+          currency: 'zł.',
+          text: 'Poszerz rozstaw kół i uzyskaj bardziej wyrazisty wygląd auta',
+        },
+      },
     },
     search: {
       title: 'Wyniki wyszukiwania',

@@ -1,0 +1,27 @@
+.bold {
+  font-weight: 600;
+}
+.link {
+  color: var(--color--link);
+  text-decoration: underline;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  th,
+  td {
+    padding: 20px;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+    border: solid var(--color-border-primary-muted-alpha) 1px;
+  }
+
+  @media (max-width: $mobile) {
+    th,
+    td {
+      padding: 12px;
+    }
+  }
+}

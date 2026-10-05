@@ -1,0 +1,21 @@
+.legalPageLayout {
+  background-color: var(--color-background-primary);
+
+  .layoutWrapper {
+    padding: 32px 0 80px;
+  }
+
+  .breadCrumbs {
+    margin-bottom: 24px;
+  }
+
+  .title {
+    margin-bottom: 24px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

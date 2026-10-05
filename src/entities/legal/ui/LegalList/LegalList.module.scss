@@ -1,0 +1,20 @@
+.bold {
+  font-weight: 600;
+}
+
+.link {
+  color: var(--color--link);
+  text-decoration: underline;
+}
+.list {
+  margin: 0;
+  padding-left: 24px;
+
+  &:is(ol) {
+    list-style-type: decimal;
+  }
+
+  &:is(ul) {
+    list-style-type: disc;
+  }
+}

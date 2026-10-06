@@ -5,6 +5,7 @@ import { useTranslation } from '@/shared/lib/hooks';
 import { TIRE_SERVICES } from '../../config';
 import { Section } from '@/shared/ui/Section/Section';
 import { ServicePriceContent } from './ServicePriceContent';
+import { SUPPORT_PHONE, SUPPORT_PHONE_LINK } from '@/shared/config/siteConst';
 
 type ServicePriceProps = {
   activeItem: string;
@@ -40,9 +41,9 @@ export const TireServicePrice = ({
         />
       </div>
       <p className={s.servicePriceNote}>
-        {t('pages.tireService.tireServiceServices.note')}{' '}
-        <a href="tel:+381641234567" className={s.phoneLink}>
-          +48 500 405 819
+        {t('pages.tireService.tireServiceServices.note')}
+        <a href={`tel:${SUPPORT_PHONE_LINK}`} className={s.phoneLink}>
+          {SUPPORT_PHONE}
         </a>
       </p>
     </Section>

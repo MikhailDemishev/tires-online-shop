@@ -2,6 +2,7 @@ import { CloseIcon } from '@/assets/icons';
 import { useTranslation } from '@/shared/lib/hooks';
 
 import s from './FAQ.module.scss';
+import { SUPPORT_PHONE, SUPPORT_PHONE_LINK } from '@/shared/config/siteConst';
 
 export const useFaqAccordionItems = () => {
   const { t } = useTranslation();
@@ -124,6 +125,10 @@ export const useFaqAccordionItems = () => {
       children: (
         <p className={s.faqAccordionText}>
           {t('pages.home.faq.installation.answer')}
+          <a href={SUPPORT_PHONE_LINK} className={s.link}>
+            {SUPPORT_PHONE}
+          </a>
+          .
         </p>
       ),
     },

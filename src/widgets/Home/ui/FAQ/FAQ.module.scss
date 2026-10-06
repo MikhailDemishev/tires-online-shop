@@ -90,6 +90,11 @@
     padding: 16px;
     gap: 16px;
   }
+
+  .link {
+    color: var(--color--link);
+    text-decoration: underline;
+  }
 }
 
 .accent {

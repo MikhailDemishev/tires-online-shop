@@ -1,6 +1,7 @@
 import type { LegalSectionConfig } from '@/entities/legal/model/commontypes';
 
 export const termsConfig: readonly LegalSectionConfig[] = [
+  //раздел 1
   {
     title: 'pages.legal.terms.general.title',
     items: [
@@ -23,7 +24,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       { text: 'pages.legal.terms.general.items.3' },
     ],
   },
-
+  //раздел 2
   {
     title: 'pages.legal.terms.seller.title',
     items: [
@@ -49,6 +50,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
               },
             ],
           },
+
           {
             text: [
               {
@@ -57,6 +59,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
               },
               {
                 value: 'pages.legal.terms.seller.items.0.items.2.text.1.value',
+                accent: 'link',
               },
             ],
           },
@@ -83,34 +86,12 @@ export const termsConfig: readonly LegalSectionConfig[] = [
               },
             ],
           },
-          {
-            text: [
-              {
-                value: 'pages.legal.terms.seller.items.0.items.5.text.0.value',
-                accent: 'bold',
-              },
-              {
-                value: 'pages.legal.terms.seller.items.0.items.5.text.1.value',
-              },
-            ],
-          },
-          {
-            text: [
-              {
-                value: 'pages.legal.terms.seller.items.0.items.6.text.0.value',
-                accent: 'bold',
-              },
-              {
-                value: 'pages.legal.terms.seller.items.0.items.6.text.1.value',
-                accent: 'link',
-              },
-            ],
-          },
         ],
       },
     ],
+    className: 'noMarkers',
   },
-
+  //раздел 3
   {
     title: 'pages.legal.terms.definitions.title',
     table: {
@@ -161,7 +142,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       ],
     },
   },
-
+  //раздел4
   {
     title: 'pages.legal.terms.products.title',
     items: [
@@ -207,10 +188,11 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       { text: 'pages.legal.terms.products.items.6' },
     ],
   },
-
+  // раздел 5
   {
     title: 'pages.legal.terms.order.title',
     items: [
+      // 1
       {
         text: [
           {
@@ -225,20 +207,33 @@ export const termsConfig: readonly LegalSectionConfig[] = [
           },
         ],
       },
+
+      // 2 — новый пункт
       {
         text: 'pages.legal.terms.order.items.1.text',
+      },
+
+      // 3 — старый пункт 2 со своим маркированным списком
+      {
+        text: 'pages.legal.terms.order.items.2.text',
         items: [
-          { text: 'pages.legal.terms.order.items.1.items.0.text' },
-          { text: 'pages.legal.terms.order.items.1.items.1.text' },
-          { text: 'pages.legal.terms.order.items.1.items.2.text' },
+          { text: 'pages.legal.terms.order.items.2.items.0.text' },
+          { text: 'pages.legal.terms.order.items.2.items.1.text' },
+          { text: 'pages.legal.terms.order.items.2.items.2.text' },
         ],
       },
-      { text: 'pages.legal.terms.order.items.2.text' },
+
+      // 4
       { text: 'pages.legal.terms.order.items.3.text' },
+
+      // 5
       { text: 'pages.legal.terms.order.items.4.text' },
+
+      // 6
+      { text: 'pages.legal.terms.order.items.5.text' },
     ],
   },
-
+  //раздел 6
   {
     title: 'pages.legal.terms.payment.title',
     items: [
@@ -270,7 +265,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       { text: 'pages.legal.terms.payment.items.3.text' },
     ],
   },
-
+  //раздел 7
   {
     title: 'pages.legal.terms.delivery.title',
     items: [
@@ -300,7 +295,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       { text: 'pages.legal.terms.delivery.items.5.text' },
     ],
   },
-
+  //раздел 8
   {
     title: 'pages.legal.terms.rights.title',
     subsections: [
@@ -369,7 +364,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       },
     ],
   },
-
+  //раздел 9
   {
     title: 'pages.legal.terms.withdrawal.title',
     items: [
@@ -435,7 +430,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       },
     ],
   },
-
+  //раздел 10
   {
     title: 'pages.legal.terms.complaints.title',
     items: [
@@ -499,7 +494,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       },
     ],
   },
-
+  //раздел 11
   {
     title: 'pages.legal.terms.liability.title',
     items: [
@@ -522,7 +517,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       { text: 'pages.legal.terms.liability.items.3.text' },
     ],
   },
-
+  //раздел 12
   {
     title: 'pages.legal.terms.privacy.title',
     items: [
@@ -531,7 +526,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       { text: 'pages.legal.terms.privacy.items.2.text' },
     ],
   },
-
+  //раздел 13
   {
     title: 'pages.legal.terms.final.title',
     items: [
@@ -542,7 +537,7 @@ export const termsConfig: readonly LegalSectionConfig[] = [
       { text: 'pages.legal.terms.final.items.4.text' },
     ],
   },
-
+  //раздел 14
   {
     title: 'pages.legal.terms.contacts.title',
     items: [
@@ -584,29 +579,6 @@ export const termsConfig: readonly LegalSectionConfig[] = [
           },
           {
             value: 'pages.legal.terms.contacts.items.3.text.1.value',
-          },
-        ],
-      },
-      {
-        text: [
-          {
-            value: 'pages.legal.terms.contacts.items.4.text.0.value',
-            accent: 'bold',
-          },
-          {
-            value: 'pages.legal.terms.contacts.items.4.text.1.value',
-            accent: 'link',
-          },
-        ],
-      },
-      {
-        text: [
-          {
-            value: 'pages.legal.terms.contacts.items.5.text.0.value',
-            accent: 'bold',
-          },
-          {
-            value: 'pages.legal.terms.contacts.items.5.text.1.value',
           },
         ],
       },

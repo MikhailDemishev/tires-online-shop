@@ -19,6 +19,7 @@ export type LegalListItem = {
 export type LegalSubsectionConfig = {
   title: string;
   items: readonly LegalListItem[];
+  className?: string;
 };
 
 export type LegalSectionConfig = {
@@ -26,4 +27,5 @@ export type LegalSectionConfig = {
   items?: readonly LegalListItem[];
   table?: LegalTableData;
   subsections?: readonly LegalSubsectionConfig[];
+  className?: string;
 };

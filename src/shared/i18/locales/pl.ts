@@ -1,3 +1,10 @@
+import {
+  COMPANY_NAME,
+  SITE_NAME,
+  SUPPORT_EMAIL,
+  SUPPORT_PHONE,
+} from '@/shared/config/siteConst';
+
 export const pl = {
   header: {
     topMenu: {
@@ -20,8 +27,7 @@ export const pl = {
     },
   },
   footer: {
-    contacts:
-      '+48 500 405 819 insaturbo4x4.help@gmail.com Pon. - Pt.: 8:00 - 20:00',
+    contacts: `${SUPPORT_PHONE} ${SUPPORT_EMAIL} Pon. - Pt.: 8:00 - 20:00`,
     address: 'Jerzego Badury 20, 56-416 Goszcz, Polska',
     routes: {
       aboutUs: 'O nas',
@@ -30,7 +36,7 @@ export const pl = {
       guarantee: 'Gwarancje',
       cookiePreferences: 'Ustawienia plików cookie',
       privacyPolicy: 'Polityka prywatności',
-      terms: 'Warunki korzystania',
+      terms: 'Regulamin',
     },
     columns: {
       information: 'Informacje',
@@ -38,7 +44,7 @@ export const pl = {
       contacts: 'Kontakt',
       address: 'Nasz adres',
     },
-    copyright: '© InsaTurbo4×4 — Rozwiązania off-road dla kierowców 4×4.',
+    copyright: '© InsaTurbo4×4 – opony terenowe, felgi i dystanse',
   },
   pages: {
     home: {
@@ -173,7 +179,7 @@ export const pl = {
         installation: {
           question: 'Czy pomagacie w montażu opon?',
           answer:
-            'Aby uzyskać więcej informacji, skontaktuj się z nami telefonicznie pod numerem +7 ... lub za pomocą formularza kontaktowego.',
+            'Aby uzyskać więcej informacji, skontaktuj się z nami za pomocą formularza kontaktowego lub telefonicznie pod numerem ',
         },
       },
 
@@ -559,7 +565,10 @@ export const pl = {
         manufacturerWarranty: {
           header: 'Oficjalna gwarancja producenta',
           content:
-            'Wszystkie produkty objęte są gwarancją producenta na wady materiałowe i produkcyjne. Okres oraz warunki gwarancji zależą od marki i są określone w dokumentacji produktu. Aby uzyskać więcej informacji, skontaktuj się z naszym doradcą.',
+            'Wszystkie produkty objęte są gwarancją producenta na wady materiałowe i produkcyjne. Okres oraz warunki gwarancji zależą od marki i są określone w dokumentacji produktu. Aby uzyskać więcej informacji, skontaktuj się z naszym ',
+          link: {
+            text: 'doradcą.',
+          },
         },
 
         qualityControl: {
@@ -613,11 +622,10 @@ export const pl = {
             {
               text: [
                 {
-                  value:
-                    'Niniejsza Polityka prywatności wyjaśnia, w jaki sposób [nazwa firmy] (dalej - Administrator) przetwarza dane osobowe użytkowników strony internetowej ',
+                  value: `Niniejsza Polityka prywatności wyjaśnia, w jaki sposób ${COMPANY_NAME} (dalej - Administrator) przetwarza dane osobowe użytkowników strony internetowej `,
                 },
                 {
-                  value: 'tires.akordirect.com',
+                  value: SITE_NAME,
                 },
                 {
                   value:
@@ -629,7 +637,7 @@ export const pl = {
               text: 'Dane osobowe są przetwarzane zgodnie z ogólnym rozporządzeniem o ochronie danych (GDPR/RODO) - Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. - oraz przepisami prawa krajowego Rzeczypospolitej Polskiej.',
             },
             {
-              text: 'Obecnie Serwis nie posiada funkcjonalności składania zamówień online, konta użytkownika ani płatności online. Wszystkie zamówienia przyjmowane są telefonicznie, a dane oraz konsultacje z klientami również są obsługiwane telefonicznie. W przyszłości w Serwisie może pojawić się formularz kontaktowy oraz inne sposoby komunikacji elektronicznej - poinformujemy o nich oddzielnie.',
+              text: 'Obecnie Serwis nie posiada funkcjonalności składania zamówień online, konta użytkownika ani płatności online. Wszystkie zamówienia i konsultacje są realizowane telefonicznie. Dane przekazane przez klienta są wykorzystywane wyłącznie w celu obsługi zapytania i kontaktu z klientem. Na Stronie dostępny jest formularz zgłoszeniowy umożliwiający dobór produktu lub sprawdzenie jego dostępności. W przyszłości mogą pojawić się inne formy komunikacji elektronicznej – poinformujemy o nich osobno.',
             },
           ],
         },
@@ -641,7 +649,7 @@ export const pl = {
               text: 'Administratorem danych osobowych jest:',
             },
             {
-              text: [{ value: '[pełna nazwa firmy]' }],
+              text: [{ value: COMPANY_NAME }],
             },
             {
               text: [
@@ -649,20 +657,12 @@ export const pl = {
                 { value: ' Jerzego Badury 20, 56-416 Goszcz, Polska' },
               ],
             },
+
             {
-              text: [{ value: 'NIP:' }, { value: ' [numer NIP]' }],
+              text: [{ value: 'E-mail: ' }, { value: SUPPORT_EMAIL }],
             },
             {
-              text: [{ value: 'REGION:' }, { value: ' [numer REGION]' }],
-            },
-            {
-              text: [
-                { value: 'E-mail:' },
-                { value: ' insaturbo4x4.help@gmail.com' },
-              ],
-            },
-            {
-              text: [{ value: 'Telefon:' }, { value: ' +48 500 405 819' }],
+              text: [{ value: 'Telefon: ' }, { value: SUPPORT_PHONE }],
             },
             {
               text: 'We wszystkich sprawach związanych z przetwarzaniem danych osobowych można kontaktować się z nami za pośrednictwem podanego adresu e-mail lub numeru telefonu.',
@@ -680,8 +680,7 @@ export const pl = {
               text: [
                 { value: 'Dane przekazywane dobrowolnie' },
                 {
-                  value:
-                    ' (obecnie telefonicznie; w przyszłości za pośrednictwem formularza kontaktowego lub prośby o kontakt telefoniczny):',
+                  value: ` za pośrednictwem formularza zgłoszeniowego na Stronie lub telefonicznie: ${SUPPORT_PHONE}`,
                 },
               ],
               items: [
@@ -737,6 +736,16 @@ export const pl = {
                       {
                         value:
                           ' - prawnie uzasadniony interes Administratora (obsługa klientów i poprawa jakości obsługi)',
+                      },
+                    ],
+                  ],
+                  [
+                    'Przetwarzanie zgłoszeń przesłanych za pośrednictwem formularza na Stronie (dobór produktu, sprawdzenie dostępności, kalkulacja kosztów)',
+                    [
+                      { value: 'art. 6 ust. 1 lit. b RODO', accent: 'bold' },
+                      {
+                        value:
+                          ' - podjęcie działań na żądanie osoby, której dane dotyczą, przed zawarciem umowy',
                       },
                     ],
                   ],
@@ -860,7 +869,7 @@ export const pl = {
         },
 
         thirdParties: {
-          title: '6. Przekazywanie danych osobowych osobom trzecim',
+          title: '5. Przekazywanie danych osobowych osobom trzecim',
           items: [
             {
               text: 'Możemy przekazywać Państwa dane osobowe następującym kategoriom odbiorców:',
@@ -952,7 +961,7 @@ export const pl = {
         },
 
         storage: {
-          title: '7. Przechowywanie i ochrona danych osobowych',
+          title: '6. Przechowywanie i ochrona danych osobowych',
           items: [
             {
               text: [
@@ -967,7 +976,18 @@ export const pl = {
               ],
               items: [
                 {
-                  text: 'Dane uzyskane w wyniku kontaktu telefonicznego (a w przyszłości - za pośrednictwem formularza kontaktowego) są przechowywane przez 12 miesięcy od ostatniego kontaktu.',
+                  text: [
+                    {
+                      value:
+                        'Dane uzyskane w wyniku kontaktu telefonicznego lub za pośrednictwem formularza zgłoszeniowego na Stronie są przechowywane przez ',
+                    },
+                    {
+                      value: '12 miesięcy',
+                    },
+                    {
+                      value: ' od momentu ostatniego kontaktu.',
+                    },
+                  ],
                 },
                 {
                   text: 'Dane związane z zamówieniami (w przyszłości) będą przechowywane przez okresy określone przepisami podatkowymi (zwykle 5 lat).',
@@ -998,7 +1018,7 @@ export const pl = {
         },
 
         rights: {
-          title: '8. Prawa użytkowników',
+          title: '7. Prawa użytkowników',
           items: [
             {
               text: 'Zgodnie z RODO mają Państwo prawo do:',
@@ -1083,7 +1103,7 @@ export const pl = {
                   value:
                     'W celu skorzystania z powyższych praw prosimy o kontakt drogą elektroniczną pod adresem: ',
                 },
-                { value: 'insaturbo4x4.help@gmail.com' },
+                { value: ` ${SUPPORT_EMAIL}` },
                 {
                   value:
                     '. W zgłoszeniu należy podać imię i nazwisko, dane kontaktowe oraz treść żądania. Rozpatrzymy zgłoszenie w ciągu ',
@@ -1100,7 +1120,7 @@ export const pl = {
 
         cookies: {
           title:
-            '9. Korzystanie z plików cookie i technologii gromadzenia danych',
+            '8. Korzystanie z plików cookie i technologii gromadzenia danych',
           items: [
             {
               text: 'Nasz Serwis wykorzystuje pliki cookie (niewielkie pliki tekstowe zapisywane na Państwa urządzeniu) w celu poprawy działania Serwisu i zbierania anonimowych danych statystycznych.',
@@ -1194,7 +1214,7 @@ export const pl = {
         },
 
         final: {
-          title: '10. Postanowienia końcowe',
+          title: '9. Postanowienia końcowe',
           items: [
             {
               text: 'Administrator zastrzega sobie prawo do zmiany niniejszej Polityki prywatności. Nowa wersja zostanie opublikowana na tej stronie wraz z datą aktualizacji i wchodzi w życie z chwilą publikacji.',
@@ -1208,7 +1228,7 @@ export const pl = {
                   value:
                     'W przypadku pytań dotyczących niniejszej Polityki prosimy o kontakt pod adresem e-mail: ',
                 },
-                { value: 'insaturbo4x4.help@gmail.com' },
+                { value: ` ${SUPPORT_EMAIL}` },
                 { value: '.' },
               ],
             },
@@ -1230,10 +1250,9 @@ export const pl = {
                   value:
                     'Niniejszy Regulamin (dalej - Regulamin) określa zasady korzystania ze sklepu internetowego ',
                 },
-                { value: 'tires.akordirect.com' },
+                { value: SITE_NAME },
                 {
-                  value:
-                    ' (dalej - Serwis), należącego do [pełna nazwa firmy] (dalej - Sprzedawca). Obecnie Serwis pełni funkcję witryny informacyjnej; zamówienia składane są telefonicznie.',
+                  value: ` (dalej - Serwis), należącego do ${COMPANY_NAME} (dalej - Sprzedawca). Obecnie Serwis pełni funkcję witryny informacyjnej; zamówienia składane są telefonicznie.`,
                 },
               ],
             },
@@ -1250,7 +1269,7 @@ export const pl = {
               text: 'Sprzedawca:',
               items: [
                 {
-                  text: [{ value: '[pełna nazwa firmy]' }],
+                  text: [{ value: COMPANY_NAME }],
                 },
                 {
                   text: [
@@ -1258,25 +1277,17 @@ export const pl = {
                     { value: ' Jerzego Badury 20, 56-416 Goszcz, Polska' },
                   ],
                 },
+
                 {
-                  text: [{ value: 'NIP:' }, { value: ' [numer NIP]' }],
+                  text: [{ value: 'E-mail: ' }, { value: SUPPORT_EMAIL }],
                 },
                 {
-                  text: [{ value: 'REGION:' }, { value: ' [numer REGION]' }],
-                },
-                {
-                  text: [
-                    { value: 'E-mail:' },
-                    { value: ' insaturbo4x4.help@gmail.com' },
-                  ],
-                },
-                {
-                  text: [{ value: 'Telefon:' }, { value: ' +48 500 405 819' }],
+                  text: [{ value: 'Telefon: ' }, { value: SUPPORT_PHONE }],
                 },
                 {
                   text: [
-                    { value: 'Strona internetowa:' },
-                    { value: ' tires.akordirect.com' },
+                    { value: 'Strona internetowa: ' },
+                    { value: SITE_NAME },
                   ],
                 },
               ],
@@ -1305,7 +1316,7 @@ export const pl = {
                 'Serwis',
                 [
                   { value: 'Serwis internetowy ' },
-                  { value: 'tires.akordirect.com' },
+                  { value: SITE_NAME },
                   {
                     value:
                       ', obejmujący wszystkie subdomeny i sekcje funkcjonalne',
@@ -1373,8 +1384,11 @@ export const pl = {
                   value: 'Obecnie zamówienia można składać ',
                 },
                 { value: 'WYŁĄCZNIE TELEFONICZNIE' },
-                { value: ' pod numerem +48 500 405 819.' },
+                { value: ` pod numerem ${SUPPORT_PHONE}.` },
               ],
+            },
+            {
+              text: 'Na Stronie dostępny jest formularz zgłoszeniowy, za pomocą którego Kupujący może poprosić o pomoc w doborze produktu lub sprawdzić jego dostępność. Wysłanie formularza nie stanowi złożenia zamówienia i nie powoduje powstania zobowiązań umownych.',
             },
             {
               text: 'W celu złożenia zamówienia Kupujący kontaktuje się ze Sprzedawcą telefonicznie i podaje:',
@@ -1564,7 +1578,7 @@ export const pl = {
                 {
                   text: [
                     { value: 'pocztą elektroniczną: ' },
-                    { value: 'insaturbo4x4.help@gmail.com' },
+                    { value: SUPPORT_EMAIL },
                     { value: ';' },
                   ],
                 },
@@ -1598,9 +1612,9 @@ export const pl = {
               text: [
                 {
                   value:
-                    'Formularz odstąpienia od umowy jest dostępny w Załączniku nr 1 do niniejszego Regulaminu, a także może zostać wypełniony drogą elektroniczną pod adresem ',
+                    'Formularz odstąpienia od umowy można otrzymać na żądanie za pośrednictwem poczty elektronicznej: ',
                 },
-                { value: 'insaturbo4x4.help@gmail.com' },
+                { value: SUPPORT_EMAIL },
                 {
                   value:
                     '. Konsument może również sporządzić oświadczenie w dowolnej formie, podając swoje dane, numer zamówienia oraz datę zakupu. Sprzedawca zobowiązuje się przesłać formularz w ciągu 24 godzin od otrzymania żądania.',
@@ -1622,7 +1636,7 @@ export const pl = {
                 {
                   text: [
                     { value: 'pocztą elektroniczną: ' },
-                    { value: 'insaturbo4x4.help@gmail.com' },
+                    { value: SUPPORT_EMAIL },
                     { value: ';' },
                   ],
                 },
@@ -1630,7 +1644,7 @@ export const pl = {
                   text: 'pisemnie na adres Sprzedawcy: Jerzego Badury 20, 56-416 Goszcz, Polska;',
                 },
                 {
-                  text: 'telefonicznie: +48 500 405 819.',
+                  text: `telefonicznie: ${SUPPORT_PHONE}.`,
                 },
               ],
             },
@@ -1705,7 +1719,7 @@ export const pl = {
               text: 'Dane przekazywane są firmom kurierskim wyłącznie w zakresie niezbędnym do realizacji zamówienia (imię i nazwisko, adres, numer telefonu kontaktowego).',
             },
             {
-              text: 'Kupujący wyraża zgodę na przetwarzanie swoich danych osobowych w celu realizacji zamówienia.',
+              text: 'Dane osobowe Kupującego są przetwarzane na podstawie konieczności wykonania umowy (art. 6 ust. 1 lit. b RODO).',
             },
           ],
         },
@@ -1735,7 +1749,7 @@ export const pl = {
           title: 'Dane kontaktowe',
           items: [
             {
-              text: [{ value: '[pełna nazwa firmy]' }],
+              text: [{ value: COMPANY_NAME }],
             },
             {
               text: [
@@ -1743,20 +1757,12 @@ export const pl = {
                 { value: ' Jerzego Badury 20, 56-416 Goszcz, Polska' },
               ],
             },
+
             {
-              text: [{ value: 'NIP:' }, { value: ' [numer NIP]' }],
+              text: [{ value: 'E-mail: ' }, { value: SUPPORT_EMAIL }],
             },
             {
-              text: [{ value: 'REGION:' }, { value: ' [numer REGION]' }],
-            },
-            {
-              text: [
-                { value: 'E-mail:' },
-                { value: ' insaturbo4x4.help@gmail.com' },
-              ],
-            },
-            {
-              text: [{ value: 'Telefon:' }, { value: ' +48 500 405 819' }],
+              text: [{ value: 'Telefon: ' }, { value: SUPPORT_PHONE }],
             },
           ],
         },
@@ -2007,7 +2013,7 @@ export const pl = {
                   value:
                     'W celu skorzystania z tych praw prosimy o przesłanie zgłoszenia na adres e-mail: ',
                 },
-                { value: 'insaturbo4x4.help@gmail.com' },
+                { value: SUPPORT_EMAIL },
                 {
                   value:
                     '. W zgłoszeniu należy podać imię i nazwisko, dane kontaktowe oraz treść żądania. Rozpatrzymy zgłoszenie w terminach przewidzianych prawem.',
@@ -2036,7 +2042,7 @@ export const pl = {
               text: 'Jeżeli mają Państwo pytania dotyczące korzystania z plików cookie lub chcą wycofać zgodę, prosimy o kontakt:',
             },
             {
-              text: [{ value: '[pełna nazwa firmy]' }],
+              text: [{ value: COMPANY_NAME }],
             },
             {
               text: [
@@ -2044,20 +2050,12 @@ export const pl = {
                 { value: ' Jerzego Badury 20, 56-416 Goszcz, Polska' },
               ],
             },
+
             {
-              text: [{ value: 'NIP:' }, { value: ' [numer NIP]' }],
+              text: [{ value: 'E-mail: ' }, { value: SUPPORT_EMAIL }],
             },
             {
-              text: [{ value: 'REGION:' }, { value: ' [numer REGION]' }],
-            },
-            {
-              text: [
-                { value: 'E-mail:' },
-                { value: ' insaturbo4x4.help@gmail.com' },
-              ],
-            },
-            {
-              text: [{ value: 'Telefon:' }, { value: ' +48 500 405 819' }],
+              text: [{ value: 'Telefon: ' }, { value: SUPPORT_PHONE }],
             },
           ],
         },

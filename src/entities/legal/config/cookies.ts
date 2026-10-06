@@ -226,29 +226,6 @@ export const cookiesConfig: readonly LegalSectionConfig[] = [
           },
         ],
       },
-      {
-        text: [
-          {
-            value: 'pages.legal.cookies.contacts.items.5.text.0.value',
-            accent: 'bold',
-          },
-          {
-            value: 'pages.legal.cookies.contacts.items.5.text.1.value',
-            accent: 'link',
-          },
-        ],
-      },
-      {
-        text: [
-          {
-            value: 'pages.legal.cookies.contacts.items.6.text.0.value',
-            accent: 'bold',
-          },
-          {
-            value: 'pages.legal.cookies.contacts.items.6.text.1.value',
-          },
-        ],
-      },
     ],
   },
 ];

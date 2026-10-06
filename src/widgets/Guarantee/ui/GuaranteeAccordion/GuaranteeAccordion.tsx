@@ -13,16 +13,29 @@ export const GuaranteeAccordion = () => {
       triggerClassName={s.guaranteeAccordionTrigger}
       contentClassName={s.guaranteeAccordionContent}
       defaultValue="characteristics"
-      items={GUARANTEE_ACCORDION_ITEMS.map(({ value, header, content }) => ({
-        value,
-        header: (
-          <div className={s.guaranteeAccordionHeader}>
-            <span className={s.guaranteeAccordionTitle}>{t(header)}</span>
-            <CloseIcon className={s.guaranteeAccordionIcon} />
-          </div>
-        ),
-        children: <p className={s.guaranteeAccordionText}>{t(content)}</p>,
-      }))}
+      items={GUARANTEE_ACCORDION_ITEMS.map(
+        ({ value, header, content, link }) => ({
+          value,
+          header: (
+            <div className={s.guaranteeAccordionHeader}>
+              <span className={s.guaranteeAccordionTitle}>{t(header)}</span>
+              <CloseIcon className={s.guaranteeAccordionIcon} />
+            </div>
+          ),
+          children: (
+            <p className={s.guaranteeAccordionText}>
+              {t(content)}
+              {link && (
+                <>
+                  <a href={link.href} className={s.link}>
+                    {t(link.text)}
+                  </a>
+                </>
+              )}
+            </p>
+          ),
+        }),
+      )}
     />
   );
 };

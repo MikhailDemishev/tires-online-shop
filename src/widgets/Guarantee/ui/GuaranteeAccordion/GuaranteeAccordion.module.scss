@@ -73,6 +73,11 @@
   .guaranteeAccordionText {
     font-size: clamp(14px, 1.4vw, 20px);
     line-height: 1;
+
+    .link {
+      color: var(--color--link);
+      text-decoration: underline;
+    }
   }
 
   .guaranteeAccordionList {

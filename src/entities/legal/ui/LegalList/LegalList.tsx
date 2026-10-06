@@ -5,15 +5,19 @@ import type { LegalListItem, LegalText } from '../../model/commontypes';
 import { LegalTable } from '@/entities/legal/ui/LegalTable/LegalTable';
 
 import s from './LegalList.module.scss';
+import clsx from 'clsx';
 
 type Props = {
   items: readonly LegalListItem[];
   ordered?: boolean;
+  className?: string;
 };
 
-export const LegalList = ({ items, ordered = true }: Props) => {
+export const LegalList = ({ items, ordered = true, className }: Props) => {
   const { t } = useTranslation();
   const List = ordered ? 'ol' : 'ul';
+
+  console.log('className', className);
 
   const renderText = (text: LegalText) => {
     if (Array.isArray(text)) {
@@ -32,7 +36,7 @@ export const LegalList = ({ items, ordered = true }: Props) => {
   };
 
   return (
-    <List className={s.list}>
+    <List className={clsx(s.list, className && s[className])}>
       {items.map((item, index) => (
         <li key={index} className={s.item}>
           <Text>{renderText(item.text)}</Text>

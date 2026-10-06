@@ -46,6 +46,28 @@ export const privacyConfig: readonly LegalSectionConfig[] = [
           },
         ],
       },
+      //   {
+      //     text: [
+      //       {
+      //         value: 'pages.legal.privacy.operator.items.3.text.0.value',
+      //         accent: 'bold',
+      //       },
+      //       {
+      //         value: 'pages.legal.privacy.operator.items.3.text.1.value',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     text: [
+      //       {
+      //         value: 'pages.legal.privacy.operator.items.4.text.0.value',
+      //         accent: 'bold',
+      //       },
+      //       {
+      //         value: 'pages.legal.privacy.operator.items.4.text.1.value',
+      //       },
+      //     ],
+      //   },
       {
         text: [
           {
@@ -54,6 +76,7 @@ export const privacyConfig: readonly LegalSectionConfig[] = [
           },
           {
             value: 'pages.legal.privacy.operator.items.3.text.1.value',
+            accent: 'link',
           },
         ],
       },
@@ -68,31 +91,9 @@ export const privacyConfig: readonly LegalSectionConfig[] = [
           },
         ],
       },
-      {
-        text: [
-          {
-            value: 'pages.legal.privacy.operator.items.5.text.0.value',
-            accent: 'bold',
-          },
-          {
-            value: 'pages.legal.privacy.operator.items.5.text.1.value',
-            accent: 'link',
-          },
-        ],
-      },
-      {
-        text: [
-          {
-            value: 'pages.legal.privacy.operator.items.6.text.0.value',
-            accent: 'bold',
-          },
-          {
-            value: 'pages.legal.privacy.operator.items.6.text.1.value',
-          },
-        ],
-      },
-      { text: 'pages.legal.privacy.operator.items.7.text' },
+      { text: 'pages.legal.privacy.operator.items.5.text' },
     ],
+    className: 'noMarkers',
   },
 
   {
@@ -285,26 +286,26 @@ export const privacyConfig: readonly LegalSectionConfig[] = [
     ],
   },
 
-  {
-    title: 'pages.legal.privacy.legalBasis.title',
-    items: [
-      {
-        text: 'pages.legal.privacy.legalBasis.items.0.text',
-        items: [0, 1, 2, 3].map((index) => ({
-          text: [
-            {
-              value: `pages.legal.privacy.legalBasis.items.0.items.${index}.text.0.value`,
-              accent: 'bold' as const,
-            },
-            {
-              value: `pages.legal.privacy.legalBasis.items.0.items.${index}.text.1.value`,
-            },
-          ],
-        })),
-      },
-      { text: 'pages.legal.privacy.legalBasis.items.1.text' },
-    ],
-  },
+  //   {
+  //     title: 'pages.legal.privacy.legalBasis.title',
+  //     items: [
+  //       {
+  //         text: 'pages.legal.privacy.legalBasis.items.0.text',
+  //         items: [0, 1, 2, 3].map((index) => ({
+  //           text: [
+  //             {
+  //               value: `pages.legal.privacy.legalBasis.items.0.items.${index}.text.0.value`,
+  //               accent: 'bold' as const,
+  //             },
+  //             {
+  //               value: `pages.legal.privacy.legalBasis.items.0.items.${index}.text.1.value`,
+  //             },
+  //           ],
+  //         })),
+  //       },
+  //       { text: 'pages.legal.privacy.legalBasis.items.1.text' },
+  //     ],
+  //   },
 
   {
     title: 'pages.legal.privacy.thirdParties.title',
@@ -379,7 +380,23 @@ export const privacyConfig: readonly LegalSectionConfig[] = [
           },
         ],
         items: [
-          { text: 'pages.legal.privacy.storage.items.0.items.0.text' },
+          {
+            text: [
+              {
+                value:
+                  'pages.legal.privacy.storage.items.0.items.0.text.0.value',
+              },
+              {
+                value:
+                  'pages.legal.privacy.storage.items.0.items.0.text.1.value',
+                accent: 'bold',
+              },
+              {
+                value:
+                  'pages.legal.privacy.storage.items.0.items.0.text.2.value',
+              },
+            ],
+          },
           { text: 'pages.legal.privacy.storage.items.0.items.1.text' },
           { text: 'pages.legal.privacy.storage.items.0.items.2.text' },
         ],

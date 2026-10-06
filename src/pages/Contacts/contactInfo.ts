@@ -1,14 +1,19 @@
 import { Email, Phone } from '@/assets/icons';
+import {
+  SUPPORT_EMAIL,
+  SUPPORT_PHONE,
+  SUPPORT_PHONE_LINK,
+} from '@/shared/config/siteConst';
 
 export const contactsInfo = [
   {
     Icon: Phone,
-    value: '+48 500 405 819',
-    href: 'tel:+48500405819',
+    value: SUPPORT_PHONE,
+    href: `tel:${SUPPORT_PHONE_LINK}`,
   },
   {
     Icon: Email,
-    value: 'insaturbo4x4.help@gmail.com',
-    href: 'mailto:insaturbo4x4.help@gmail.com',
+    value: SUPPORT_EMAIL,
+    href: `mailto:${SUPPORT_EMAIL}`,
   },
 ] as const;

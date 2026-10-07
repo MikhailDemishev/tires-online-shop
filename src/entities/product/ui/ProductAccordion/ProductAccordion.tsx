@@ -18,6 +18,8 @@ export const ProductAccordion = ({
   characteristics,
   description,
 }: ProductAccordionProps) => {
+  console.log('characteristics', characteristics);
+  console.log('description', description);
   const { t, language } = useTranslation();
   const PRODUCT_ACCORDION_ITEMS = [
     {

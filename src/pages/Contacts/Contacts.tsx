@@ -5,7 +5,7 @@ import { useSeo } from '@/features/seo/lib';
 import { Seo } from '@/features/seo/ui';
 
 export const Contacts = () => {
-  const seo = useSeo(undefined, undefined, '/about-us');
+  const seo = useSeo(undefined, undefined, '/contact');
   return (
     <>
       <Seo

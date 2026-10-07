@@ -1,56 +1,37 @@
 export const renderDescription = (text: string) => {
-  const parts = text
-    .split('•')
-    .map((item) => item.trim())
+  if (!text) return null;
+
+  const blocks = text
+    .split('\n\n')
+    .map((block) => block.trim())
     .filter(Boolean);
 
-  const sections: {
-    text?: string;
-    title?: string;
-    items: string[];
-  }[] = [];
+  return blocks.map((block, index) => {
+    const lines = block
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean);
 
-  parts.forEach((part) => {
-    if (part.includes(':')) {
-      const colonIndex = part.indexOf(':');
-      const beforeColon = part.slice(0, colonIndex).trim();
+    const title = lines[0];
+    const listItems = lines
+      .slice(1)
+      .filter((line) => line.startsWith('•'))
+      .map((line) => line.replace(/^•\s*/, ''));
 
-      const lastSentenceEnd = Math.max(
-        beforeColon.lastIndexOf('.'),
-        beforeColon.lastIndexOf('!'),
-        beforeColon.lastIndexOf('?'),
+    if (listItems.length > 0) {
+      return (
+        <div key={index}>
+          <p>{title}</p>
+
+          <ul>
+            {listItems.map((item, itemIndex) => (
+              <li key={itemIndex}>{item}</li>
+            ))}
+          </ul>
+        </div>
       );
-
-      const paragraph =
-        lastSentenceEnd !== -1
-          ? beforeColon.slice(0, lastSentenceEnd + 1).trim()
-          : '';
-
-      const title = beforeColon.slice(lastSentenceEnd + 1).trim() + ':';
-
-      sections.push({
-        text: paragraph,
-        title,
-        items: [],
-      });
-    } else {
-      sections.at(-1)?.items.push(part);
     }
+
+    return <p key={index}>{block}</p>;
   });
-
-  return sections.map(({ text, title, items }, index) => (
-    <div key={index}>
-      {text && <p>{text}</p>}
-
-      {title && <p>{title}</p>}
-
-      {items.length > 0 && (
-        <ul>
-          {items.map((item, itemIndex) => (
-            <li key={itemIndex}>{item}</li>
-          ))}
-        </ul>
-      )}
-    </div>
-  ));
 };

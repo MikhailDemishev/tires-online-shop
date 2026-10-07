@@ -51,14 +51,10 @@ export const getProductSeoDescription = (
       const price = wheel.price;
 
       const productType = t('pages.wheels.seo.description.productType');
-      const productTypeSuffix = t(
-        'pages.wheels.seo.description.productTypeSuffix',
-      );
 
       return [
         material,
         productType,
-        productTypeSuffix,
         size,
         boltSpacing ? `${boltSpacing},` : '',
         et ? `ET${et}` : '',

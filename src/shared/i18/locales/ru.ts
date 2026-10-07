@@ -205,7 +205,7 @@ export const ru = {
         },
         description: {
           productType: '– внедорожная шина 4x4 за',
-          currency: 'PLN.',
+          currency: 'zł. ',
           text: 'Подберите протектор для своих маршрутов вне асфальта',
         },
       },
@@ -221,7 +221,7 @@ export const ru = {
         },
         description: {
           productType: 'диск 4x4',
-          currency: 'PLN.',
+          currency: 'zł. ',
           text: 'Подчеркните внедорожный стиль машины, выбрав подходящую разболтовку и вылет',
         },
       },
@@ -240,7 +240,7 @@ export const ru = {
           productType: 'Проставка для колёс 4x4',
           thicknessUnit: 'мм',
           thread: 'резьба',
-          currency: 'PLN.',
+          currency: 'zł.',
           text: 'Расширьте колею и придайте автомобилю более выразительный вид',
         },
       },
@@ -1340,7 +1340,7 @@ export const ru = {
             {
               text: [
                 { value: 'Цены на сайте указаны в ' },
-                { value: 'польских злотых (PLN)' },
+                { value: 'польских злотых (zł.)' },
                 { value: ' и являются ' },
                 { value: 'ценами брутто' },
                 {

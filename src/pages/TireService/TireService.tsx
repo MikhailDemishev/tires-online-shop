@@ -8,11 +8,13 @@ import { ContactsBlock } from '@/widgets/Contacts';
 import { useSeo } from '@/features/seo/lib';
 import { ROUTES } from '@/app/router';
 import { Seo } from '@/features/seo/ui';
+import { useTranslation } from '@/shared/lib/hooks';
 
 export const TireService = () => {
-  const title = 'pages.tireService.title';
   const [activeService, setActiveService] = useState('');
   const seo = useSeo(undefined, undefined, ROUTES.tireService);
+  const { t } = useTranslation();
+  const title = t('pages.tireService.title');
 
   const handleServiceClick = (value: string) => {
     setActiveService(value);

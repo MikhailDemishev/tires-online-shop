@@ -10,6 +10,8 @@ type Props = {
 export const SearchCard = ({ searchProduct }: Props) => {
   const cardTitle = searchProduct.title.replace(/\s*\([^)]*\)\s*$/, '');
 
+  console.log(cardTitle, cardTitle);
+
   const getTireProtectorName = (title: string) =>
     title.match(/\(([^)]+)\)/)?.[1] ?? '';
   return (

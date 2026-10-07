@@ -206,7 +206,7 @@ export const en = {
         },
         description: {
           productType: '– off-road 4x4 tire for',
-          currency: 'PLN.',
+          currency: 'zł.',
           text: 'Match the tread to the routes you take beyond paved roads',
         },
       },
@@ -222,7 +222,7 @@ export const en = {
         },
         description: {
           productType: '4x4 wheel',
-          currency: 'PLN.',
+          currency: 'zł.',
           text: 'Give your off-road build a bolder look with the bolt pattern and offset it needs',
         },
       },
@@ -241,7 +241,7 @@ export const en = {
           productType: '4x4 wheel spacer',
           thicknessUnit: 'mm',
           thread: 'thread',
-          currency: 'PLN.',
+          currency: 'zł.',
           text: 'Widen the track for a more pronounced off-road stance',
         },
       },
@@ -1324,7 +1324,7 @@ export const en = {
             {
               text: [
                 { value: 'Prices on the Website are stated in ' },
-                { value: 'Polish zloty (PLN)' },
+                { value: 'Polish zloty (zł.)' },
                 { value: ' and are ' },
                 { value: 'gross prices' },
                 {

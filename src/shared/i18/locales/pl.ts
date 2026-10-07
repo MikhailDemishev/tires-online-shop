@@ -1359,7 +1359,7 @@ export const pl = {
             {
               text: [
                 { value: 'Ceny w Serwisie podawane są w ' },
-                { value: 'złotych polskich (PLN)' },
+                { value: 'złotych polskich (zł.)' },
                 { value: ' i są ' },
                 { value: 'cenami brutto' },
                 {

@@ -1,25 +1,31 @@
 import { Facebook, Instagram, Telegram, Youtube } from '@/assets/icons';
+import {
+  FACEBOOK_URL,
+  INSTAGRAM_URL,
+  TELEGRAM_URL,
+  YOUTUBE_URL,
+} from '@/shared/config/siteConst';
 import type { SocialItem } from '@/shared/ui/Socials';
 
 export const socials: SocialItem[] = [
   {
     Icon: Instagram,
-    href: 'https://www.instagram.com/insaturbo4x4/',
+    href: INSTAGRAM_URL,
     label: 'Instagram',
   },
   {
     Icon: Telegram,
-    href: 'https://t.me/tires4x4_bot',
+    href: TELEGRAM_URL,
     label: 'Telegram',
   },
   {
     Icon: Youtube,
-    href: 'https://www.youtube.com/@tires4x4',
+    href: YOUTUBE_URL,
     label: 'YouTube',
   },
   {
     Icon: Facebook,
-    href: 'https://www.facebook.com/tires4x4',
+    href: FACEBOOK_URL,
     label: 'Facebook',
   },
 ];

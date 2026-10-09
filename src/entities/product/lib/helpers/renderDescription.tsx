@@ -1,3 +1,5 @@
+import s from '@/entities/product/ui/ProductAccordion/ProductAccordion.module.scss';
+
 export const renderDescription = (text: string) => {
   if (!text) return null;
 
@@ -21,11 +23,13 @@ export const renderDescription = (text: string) => {
     if (listItems.length > 0) {
       return (
         <div key={index}>
-          <p>{title}</p>
+          <p className={s.descriptionTitle}>{title}</p>
 
-          <ul>
+          <ul className={s.descriptionList}>
             {listItems.map((item, itemIndex) => (
-              <li key={itemIndex}>{item}</li>
+              <li className={s.descriptionListItem} key={itemIndex}>
+                {item}
+              </li>
             ))}
           </ul>
         </div>

@@ -18,7 +18,6 @@ type ProductGalleryMobileProps = {
 
 export const ProductGalleryMobile = ({
   url,
-  urls,
   fallbackImage,
   inStock,
   className,
@@ -32,7 +31,7 @@ export const ProductGalleryMobile = ({
   //   : [];
 
   // Временно
-  const images = [url, urls, fallbackImage];
+  const images = [url, url, url];
 
   return (
     <div className={clsx(className, s.galleryMobile, !inStock && s.outOfStock)}>

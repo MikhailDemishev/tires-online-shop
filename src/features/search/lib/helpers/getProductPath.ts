@@ -9,7 +9,7 @@ export const getProductPath = (searchProduct: SearchProduct) => {
     case 'Wheel':
       return `${ROUTES.wheels}/${searchProduct.id}`;
 
-    case 'SPACER':
+    case 'WheelSpacer':
       return `${ROUTES.wheelSpacers}/${searchProduct.id}`;
 
     default:

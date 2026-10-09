@@ -13,7 +13,6 @@ type ProductGalleryDesktopProps = {
 
 export const ProductGallery = ({
   url,
-  urls,
   fallbackImage,
   inStock,
   className,
@@ -27,7 +26,7 @@ export const ProductGallery = ({
   //     : [];
 
   //временно
-  const images = [url, urls, fallbackImage];
+  const images = [url, url, url];
 
   return (
     <div className={className}>

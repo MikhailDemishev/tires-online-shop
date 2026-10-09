@@ -85,3 +85,18 @@
 .bold {
   font-weight: 700;
 }
+
+.descriptionTitle {
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.descriptionList.descriptionList {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.descriptionListItem.descriptionListItem {
+  display: list-item;
+}

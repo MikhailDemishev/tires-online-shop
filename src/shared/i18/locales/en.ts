@@ -34,7 +34,7 @@ export const en = {
       contacts: 'Contacts',
       feedback: 'Reviews',
       guarantee: 'Guarantee',
-      cookiePreferences: 'Cookie Preferences',
+      cookiePreferences: 'Cookie Policy',
       privacyPolicy: 'Privacy Policy',
       terms: 'Terms of Use',
     },

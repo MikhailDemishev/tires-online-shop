@@ -34,7 +34,7 @@ export const ru = {
       contacts: 'Контакты',
       feedback: 'Отзывы',
       guarantee: 'Гарантии',
-      cookiePreferences: 'Настройки cookie',
+      cookiePreferences: 'Политика Cookie',
       privacyPolicy: 'Политика конфиденциальности',
       terms: 'Пользовательское соглашение',
     },

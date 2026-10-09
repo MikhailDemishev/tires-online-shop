@@ -1,11 +1,10 @@
+import { getLoadSpeedIndex } from '@/entities/product/lib/helpers';
 import type { Tire } from '@/entities/tire/model';
 import type { Wheel } from '@/entities/wheel/model';
 import type { WheelSpacer } from '@/entities/wheelSpacer/model';
-import { getLoadSpeedIndex } from './getLoadSpeedIndex';
-import type { SearchProduct } from '@/features/search/model';
 
 export const getProductTitle = (
-  product: Tire | Wheel | WheelSpacer | SearchProduct,
+  product: Tire | Wheel | WheelSpacer,
   t: (key: string) => string,
 ) => {
   switch (product.productType) {
